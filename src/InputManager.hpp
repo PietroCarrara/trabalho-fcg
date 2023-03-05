@@ -1,6 +1,10 @@
 #ifndef INPUT_MANAGER_HPP
 #define INPUT_MANAGER_HPP
 
+#include <map>
+#include <glm/vec2.hpp>
+#include <GLFW/glfw3.h>
+
 class InputManager {
 private:
     static float mouseLastX, mouseLastY, mouseX, mouseY;
