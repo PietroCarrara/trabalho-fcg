@@ -103,6 +103,7 @@
 		<Unit filename="include/KHR/khrplatform.h" />
 		<Unit filename="include/dejavufont.h" />
 		<Unit filename="include/glad/glad.h" />
+		<Unit filename="include/glcommon.h" />
 		<Unit filename="include/glm/CMakeLists.txt" />
 		<Unit filename="include/glm/common.hpp" />
 		<Unit filename="include/glm/detail/_features.hpp" />
@@ -365,19 +366,26 @@
 		<Unit filename="include/glm/vec3.hpp" />
 		<Unit filename="include/glm/vec4.hpp" />
 		<Unit filename="include/glm/vector_relational.hpp" />
-		<Unit filename="include/matrices.h" />
 		<Unit filename="include/utils.h" />
+		<Unit filename="src/Camera.cpp" />
+		<Unit filename="src/Camera.hpp" />
+		<Unit filename="src/Cube.cpp" />
+		<Unit filename="src/Cube.hpp" />
+		<Unit filename="src/GraphicsManager.cpp" />
+		<Unit filename="src/GraphicsManager.hpp" />
+		<Unit filename="src/InputManager.cpp" />
+		<Unit filename="src/InputManager.hpp" />
 		<Unit filename="src/glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/lowlevel.cpp" />
+		<Unit filename="src/lowlevel.hpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/matrices.cpp" />
+		<Unit filename="src/matrices.hpp" />
 		<Unit filename="src/shader_fragment.glsl" />
 		<Unit filename="src/shader_vertex.glsl" />
-		<Unit filename="src/textrendering.cpp" />
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>

@@ -9,15 +9,14 @@
 #include <fstream>
 #include <sstream>
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "matrices.hpp"
+#include <glcommon.h>
 
 #include <glm/mat4x4.hpp>
 #include <glm/vec4.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 #include "utils.h"
-#include "matrices.h"
 #include "lowlevel.hpp"
 #include "InputManager.hpp"
 #include "Camera.hpp"
@@ -29,21 +28,18 @@ void DrawCube(); // Desenha um cubo
 
 int main()
 {
-    initialize_lowlevel();
+    GLFWwindow* w = initialize_lowlevel();
 
-    LookAtCamera cam = LookAtCamera();
-    cam.setDistance(3.5);
-    cam.setRotationX(0);
-    cam.setRotationY(0);
+    LookAtCamera cam = LookAtCamera(glm::vec3(0));
 
     Cube c1 = Cube();
     Cube c2 = Cube();
     c2.position = glm::vec3(20, 20, 20);
 
-    while (programAlive() && !InputManager::isKeyDown(GLFW_KEY_ESCAPE))
+    while (programAlive(w) && !InputManager::isKeyDown(GLFW_KEY_ESCAPE))
     {
         // UPDATE:
-        update_lowlevel();
+        update_lowlevel(w);
 
         // Update camera!
         if (InputManager::isKeyDown(GLFW_MOUSE_BUTTON_LEFT))
@@ -54,8 +50,8 @@ int main()
             float dy = InputManager::getMouseDelta().y;
 
             // Atualizamos parâmetros da câmera com os deslocamentos
-            cam.setRotationX(cam.getRotationX() - 0.01*dx);
-            cam.setRotationY(cam.getRotationY() + 0.01*dy);
+            cam.rotX -= 0.01*dx;
+            cam.rotY += 0.01*dy;
         }
 
         // DRAW:
@@ -70,16 +66,16 @@ int main()
         model = Matrix_Translate(20, 20, 20);
         c2.draw(cam);
 
-        glfwSwapBuffers(window);
+        glfwSwapBuffers(w);
         glfwPollEvents();
     }
 
-    glfwTerminate();
+    destroy_lowlevel();
     return 0;
 }
 
 void main_goals() {
-    initialize_lowlevel();
+    // initialize_lowlevel();
 
     // World world;
     // Scene firstScene;
@@ -97,7 +93,7 @@ void main_goals() {
     // }
     // world.destroy();
 
-    destroy_lowlevel();
+    // destroy_lowlevel();
 }
 
 // Função que desenha um cubo com arestas em preto, definido dentro da função BuildTriangles().
