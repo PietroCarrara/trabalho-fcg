@@ -9,7 +9,7 @@ MainGameScene::MainGameScene() {
     this->entities.push_back(p);
     this->camera = p;
 
-    ObjEntity* theBunny = new ObjEntity("../../assets/obj/bunny.obj");
+    ObjEntity* theBunny = new ObjEntity("../../assets/objects/bunny.obj");
 
     this->entities.push_back(theBunny);
 }
