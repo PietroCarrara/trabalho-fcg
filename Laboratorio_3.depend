@@ -7,6 +7,8 @@
 	<windows.h>
 	<dlfcn.h>
 
+1678366300 
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glad/glad.h
 	<windows.h>
 	<stddef.h>
@@ -17,6 +19,8 @@
 	<stdint.h>
 	<stdint.h>
 	<inttypes.h>
+
+1678366178 h>
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/KHR/khrplatform.h
 	<sys/cdefs.h>
@@ -32,6 +36,8 @@
 	<glm/vec4.hpp>
 	"utils.h"
 	"dejavufont.h"
+
+1677616720 t.h"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/GLFW/glfw3.h
 	<stddef.h>
@@ -60,14 +66,20 @@
 	"./ext/matrix_float4x4.hpp"
 	"./ext/matrix_float4x4_precision.hpp"
 
+1678216844 rix_float4x4_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double4x4.hpp
 	"../detail/type_mat4x4.hpp"
+
+1678216844 /type_mat4x4.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat4x4.hpp
 	"type_vec4.hpp"
 	<limits>
 	<cstddef>
 	"type_mat4x4.inl"
+
+1678216844 x4.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec4.hpp
 	"qualifier.hpp"
@@ -76,8 +88,12 @@
 	<cstddef>
 	"type_vec4.inl"
 
+1678216844 .inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/qualifier.hpp
 	"setup.hpp"
+
+1678216844 "
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/setup.hpp
 	<cassert>
@@ -85,6 +101,8 @@
 	"../simd/platform.h"
 	<cstdint>
 	<type_traits>
+
+1678216844 ts>
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/simd/platform.h
 	<cuda.h>
@@ -97,6 +115,8 @@
 	<pmmintrin.h>
 	<emmintrin.h>
 
+1678216844 .h>
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/_swizzle.hpp
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/_swizzle_func.hpp
@@ -104,6 +124,8 @@
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec4.inl
 	"compute_vector_relational.hpp"
 	"type_vec4_simd.inl"
+
+1678216844 _simd.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/compute_vector_relational.hpp
 	"setup.hpp"
@@ -114,6 +136,8 @@
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat4x4.inl
 	"../matrix.hpp"
 	"type_mat4x4_simd.inl"
+
+1678216844 x4_simd.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/matrix.hpp
 	"detail/qualifier.hpp"
@@ -132,6 +156,8 @@
 	"mat4x4.hpp"
 	"detail/func_matrix.inl"
 
+1678216844 nc_matrix.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/vec2.hpp
 	"./ext/vector_bool2.hpp"
 	"./ext/vector_bool2_precision.hpp"
@@ -144,8 +170,12 @@
 	"./ext/vector_uint2.hpp"
 	"./ext/vector_uint2_precision.hpp"
 
+1678216844 tor_uint2_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool2.hpp
 	"../detail/type_vec2.hpp"
+
+1678216844 /type_vec2.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec2.hpp
 	"qualifier.hpp"
@@ -156,6 +186,8 @@
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec2.inl
 	"./compute_vector_relational.hpp"
+
+1678216844 _vector_relational.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool2_precision.hpp
 	"../detail/type_vec2.hpp"
@@ -196,8 +228,12 @@
 	"./ext/vector_uint3.hpp"
 	"./ext/vector_uint3_precision.hpp"
 
+1678216844 tor_uint3_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool3.hpp
 	"../detail/type_vec3.hpp"
+
+1678216844 /type_vec3.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec3.hpp
 	"qualifier.hpp"
@@ -208,6 +244,8 @@
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec3.inl
 	"compute_vector_relational.hpp"
+
+1678216844 ector_relational.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool3_precision.hpp
 	"../detail/type_vec3.hpp"
@@ -248,8 +286,12 @@
 	"./ext/vector_uint4.hpp"
 	"./ext/vector_uint4_precision.hpp"
 
+1678216844 tor_uint4_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool4.hpp
 	"../detail/type_vec4.hpp"
+
+1678216844 /type_vec4.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool4_precision.hpp
 	"../detail/type_vec4.hpp"
@@ -285,8 +327,12 @@
 	"./ext/matrix_float2x2.hpp"
 	"./ext/matrix_float2x2_precision.hpp"
 
+1678216844 rix_float2x2_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double2x2.hpp
 	"../detail/type_mat2x2.hpp"
+
+1678216844 /type_mat2x2.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat2x2.hpp
 	"type_vec2.hpp"
@@ -294,8 +340,12 @@
 	<cstddef>
 	"type_mat2x2.inl"
 
+1678216844 x2.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat2x2.inl
 	"../matrix.hpp"
+
+1678216844 .hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double2x2_precision.hpp
 	"../detail/type_mat2x2.hpp"
@@ -312,8 +362,12 @@
 	"./ext/matrix_float2x3.hpp"
 	"./ext/matrix_float2x3_precision.hpp"
 
+1678216844 rix_float2x3_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double2x3.hpp
 	"../detail/type_mat2x3.hpp"
+
+1678216844 /type_mat2x3.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat2x3.hpp
 	"type_vec2.hpp"
@@ -321,6 +375,8 @@
 	<limits>
 	<cstddef>
 	"type_mat2x3.inl"
+
+1678216844 x3.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat2x3.inl
 
@@ -339,8 +395,12 @@
 	"./ext/matrix_float2x4.hpp"
 	"./ext/matrix_float2x4_precision.hpp"
 
+1678216844 rix_float2x4_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double2x4.hpp
 	"../detail/type_mat2x4.hpp"
+
+1678216844 /type_mat2x4.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat2x4.hpp
 	"type_vec2.hpp"
@@ -366,8 +426,12 @@
 	"./ext/matrix_float3x2.hpp"
 	"./ext/matrix_float3x2_precision.hpp"
 
+1678216844 rix_float3x2_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double3x2.hpp
 	"../detail/type_mat3x2.hpp"
+
+1678216844 /type_mat3x2.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat3x2.hpp
 	"type_vec2.hpp"
@@ -393,8 +457,12 @@
 	"./ext/matrix_float3x3.hpp"
 	"./ext/matrix_float3x3_precision.hpp"
 
+1678216844 rix_float3x3_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double3x3.hpp
 	"../detail/type_mat3x3.hpp"
+
+1678216844 /type_mat3x3.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat3x3.hpp
 	"type_vec3.hpp"
@@ -420,8 +488,12 @@
 	"./ext/matrix_float3x4.hpp"
 	"./ext/matrix_float3x4_precision.hpp"
 
+1678216844 rix_float3x4_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double3x4.hpp
 	"../detail/type_mat3x4.hpp"
+
+1678216844 /type_mat3x4.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat3x4.hpp
 	"type_vec3.hpp"
@@ -447,8 +519,12 @@
 	"./ext/matrix_float4x2.hpp"
 	"./ext/matrix_float4x2_precision.hpp"
 
+1678216844 rix_float4x2_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double4x2.hpp
 	"../detail/type_mat4x2.hpp"
+
+1678216844 /type_mat4x2.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat4x2.hpp
 	"type_vec2.hpp"
@@ -474,8 +550,12 @@
 	"./ext/matrix_float4x3.hpp"
 	"./ext/matrix_float4x3_precision.hpp"
 
+1678216844 rix_float4x3_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_double4x3.hpp
 	"../detail/type_mat4x3.hpp"
+
+1678216844 /type_mat4x3.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat4x3.hpp
 	"type_vec3.hpp"
@@ -500,14 +580,20 @@
 	<limits>
 	"func_matrix_simd.inl"
 
+1678216844 ix_simd.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/geometric.hpp
 	"detail/type_vec3.hpp"
 	"detail/func_geometric.inl"
+
+1678216844 nc_geometric.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_geometric.inl
 	"../exponential.hpp"
 	"../common.hpp"
 	"func_geometric_simd.inl"
+
+1678216844 etric_simd.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/exponential.hpp
 	"detail/type_vec1.hpp"
@@ -516,6 +602,8 @@
 	"detail/type_vec4.hpp"
 	<cmath>
 	"detail/func_exponential.inl"
+
+1678216844 nc_exponential.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_vec1.hpp
 	"qualifier.hpp"
@@ -535,13 +623,19 @@
 	<cassert>
 	"func_exponential_simd.inl"
 
+1678216844 nential_simd.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/vector_relational.hpp
 	"detail/qualifier.hpp"
 	"detail/setup.hpp"
 	"detail/func_vector_relational.inl"
 
+1678216844 nc_vector_relational.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_vector_relational.inl
 	"func_vector_relational_simd.inl"
+
+1678216844 or_relational_simd.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_vector_relational_simd.inl
 
@@ -550,13 +644,19 @@
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_exponential_simd.inl
 	"../simd/exponential.h"
 
+1678216844 xponential.h"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/simd/exponential.h
 	"platform.h"
+
+1678216844 h"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/common.hpp
 	"detail/qualifier.hpp"
 	"detail/_fixes.hpp"
 	"detail/func_common.inl"
+
+1678216844 nc_common.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/_fixes.hpp
 	<cmath>
@@ -572,6 +672,8 @@
 	<limits>
 	"func_common_simd.inl"
 
+1678216844 on_simd.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/compute_common.hpp
 	"setup.hpp"
 	<limits>
@@ -586,6 +688,8 @@
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_geometric_simd.inl
 	"../simd/geometric.h"
 
+1678216844 eometric.h"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/simd/geometric.h
 	"common.h"
 
@@ -597,6 +701,8 @@
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/simd/matrix.h
 	"geometric.h"
+
+1678216844 .h"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_mat4x4_simd.inl
 
@@ -636,6 +742,8 @@
 	"lowlevel.hpp"
 	"InputManager.hpp"
 
+1678216844 ger.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/gtc/type_ptr.hpp
 	"../gtc/quaternion.hpp"
 	"../gtc/vec1.hpp"
@@ -653,6 +761,8 @@
 	"../mat4x4.hpp"
 	<cstring>
 	"type_ptr.inl"
+
+1678216844 inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/gtc/quaternion.hpp
 	"../gtc/constants.hpp"
@@ -673,6 +783,8 @@
 	"../detail/type_vec4.hpp"
 	"quaternion.inl"
 
+1678216844 n.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/gtc/constants.hpp
 	"../ext/scalar_constants.hpp"
 	"constants.inl"
@@ -680,6 +792,8 @@
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/scalar_constants.hpp
 	"../detail/setup.hpp"
 	"scalar_constants.inl"
+
+1678216844 nstants.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/scalar_constants.inl
 	<limits>
@@ -696,6 +810,8 @@
 	"../ext/matrix_transform.hpp"
 	"matrix_transform.inl"
 
+1678216844 ansform.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_projection.hpp
 	"../gtc/constants.hpp"
 	"../geometric.hpp"
@@ -703,16 +819,22 @@
 	"../matrix.hpp"
 	"matrix_projection.inl"
 
+1678216844 ojection.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/trigonometric.hpp
 	"detail/setup.hpp"
 	"detail/qualifier.hpp"
 	"detail/func_trigonometric.inl"
+
+1678216844 nc_trigonometric.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_trigonometric.inl
 	"_vectorize.hpp"
 	<cmath>
 	<limits>
 	"func_trigonometric_simd.inl"
+
+1678216844 onometric_simd.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/func_trigonometric_simd.inl
 
@@ -723,6 +845,8 @@
 	"../geometric.hpp"
 	"../trigonometric.hpp"
 	"matrix_clip_space.inl"
+
+1678216844 ip_space.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/matrix_clip_space.inl
 
@@ -744,11 +868,15 @@
 	"../detail/qualifier.hpp"
 	"vector_relational.inl"
 
+1678216844 lational.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_relational.inl
 	"../vector_relational.hpp"
 	"../common.hpp"
 	"../detail/qualifier.hpp"
 	"../detail/type_float.hpp"
+
+1678216844 /type_float.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_float.hpp
 	"setup.hpp"
@@ -762,21 +890,29 @@
 	<limits>
 	"quaternion_common.inl"
 
+1678216844 n_common.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_geometric.hpp
 	"../geometric.hpp"
 	"../exponential.hpp"
 	"../ext/vector_relational.hpp"
 	"quaternion_geometric.inl"
 
+1678216844 n_geometric.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_geometric.inl
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_common.inl
 	"quaternion_common_simd.inl"
 
+1678216844 n_common_simd.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_common_simd.inl
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_float.hpp
 	"../detail/type_quat.hpp"
+
+1678216844 /type_quat.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/detail/type_quat.hpp
 	"../detail/type_mat3x3.hpp"
@@ -792,6 +928,8 @@
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_relational.hpp
 	"../vector_relational.hpp"
 	"quaternion_relational.inl"
+
+1678216844 n_relational.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_relational.inl
 
@@ -821,6 +959,8 @@
 	<limits>
 	"quaternion_trigonometric.inl"
 
+1678216844 n_trigonometric.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_trigonometric.inl
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_transform.hpp
@@ -828,6 +968,8 @@
 	"../trigonometric.hpp"
 	"../geometric.hpp"
 	"quaternion_transform.inl"
+
+1678216844 n_transform.inl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/quaternion_transform.inl
 
@@ -839,10 +981,14 @@
 	<limits>
 	"quaternion_simd.inl"
 
+1678216844 n_simd.inl"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/gtc/epsilon.hpp
 	"../detail/setup.hpp"
 	"../detail/qualifier.hpp"
 	"epsilon.inl"
+
+1678216844 nl"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/gtc/epsilon.inl
 	"../vector_relational.hpp"
@@ -862,8 +1008,12 @@
 	"../ext/vector_uint1.hpp"
 	"../ext/vector_uint1_precision.hpp"
 
+1678216844 ctor_uint1_precision.hpp"
+
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool1.hpp
 	"../detail/type_vec1.hpp"
+
+1678216844 /type_vec1.hpp"
 
 1668684537 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/include/glm/ext/vector_bool1_precision.hpp
 	"../detail/type_vec1.hpp"
@@ -901,6 +1051,8 @@
 	<glm/mat4x4.hpp>
 	<glm/vec4.hpp>
 	<glm/gtc/matrix_transform.hpp>
+
+1678216844 atrix_transform.hpp>
 
 1676559080 /home/grad/pbcarrara/Downloads/Projects/FCGTrabFin/src/lowlevel.hpp
 	<cmath>
@@ -1588,6 +1740,8 @@
 	"lowlevel.hpp"
 	"InputManager.hpp"
 	"Camera.hpp"
+
+1678366581 p"
 
 1677616720 /home/grad/pbcarrara/Downloads/trabalho-fcg-master/include/GLFW/glfw3.h
 	<stddef.h>
@@ -2460,6 +2614,8 @@
 	<map>
 	<glm/vec2.hpp>
 
+1677765050 hpp>
+
 1677616720 source:/home/grad/pbcarrara/Downloads/trabalho-fcg-master/src/textrendering.cpp
 	<string>
 	<glad/glad.h>
@@ -2503,6 +2659,8 @@
 1678232144 /home/pietro/Projects/FCGTrabFin/include/glcommon.h
 	<glad/glad.h>
 	<GLFW/glfw3.h>
+
+1678216844 3.h>
 
 1677616720 /home/pietro/Projects/FCGTrabFin/include/glm/gtc/type_ptr.hpp
 	"../gtc/quaternion.hpp"
@@ -2784,6 +2942,8 @@
 	<glm/vec4.hpp>
 	"matrices.hpp"
 
+1678366156 hpp"
+
 1678234356 /home/pietro/Projects/FCGTrabFin/src/Cube.hpp
 	<glm/mat4x4.hpp>
 	<glm/vec3.hpp>
@@ -2824,6 +2984,8 @@
 	"matrices.hpp"
 	"glm/mat4x4.hpp"
 
+1678366571 4.hpp"
+
 1678234616 source:/home/pietro/Projects/FCGTrabFin/src/lowlevel.cpp
 	"lowlevel.hpp"
 	<cmath>
@@ -2845,6 +3007,2835 @@
 	"utils.h"
 
 1678233985 source:/home/pietro/Projects/FCGTrabFin/src/matrices.cpp
+	"matrices.hpp"
+	<cstdio>
+	<cstdlib>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1678216844 source:c:\users\public\documents\trabalho-fcg-master\src\camera.cpp
+	"Camera.hpp"
+	<glcommon.h>
+	"matrices.hpp"
+
+1678366430 c:\users\public\documents\trabalho-fcg-master\src\camera.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec3.hpp>
+	<glm/vec4.hpp>
+	"matrices.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat4x4.hpp
+	"./ext/matrix_double4x4.hpp"
+	"./ext/matrix_double4x4_precision.hpp"
+	"./ext/matrix_float4x4.hpp"
+	"./ext/matrix_float4x4_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x4.hpp
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec4.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\qualifier.hpp
+	"setup.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\setup.hpp
+	<cassert>
+	<cstddef>
+	"../simd/platform.h"
+	<cstdint>
+	<type_traits>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\simd\platform.h
+	<cuda.h>
+	<immintrin.h>
+	<immintrin.h>
+	<popcntintrin.h>
+	<nmmintrin.h>
+	<smmintrin.h>
+	<tmmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\_swizzle.hpp
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\_swizzle_func.hpp
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec4.inl
+	"compute_vector_relational.hpp"
+	"type_vec4_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\compute_vector_relational.hpp
+	"setup.hpp"
+	<limits>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec4_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x4.inl
+	"../matrix.hpp"
+	"type_mat4x4_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\matrix.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"detail/func_matrix.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\vec2.hpp
+	"./ext/vector_bool2.hpp"
+	"./ext/vector_bool2_precision.hpp"
+	"./ext/vector_float2.hpp"
+	"./ext/vector_float2_precision.hpp"
+	"./ext/vector_double2.hpp"
+	"./ext/vector_double2_precision.hpp"
+	"./ext/vector_int2.hpp"
+	"./ext/vector_int2_precision.hpp"
+	"./ext/vector_uint2.hpp"
+	"./ext/vector_uint2_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec2.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec2.inl
+	"./compute_vector_relational.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\vec3.hpp
+	"./ext/vector_bool3.hpp"
+	"./ext/vector_bool3_precision.hpp"
+	"./ext/vector_float3.hpp"
+	"./ext/vector_float3_precision.hpp"
+	"./ext/vector_double3.hpp"
+	"./ext/vector_double3_precision.hpp"
+	"./ext/vector_int3.hpp"
+	"./ext/vector_int3_precision.hpp"
+	"./ext/vector_uint3.hpp"
+	"./ext/vector_uint3_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec3.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec3.inl
+	"compute_vector_relational.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\vec4.hpp
+	"./ext/vector_bool4.hpp"
+	"./ext/vector_bool4_precision.hpp"
+	"./ext/vector_float4.hpp"
+	"./ext/vector_float4_precision.hpp"
+	"./ext/vector_double4.hpp"
+	"./ext/vector_double4_precision.hpp"
+	"./ext/vector_int4.hpp"
+	"./ext/vector_int4_precision.hpp"
+	"./ext/vector_uint4.hpp"
+	"./ext/vector_uint4_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double4_precision.hpp
+	"../detail/setup.hpp"
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat2x2.hpp
+	"./ext/matrix_double2x2.hpp"
+	"./ext/matrix_double2x2_precision.hpp"
+	"./ext/matrix_float2x2.hpp"
+	"./ext/matrix_float2x2_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat2x2.hpp
+	"type_vec2.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x2.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat2x2.inl
+	"../matrix.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat2x3.hpp
+	"./ext/matrix_double2x3.hpp"
+	"./ext/matrix_double2x3_precision.hpp"
+	"./ext/matrix_float2x3.hpp"
+	"./ext/matrix_float2x3_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat2x3.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x3.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat2x3.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat2x4.hpp
+	"./ext/matrix_double2x4.hpp"
+	"./ext/matrix_double2x4_precision.hpp"
+	"./ext/matrix_float2x4.hpp"
+	"./ext/matrix_float2x4_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat2x4.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x4.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat2x4.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat3x2.hpp
+	"./ext/matrix_double3x2.hpp"
+	"./ext/matrix_double3x2_precision.hpp"
+	"./ext/matrix_float3x2.hpp"
+	"./ext/matrix_float3x2_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat3x2.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x2.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat3x2.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat3x3.hpp
+	"./ext/matrix_double3x3.hpp"
+	"./ext/matrix_double3x3_precision.hpp"
+	"./ext/matrix_float3x3.hpp"
+	"./ext/matrix_float3x3_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat3x3.hpp
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x3.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat3x3.inl
+	"../matrix.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat3x4.hpp
+	"./ext/matrix_double3x4.hpp"
+	"./ext/matrix_double3x4_precision.hpp"
+	"./ext/matrix_float3x4.hpp"
+	"./ext/matrix_float3x4_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat3x4.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x4.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat3x4.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat4x2.hpp
+	"./ext/matrix_double4x2.hpp"
+	"./ext/matrix_double4x2_precision.hpp"
+	"./ext/matrix_float4x2.hpp"
+	"./ext/matrix_float4x2_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x2.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x2.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x2.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double4x2_precision.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float4x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\mat4x3.hpp
+	"./ext/matrix_double4x3.hpp"
+	"./ext/matrix_double4x3_precision.hpp"
+	"./ext/matrix_float4x3.hpp"
+	"./ext/matrix_float4x3_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x3.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x3.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x3.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+	"func_matrix_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\geometric.hpp
+	"detail/type_vec3.hpp"
+	"detail/func_geometric.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_geometric.inl
+	"../exponential.hpp"
+	"../common.hpp"
+	"func_geometric_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\exponential.hpp
+	"detail/type_vec1.hpp"
+	"detail/type_vec2.hpp"
+	"detail/type_vec3.hpp"
+	"detail/type_vec4.hpp"
+	<cmath>
+	"detail/func_exponential.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec1.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_vec1.inl
+	"./compute_vector_relational.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_exponential.inl
+	"../vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cmath>
+	<cassert>
+	"func_exponential_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\vector_relational.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"detail/func_vector_relational.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_vector_relational.inl
+	"func_vector_relational_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_vector_relational_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\_vectorize.hpp
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_exponential_simd.inl
+	"../simd/exponential.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\simd\exponential.h
+	"platform.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\common.hpp
+	"detail/qualifier.hpp"
+	"detail/_fixes.hpp"
+	"detail/func_common.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\_fixes.hpp
+	<cmath>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_common.inl
+	"../vector_relational.hpp"
+	"compute_common.hpp"
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+	"func_common_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\compute_common.hpp
+	"setup.hpp"
+	<limits>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_common_simd.inl
+	"../simd/common.h"
+	<immintrin.h>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\simd\common.h
+	"platform.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_geometric_simd.inl
+	"../simd/geometric.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\simd\geometric.h
+	"common.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_matrix_simd.inl
+	"type_mat4x4.hpp"
+	"../geometric.hpp"
+	"../simd/matrix.h"
+	<cstring>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\simd\matrix.h
+	"geometric.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_mat4x4_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_double4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_float4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\src\matrices.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../ext/matrix_projection.hpp"
+	"../ext/matrix_clip_space.hpp"
+	"../ext/matrix_transform.hpp"
+	"matrix_transform.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_projection.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_projection.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\constants.hpp
+	"../ext/scalar_constants.hpp"
+	"constants.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\scalar_constants.hpp
+	"../detail/setup.hpp"
+	"scalar_constants.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\scalar_constants.inl
+	<limits>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\constants.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\trigonometric.hpp
+	"detail/setup.hpp"
+	"detail/qualifier.hpp"
+	"detail/func_trigonometric.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+	"func_trigonometric_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\func_trigonometric_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_projection.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_clip_space.hpp
+	"../ext/scalar_constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"matrix_clip_space.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_clip_space.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_transform.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_transform.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\matrix_transform.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glcommon.h
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glad\glad.h
+	<windows.h>
+	<stddef.h>
+	<KHR/khrplatform.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\khr\khrplatform.h
+	<sys/cdefs.h>
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glfw\glfw3.h
+	<stddef.h>
+	<stdint.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES2/gl2ext.h>
+	<vulkan/vulkan.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1678366571 source:c:\users\public\documents\trabalho-fcg-master\src\cube.cpp
+	"Cube.hpp"
+	<glcommon.h>
+	"matrices.hpp"
+	"glm/mat4x4.hpp"
+
+1678366581 c:\users\public\documents\trabalho-fcg-master\src\cube.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec3.hpp>
+	<glm/vec4.hpp>
+	<glcommon.h>
+	"matrices.hpp"
+	"GraphicsManager.hpp"
+	"Camera.hpp"
+
+1678366156 c:\users\public\documents\trabalho-fcg-master\src\graphicsmanager.hpp
+	<sstream>
+	<fstream>
+	<glm/mat4x4.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glcommon.h>
+	"matrices.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\type_ptr.hpp
+	"../gtc/quaternion.hpp"
+	"../gtc/vec1.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\quaternion.hpp
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_common.hpp"
+	"../ext/quaternion_float.hpp"
+	"../ext/quaternion_float_precision.hpp"
+	"../ext/quaternion_double.hpp"
+	"../ext/quaternion_double_precision.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../ext/quaternion_trigonometric.hpp"
+	"../ext/quaternion_transform.hpp"
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"quaternion.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_relational.hpp
+	"../detail/qualifier.hpp"
+	"vector_relational.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_relational.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+	"../detail/qualifier.hpp"
+	"../detail/type_float.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_common.hpp
+	"../ext/scalar_constants.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	<limits>
+	"quaternion_common.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_geometric.hpp
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"../ext/vector_relational.hpp"
+	"quaternion_geometric.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_geometric.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_common.inl
+	"quaternion_common_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_common_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_float.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_quat.hpp
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"type_quat.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_relational.hpp
+	"../vector_relational.hpp"
+	"quaternion_relational.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_relational.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_quat.inl
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"../ext/quaternion_geometric.hpp"
+	<limits>
+	"type_quat_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\detail\type_quat_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_float_precision.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_double.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_double_precision.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_trigonometric.hpp
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"scalar_constants.hpp"
+	"vector_relational.hpp"
+	<limits>
+	"quaternion_trigonometric.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_trigonometric.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_transform.hpp
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"quaternion_transform.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\quaternion_transform.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\quaternion.inl
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"epsilon.hpp"
+	<limits>
+	"quaternion_simd.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\epsilon.hpp
+	"../detail/setup.hpp"
+	"../detail/qualifier.hpp"
+	"epsilon.inl"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\epsilon.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\quaternion_simd.inl
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\vec1.hpp
+	"../ext/vector_bool1.hpp"
+	"../ext/vector_bool1_precision.hpp"
+	"../ext/vector_float1.hpp"
+	"../ext/vector_float1_precision.hpp"
+	"../ext/vector_double1.hpp"
+	"../ext/vector_double1_precision.hpp"
+	"../ext/vector_int1.hpp"
+	"../ext/vector_int1_precision.hpp"
+	"../ext/vector_uint1.hpp"
+	"../ext/vector_uint1_precision.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_bool1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_float1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_double1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_int1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\ext\vector_uint1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\glm\gtc\type_ptr.inl
+	<cstring>
+
+1678216844 source:c:\users\public\documents\trabalho-fcg-master\src\glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<dlfcn.h>
+
+1678216844 source:c:\users\public\documents\trabalho-fcg-master\src\inputmanager.cpp
+	"InputManager.hpp"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\src\inputmanager.hpp
+	<map>
+	<glm/vec2.hpp>
+	<glcommon.h>
+
+1678216844 source:c:\users\public\documents\trabalho-fcg-master\src\lowlevel.cpp
+	"lowlevel.hpp"
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<fstream>
+	<glm/gtc/type_ptr.hpp>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<limits>
+	<map>
+	<sstream>
+	<stack>
+	<string>
+	<glcommon.h>
+	"GraphicsManager.hpp"
+	"InputManager.hpp"
+	"matrices.hpp"
+	"utils.h"
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\src\lowlevel.hpp
+	<glcommon.h>
+
+1678216844 c:\users\public\documents\trabalho-fcg-master\include\utils.h
+	<cstdio>
+
+1678366178 source:c:\users\public\documents\trabalho-fcg-master\src\graphicsmanager.cpp
+	"GraphicsManager.hpp"
+	<glcommon.h>
+
+1678366300 source:c:\users\public\documents\trabalho-fcg-master\src\main.cpp
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<map>
+	<stack>
+	<string>
+	<limits>
+	<fstream>
+	<sstream>
+	"matrices.hpp"
+	<glcommon.h>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"utils.h"
+	"lowlevel.hpp"
+	"InputManager.hpp"
+	"Camera.hpp"
+	"Cube.hpp"
+
+1678216844 source:c:\users\public\documents\trabalho-fcg-master\src\matrices.cpp
+	"matrices.hpp"
+	<cstdio>
+	<cstdlib>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1678216844 source:/home/aluno/Downloads/trabalho-fcg/src/Camera.cpp
+	"Camera.hpp"
+	<glcommon.h>
+	"matrices.hpp"
+
+1678366432 /home/aluno/Downloads/trabalho-fcg/src/Camera.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec3.hpp>
+	<glm/vec4.hpp>
+	"matrices.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat4x4.hpp
+	"./ext/matrix_double4x4.hpp"
+	"./ext/matrix_double4x4_precision.hpp"
+	"./ext/matrix_float4x4.hpp"
+	"./ext/matrix_float4x4_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x4.hpp
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec4.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/qualifier.hpp
+	"setup.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/setup.hpp
+	<cassert>
+	<cstddef>
+	"../simd/platform.h"
+	<cstdint>
+	<type_traits>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/simd/platform.h
+	<cuda.h>
+	<immintrin.h>
+	<immintrin.h>
+	<popcntintrin.h>
+	<nmmintrin.h>
+	<smmintrin.h>
+	<tmmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/_swizzle.hpp
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/_swizzle_func.hpp
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec4.inl
+	"compute_vector_relational.hpp"
+	"type_vec4_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/compute_vector_relational.hpp
+	"setup.hpp"
+	<limits>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec4_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x4.inl
+	"../matrix.hpp"
+	"type_mat4x4_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/matrix.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"detail/func_matrix.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/vec2.hpp
+	"./ext/vector_bool2.hpp"
+	"./ext/vector_bool2_precision.hpp"
+	"./ext/vector_float2.hpp"
+	"./ext/vector_float2_precision.hpp"
+	"./ext/vector_double2.hpp"
+	"./ext/vector_double2_precision.hpp"
+	"./ext/vector_int2.hpp"
+	"./ext/vector_int2_precision.hpp"
+	"./ext/vector_uint2.hpp"
+	"./ext/vector_uint2_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec2.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec2.inl
+	"./compute_vector_relational.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/vec3.hpp
+	"./ext/vector_bool3.hpp"
+	"./ext/vector_bool3_precision.hpp"
+	"./ext/vector_float3.hpp"
+	"./ext/vector_float3_precision.hpp"
+	"./ext/vector_double3.hpp"
+	"./ext/vector_double3_precision.hpp"
+	"./ext/vector_int3.hpp"
+	"./ext/vector_int3_precision.hpp"
+	"./ext/vector_uint3.hpp"
+	"./ext/vector_uint3_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec3.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec3.inl
+	"compute_vector_relational.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/vec4.hpp
+	"./ext/vector_bool4.hpp"
+	"./ext/vector_bool4_precision.hpp"
+	"./ext/vector_float4.hpp"
+	"./ext/vector_float4_precision.hpp"
+	"./ext/vector_double4.hpp"
+	"./ext/vector_double4_precision.hpp"
+	"./ext/vector_int4.hpp"
+	"./ext/vector_int4_precision.hpp"
+	"./ext/vector_uint4.hpp"
+	"./ext/vector_uint4_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double4_precision.hpp
+	"../detail/setup.hpp"
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat2x2.hpp
+	"./ext/matrix_double2x2.hpp"
+	"./ext/matrix_double2x2_precision.hpp"
+	"./ext/matrix_float2x2.hpp"
+	"./ext/matrix_float2x2_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat2x2.hpp
+	"type_vec2.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x2.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat2x2.inl
+	"../matrix.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat2x3.hpp
+	"./ext/matrix_double2x3.hpp"
+	"./ext/matrix_double2x3_precision.hpp"
+	"./ext/matrix_float2x3.hpp"
+	"./ext/matrix_float2x3_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat2x3.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x3.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat2x3.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat2x4.hpp
+	"./ext/matrix_double2x4.hpp"
+	"./ext/matrix_double2x4_precision.hpp"
+	"./ext/matrix_float2x4.hpp"
+	"./ext/matrix_float2x4_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat2x4.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x4.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat2x4.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat3x2.hpp
+	"./ext/matrix_double3x2.hpp"
+	"./ext/matrix_double3x2_precision.hpp"
+	"./ext/matrix_float3x2.hpp"
+	"./ext/matrix_float3x2_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat3x2.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x2.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat3x2.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat3x3.hpp
+	"./ext/matrix_double3x3.hpp"
+	"./ext/matrix_double3x3_precision.hpp"
+	"./ext/matrix_float3x3.hpp"
+	"./ext/matrix_float3x3_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat3x3.hpp
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x3.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat3x3.inl
+	"../matrix.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat3x4.hpp
+	"./ext/matrix_double3x4.hpp"
+	"./ext/matrix_double3x4_precision.hpp"
+	"./ext/matrix_float3x4.hpp"
+	"./ext/matrix_float3x4_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat3x4.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x4.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat3x4.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat4x2.hpp
+	"./ext/matrix_double4x2.hpp"
+	"./ext/matrix_double4x2_precision.hpp"
+	"./ext/matrix_float4x2.hpp"
+	"./ext/matrix_float4x2_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x2.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x2.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x2.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double4x2_precision.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float4x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/mat4x3.hpp
+	"./ext/matrix_double4x3.hpp"
+	"./ext/matrix_double4x3_precision.hpp"
+	"./ext/matrix_float4x3.hpp"
+	"./ext/matrix_float4x3_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x3.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x3.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x3.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+	"func_matrix_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/geometric.hpp
+	"detail/type_vec3.hpp"
+	"detail/func_geometric.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_geometric.inl
+	"../exponential.hpp"
+	"../common.hpp"
+	"func_geometric_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/exponential.hpp
+	"detail/type_vec1.hpp"
+	"detail/type_vec2.hpp"
+	"detail/type_vec3.hpp"
+	"detail/type_vec4.hpp"
+	<cmath>
+	"detail/func_exponential.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec1.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_vec1.inl
+	"./compute_vector_relational.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_exponential.inl
+	"../vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cmath>
+	<cassert>
+	"func_exponential_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/vector_relational.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"detail/func_vector_relational.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_vector_relational.inl
+	"func_vector_relational_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_vector_relational_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/_vectorize.hpp
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_exponential_simd.inl
+	"../simd/exponential.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/simd/exponential.h
+	"platform.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/common.hpp
+	"detail/qualifier.hpp"
+	"detail/_fixes.hpp"
+	"detail/func_common.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/_fixes.hpp
+	<cmath>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_common.inl
+	"../vector_relational.hpp"
+	"compute_common.hpp"
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+	"func_common_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/compute_common.hpp
+	"setup.hpp"
+	<limits>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_common_simd.inl
+	"../simd/common.h"
+	<immintrin.h>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/simd/common.h
+	"platform.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_geometric_simd.inl
+	"../simd/geometric.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/simd/geometric.h
+	"common.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_matrix_simd.inl
+	"type_mat4x4.hpp"
+	"../geometric.hpp"
+	"../simd/matrix.h"
+	<cstring>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/simd/matrix.h
+	"geometric.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_mat4x4_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_double4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_float4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/src/matrices.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../ext/matrix_projection.hpp"
+	"../ext/matrix_clip_space.hpp"
+	"../ext/matrix_transform.hpp"
+	"matrix_transform.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_projection.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_projection.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/constants.hpp
+	"../ext/scalar_constants.hpp"
+	"constants.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/scalar_constants.hpp
+	"../detail/setup.hpp"
+	"scalar_constants.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/scalar_constants.inl
+	<limits>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/constants.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/trigonometric.hpp
+	"detail/setup.hpp"
+	"detail/qualifier.hpp"
+	"detail/func_trigonometric.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+	"func_trigonometric_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/func_trigonometric_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_projection.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_clip_space.hpp
+	"../ext/scalar_constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"matrix_clip_space.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_clip_space.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_transform.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_transform.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/matrix_transform.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glcommon.h
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glad/glad.h
+	<windows.h>
+	<stddef.h>
+	<KHR/khrplatform.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/KHR/khrplatform.h
+	<sys/cdefs.h>
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/GLFW/glfw3.h
+	<stddef.h>
+	<stdint.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES2/gl2ext.h>
+	<vulkan/vulkan.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1678216844 source:/home/aluno/Downloads/trabalho-fcg/src/glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<dlfcn.h>
+
+1678216844 source:/home/aluno/Downloads/trabalho-fcg/src/InputManager.cpp
+	"InputManager.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/src/InputManager.hpp
+	<map>
+	<glm/vec2.hpp>
+	<glcommon.h>
+
+1678216844 source:/home/aluno/Downloads/trabalho-fcg/src/lowlevel.cpp
+	"lowlevel.hpp"
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<fstream>
+	<glm/gtc/type_ptr.hpp>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<limits>
+	<map>
+	<sstream>
+	<stack>
+	<string>
+	<glcommon.h>
+	"GraphicsManager.hpp"
+	"InputManager.hpp"
+	"matrices.hpp"
+	"utils.h"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/src/lowlevel.hpp
+	<glcommon.h>
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/type_ptr.hpp
+	"../gtc/quaternion.hpp"
+	"../gtc/vec1.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/quaternion.hpp
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_common.hpp"
+	"../ext/quaternion_float.hpp"
+	"../ext/quaternion_float_precision.hpp"
+	"../ext/quaternion_double.hpp"
+	"../ext/quaternion_double_precision.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../ext/quaternion_trigonometric.hpp"
+	"../ext/quaternion_transform.hpp"
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"quaternion.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_relational.hpp
+	"../detail/qualifier.hpp"
+	"vector_relational.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_relational.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+	"../detail/qualifier.hpp"
+	"../detail/type_float.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_float.hpp
+	"setup.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_common.hpp
+	"../ext/scalar_constants.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	<limits>
+	"quaternion_common.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_geometric.hpp
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"../ext/vector_relational.hpp"
+	"quaternion_geometric.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_geometric.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_common.inl
+	"quaternion_common_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_common_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_float.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_quat.hpp
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"type_quat.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_relational.hpp
+	"../vector_relational.hpp"
+	"quaternion_relational.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_relational.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_quat.inl
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"../ext/quaternion_geometric.hpp"
+	<limits>
+	"type_quat_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/detail/type_quat_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_float_precision.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_double.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_double_precision.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_trigonometric.hpp
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"scalar_constants.hpp"
+	"vector_relational.hpp"
+	<limits>
+	"quaternion_trigonometric.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_trigonometric.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_transform.hpp
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"quaternion_transform.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/quaternion_transform.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/quaternion.inl
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"epsilon.hpp"
+	<limits>
+	"quaternion_simd.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/epsilon.hpp
+	"../detail/setup.hpp"
+	"../detail/qualifier.hpp"
+	"epsilon.inl"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/epsilon.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/quaternion_simd.inl
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/vec1.hpp
+	"../ext/vector_bool1.hpp"
+	"../ext/vector_bool1_precision.hpp"
+	"../ext/vector_float1.hpp"
+	"../ext/vector_float1_precision.hpp"
+	"../ext/vector_double1.hpp"
+	"../ext/vector_double1_precision.hpp"
+	"../ext/vector_int1.hpp"
+	"../ext/vector_int1_precision.hpp"
+	"../ext/vector_uint1.hpp"
+	"../ext/vector_uint1_precision.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_bool1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_float1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_double1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_int1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/ext/vector_uint1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/glm/gtc/type_ptr.inl
+	<cstring>
+
+1678366158 /home/aluno/Downloads/trabalho-fcg/src/GraphicsManager.hpp
+	<sstream>
+	<fstream>
+	<glm/mat4x4.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glcommon.h>
+	"matrices.hpp"
+
+1678216844 /home/aluno/Downloads/trabalho-fcg/include/utils.h
+	<cstdio>
+
+1678216844 source:/home/aluno/Downloads/trabalho-fcg/src/matrices.cpp
+	"matrices.hpp"
+	<cstdio>
+	<cstdlib>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1678366572 source:/home/aluno/Downloads/trabalho-fcg/src/Cube.cpp
+	"Cube.hpp"
+	<glcommon.h>
+	"matrices.hpp"
+	"glm/mat4x4.hpp"
+
+1678366582 /home/aluno/Downloads/trabalho-fcg/src/Cube.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec3.hpp>
+	<glm/vec4.hpp>
+	<glcommon.h>
+	"matrices.hpp"
+	"GraphicsManager.hpp"
+	"Camera.hpp"
+
+1678366180 source:/home/aluno/Downloads/trabalho-fcg/src/GraphicsManager.cpp
+	"GraphicsManager.hpp"
+	<glcommon.h>
+
+1678366670 source:/home/aluno/Downloads/trabalho-fcg/src/main.cpp
+	<cmath>
+	<cstdio>
+	<cstdlib>
+	<map>
+	<stack>
+	<string>
+	<limits>
+	<fstream>
+	<sstream>
+	"matrices.hpp"
+	<glcommon.h>
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"utils.h"
+	"lowlevel.hpp"
+	"InputManager.hpp"
+	"Camera.hpp"
+	"Cube.hpp"
+
+1678216844 source:/home/grad/eahduarte/Desktop/trabalho-fcg/src/glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<dlfcn.h>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glad/glad.h
+	<windows.h>
+	<stddef.h>
+	<KHR/khrplatform.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/KHR/khrplatform.h
+	<sys/cdefs.h>
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1678366180 source:/home/grad/eahduarte/Desktop/trabalho-fcg/src/GraphicsManager.cpp
+	"GraphicsManager.hpp"
+	<glcommon.h>
+
+1678366158 /home/grad/eahduarte/Desktop/trabalho-fcg/src/GraphicsManager.hpp
+	<sstream>
+	<fstream>
+	<glm/mat4x4.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glcommon.h>
+	"matrices.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat4x4.hpp
+	"./ext/matrix_double4x4.hpp"
+	"./ext/matrix_double4x4_precision.hpp"
+	"./ext/matrix_float4x4.hpp"
+	"./ext/matrix_float4x4_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x4.hpp
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec4.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/qualifier.hpp
+	"setup.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/setup.hpp
+	<cassert>
+	<cstddef>
+	"../simd/platform.h"
+	<cstdint>
+	<type_traits>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/simd/platform.h
+	<cuda.h>
+	<immintrin.h>
+	<immintrin.h>
+	<popcntintrin.h>
+	<nmmintrin.h>
+	<smmintrin.h>
+	<tmmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/_swizzle.hpp
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/_swizzle_func.hpp
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec4.inl
+	"compute_vector_relational.hpp"
+	"type_vec4_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/compute_vector_relational.hpp
+	"setup.hpp"
+	<limits>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec4_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x4.inl
+	"../matrix.hpp"
+	"type_mat4x4_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/matrix.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"detail/func_matrix.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/vec2.hpp
+	"./ext/vector_bool2.hpp"
+	"./ext/vector_bool2_precision.hpp"
+	"./ext/vector_float2.hpp"
+	"./ext/vector_float2_precision.hpp"
+	"./ext/vector_double2.hpp"
+	"./ext/vector_double2_precision.hpp"
+	"./ext/vector_int2.hpp"
+	"./ext/vector_int2_precision.hpp"
+	"./ext/vector_uint2.hpp"
+	"./ext/vector_uint2_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec2.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec2.inl
+	"./compute_vector_relational.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint2.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/vec3.hpp
+	"./ext/vector_bool3.hpp"
+	"./ext/vector_bool3_precision.hpp"
+	"./ext/vector_float3.hpp"
+	"./ext/vector_float3_precision.hpp"
+	"./ext/vector_double3.hpp"
+	"./ext/vector_double3_precision.hpp"
+	"./ext/vector_int3.hpp"
+	"./ext/vector_int3_precision.hpp"
+	"./ext/vector_uint3.hpp"
+	"./ext/vector_uint3_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec3.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec3.inl
+	"compute_vector_relational.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint3.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/vec4.hpp
+	"./ext/vector_bool4.hpp"
+	"./ext/vector_bool4_precision.hpp"
+	"./ext/vector_float4.hpp"
+	"./ext/vector_float4_precision.hpp"
+	"./ext/vector_double4.hpp"
+	"./ext/vector_double4_precision.hpp"
+	"./ext/vector_int4.hpp"
+	"./ext/vector_int4_precision.hpp"
+	"./ext/vector_uint4.hpp"
+	"./ext/vector_uint4_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double4_precision.hpp
+	"../detail/setup.hpp"
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint4.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat2x2.hpp
+	"./ext/matrix_double2x2.hpp"
+	"./ext/matrix_double2x2_precision.hpp"
+	"./ext/matrix_float2x2.hpp"
+	"./ext/matrix_float2x2_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat2x2.hpp
+	"type_vec2.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x2.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat2x2.inl
+	"../matrix.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat2x3.hpp
+	"./ext/matrix_double2x3.hpp"
+	"./ext/matrix_double2x3_precision.hpp"
+	"./ext/matrix_float2x3.hpp"
+	"./ext/matrix_float2x3_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat2x3.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x3.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat2x3.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat2x4.hpp
+	"./ext/matrix_double2x4.hpp"
+	"./ext/matrix_double2x4_precision.hpp"
+	"./ext/matrix_float2x4.hpp"
+	"./ext/matrix_float2x4_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat2x4.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x4.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat2x4.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat3x2.hpp
+	"./ext/matrix_double3x2.hpp"
+	"./ext/matrix_double3x2_precision.hpp"
+	"./ext/matrix_float3x2.hpp"
+	"./ext/matrix_float3x2_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat3x2.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x2.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat3x2.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat3x3.hpp
+	"./ext/matrix_double3x3.hpp"
+	"./ext/matrix_double3x3_precision.hpp"
+	"./ext/matrix_float3x3.hpp"
+	"./ext/matrix_float3x3_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat3x3.hpp
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x3.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat3x3.inl
+	"../matrix.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat3x4.hpp
+	"./ext/matrix_double3x4.hpp"
+	"./ext/matrix_double3x4_precision.hpp"
+	"./ext/matrix_float3x4.hpp"
+	"./ext/matrix_float3x4_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat3x4.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x4.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat3x4.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat4x2.hpp
+	"./ext/matrix_double4x2.hpp"
+	"./ext/matrix_double4x2_precision.hpp"
+	"./ext/matrix_float4x2.hpp"
+	"./ext/matrix_float4x2_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x2.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x2.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x2.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double4x2_precision.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float4x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/mat4x3.hpp
+	"./ext/matrix_double4x3.hpp"
+	"./ext/matrix_double4x3_precision.hpp"
+	"./ext/matrix_float4x3.hpp"
+	"./ext/matrix_float4x3_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x3.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x3.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x3.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+	"func_matrix_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/geometric.hpp
+	"detail/type_vec3.hpp"
+	"detail/func_geometric.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_geometric.inl
+	"../exponential.hpp"
+	"../common.hpp"
+	"func_geometric_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/exponential.hpp
+	"detail/type_vec1.hpp"
+	"detail/type_vec2.hpp"
+	"detail/type_vec3.hpp"
+	"detail/type_vec4.hpp"
+	<cmath>
+	"detail/func_exponential.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec1.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_vec1.inl
+	"./compute_vector_relational.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_exponential.inl
+	"../vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cmath>
+	<cassert>
+	"func_exponential_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/vector_relational.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"detail/func_vector_relational.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_vector_relational.inl
+	"func_vector_relational_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_vector_relational_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/_vectorize.hpp
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_exponential_simd.inl
+	"../simd/exponential.h"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/simd/exponential.h
+	"platform.h"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/common.hpp
+	"detail/qualifier.hpp"
+	"detail/_fixes.hpp"
+	"detail/func_common.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/_fixes.hpp
+	<cmath>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_common.inl
+	"../vector_relational.hpp"
+	"compute_common.hpp"
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+	"func_common_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/compute_common.hpp
+	"setup.hpp"
+	<limits>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_common_simd.inl
+	"../simd/common.h"
+	<immintrin.h>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/simd/common.h
+	"platform.h"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_geometric_simd.inl
+	"../simd/geometric.h"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/simd/geometric.h
+	"common.h"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_matrix_simd.inl
+	"type_mat4x4.hpp"
+	"../geometric.hpp"
+	"../simd/matrix.h"
+	<cstring>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/simd/matrix.h
+	"geometric.h"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_mat4x4_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_double4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_float4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/type_ptr.hpp
+	"../gtc/quaternion.hpp"
+	"../gtc/vec1.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/quaternion.hpp
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_common.hpp"
+	"../ext/quaternion_float.hpp"
+	"../ext/quaternion_float_precision.hpp"
+	"../ext/quaternion_double.hpp"
+	"../ext/quaternion_double_precision.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../ext/quaternion_trigonometric.hpp"
+	"../ext/quaternion_transform.hpp"
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"quaternion.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/constants.hpp
+	"../ext/scalar_constants.hpp"
+	"constants.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/scalar_constants.hpp
+	"../detail/setup.hpp"
+	"scalar_constants.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/scalar_constants.inl
+	<limits>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/constants.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../ext/matrix_projection.hpp"
+	"../ext/matrix_clip_space.hpp"
+	"../ext/matrix_transform.hpp"
+	"matrix_transform.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_projection.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_projection.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/trigonometric.hpp
+	"detail/setup.hpp"
+	"detail/qualifier.hpp"
+	"detail/func_trigonometric.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+	"func_trigonometric_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/func_trigonometric_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_projection.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_clip_space.hpp
+	"../ext/scalar_constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"matrix_clip_space.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_clip_space.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_transform.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_transform.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/matrix_transform.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_relational.hpp
+	"../detail/qualifier.hpp"
+	"vector_relational.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_relational.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+	"../detail/qualifier.hpp"
+	"../detail/type_float.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_float.hpp
+	"setup.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_common.hpp
+	"../ext/scalar_constants.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	<limits>
+	"quaternion_common.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_geometric.hpp
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"../ext/vector_relational.hpp"
+	"quaternion_geometric.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_geometric.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_common.inl
+	"quaternion_common_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_common_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_float.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_quat.hpp
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"type_quat.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_relational.hpp
+	"../vector_relational.hpp"
+	"quaternion_relational.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_relational.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_quat.inl
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"../ext/quaternion_geometric.hpp"
+	<limits>
+	"type_quat_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/detail/type_quat_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_float_precision.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_double.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_double_precision.hpp
+	"../detail/type_quat.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_trigonometric.hpp
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"scalar_constants.hpp"
+	"vector_relational.hpp"
+	<limits>
+	"quaternion_trigonometric.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_trigonometric.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_transform.hpp
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"quaternion_transform.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/quaternion_transform.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/quaternion.inl
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"epsilon.hpp"
+	<limits>
+	"quaternion_simd.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/epsilon.hpp
+	"../detail/setup.hpp"
+	"../detail/qualifier.hpp"
+	"epsilon.inl"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/epsilon.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/quaternion_simd.inl
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/vec1.hpp
+	"../ext/vector_bool1.hpp"
+	"../ext/vector_bool1_precision.hpp"
+	"../ext/vector_float1.hpp"
+	"../ext/vector_float1_precision.hpp"
+	"../ext/vector_double1.hpp"
+	"../ext/vector_double1_precision.hpp"
+	"../ext/vector_int1.hpp"
+	"../ext/vector_int1_precision.hpp"
+	"../ext/vector_uint1.hpp"
+	"../ext/vector_uint1_precision.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_bool1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_float1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_double1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_int1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint1.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/ext/vector_uint1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glm/gtc/type_ptr.inl
+	<cstring>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/glcommon.h
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/include/GLFW/glfw3.h
+	<stddef.h>
+	<stdint.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES2/gl2ext.h>
+	<vulkan/vulkan.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1678216844 /home/grad/eahduarte/Desktop/trabalho-fcg/src/matrices.hpp
+	<glm/mat4x4.hpp>
+	<glm/vec4.hpp>
+	<glm/gtc/matrix_transform.hpp>
+
+1678216844 source:/home/grad/eahduarte/Desktop/trabalho-fcg/src/matrices.cpp
 	"matrices.hpp"
 	<cstdio>
 	<cstdlib>

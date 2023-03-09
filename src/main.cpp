@@ -21,50 +21,43 @@
 #include "InputManager.hpp"
 #include "Camera.hpp"
 #include "Cube.hpp"
-
-// Declaração de várias funções utilizadas em main().  Essas estão definidas
-// logo após a definição de main() neste arquivo.
-void DrawCube(); // Desenha um cubo
+#include "MainGameScene.h"
 
 int main()
 {
     GLFWwindow* w = initialize_lowlevel();
 
-    LookAtCamera cam = LookAtCamera(glm::vec3(0));
+    MainGameScene s = MainGameScene();
 
     Cube c1 = Cube();
     Cube c2 = Cube();
     c2.position = glm::vec3(20, 20, 20);
+
+    s.entities.push_back(&c1);
+    s.entities.push_back(&c2);
+
+    // Atualiza delta de tempo
+    float current_time = (float)glfwGetTime();
+    float delta_t = current_time;
+    float prev_time = 0;
 
     while (programAlive(w) && !InputManager::isKeyDown(GLFW_KEY_ESCAPE))
     {
         // UPDATE:
         update_lowlevel(w);
 
-        // Update camera!
-        if (InputManager::isKeyDown(GLFW_MOUSE_BUTTON_LEFT))
-        {
-            // Deslocamento do cursor do mouse em x e y de coordenadas de tela!
-
-            float dx = InputManager::getMouseDelta().x;
-            float dy = InputManager::getMouseDelta().y;
-
-            // Atualizamos parâmetros da câmera com os deslocamentos
-            cam.rotX -= 0.01*dx;
-            cam.rotY += 0.01*dy;
-        }
+        s.update(delta_t);
 
         // DRAW:
-        glClearColor(100/1.0f, 149/1.0f, 237/1.0f, 1.0f);
+        glClearColor(0.2, 0.2, 0.2, 0.2);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // Desenha o cubo
-        glm::mat4 model = Matrix_Identity();
-        c1.draw(cam);
+        // Desenha os cubos
+        s.draw();
 
-        // Desenha o cubo 2
-        model = Matrix_Translate(20, 20, 20);
-        c2.draw(cam);
+        prev_time = current_time;
+        current_time = (float)glfwGetTime();
+        delta_t = current_time - prev_time;
 
         glfwSwapBuffers(w);
         glfwPollEvents();
@@ -94,10 +87,4 @@ void main_goals() {
     // world.destroy();
 
     // destroy_lowlevel();
-}
-
-// Função que desenha um cubo com arestas em preto, definido dentro da função BuildTriangles().
-void DrawCube()
-{
-
 }

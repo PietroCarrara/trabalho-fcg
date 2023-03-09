@@ -9,11 +9,12 @@
 
 class Camera {
 public:
-    virtual glm::mat4 getMatrix();
+    virtual glm::mat4 getMatrix() = 0;
+    virtual glm::vec4 getViewVec() = 0;
 };
 
 
-class LookAtCamera {
+class LookAtCamera: public Camera {
 public:
     glm::vec3 focus;
     float rotX = 0, rotY = 0;
@@ -22,9 +23,17 @@ public:
     LookAtCamera(glm::vec3 lookAt);
 
     glm::mat4 getMatrix();
+    glm::vec4 getViewVec();
 };
 
-class FreeCamera {
+class FreeCamera: public Camera {
+public:
+    glm::vec3 position = glm::vec3(0);
+    float rotX = 0, rotY = 0;
+    glm::mat4 getMatrix();
+
+    glm::vec4 getViewVec();
+
 };
 
 #endif // CAMERA_HPP

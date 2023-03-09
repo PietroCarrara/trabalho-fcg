@@ -9,6 +9,7 @@
 #include <glcommon.h>
 
 #include "matrices.hpp"
+#include "Camera.hpp"
 
 class GraphicsManager {
 private:
@@ -19,16 +20,17 @@ private:
     static GLint modelUniform;
     static GLint viewUniform;
     static GLint projectionUniform;
+    static GLint viewVecUniform;
 
     static float fov;
-    static float near;
-    static float far;
+    static float nearPlane;
+    static float farPlane;
 
 public:
     static void init();
     static void setScreenRatio(float r);
 
-    static void DrawElements(glm::mat4 model, glm::mat4 view, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type);
+    static void DrawElements(glm::mat4 model, Camera* cam, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex = 0);
 };
 
 #endif

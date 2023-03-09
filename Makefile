@@ -1,6 +1,6 @@
-./bin/Linux/main: src/main.cpp src/glad.c include/matrices.h include/utils.h include/dejavufont.h src/Camera.hpp src/GraphicsManager.hpp  src/InputManager.hpp  src/lowlevel.hpp
+./bin/Linux/main: src/main.cpp src/glad.c include/utils.h include/dejavufont.h src/Camera.hpp src/GraphicsManager.hpp  src/InputManager.hpp  src/lowlevel.hpp
 	mkdir -p bin/Linux
-	g++ -std=c++11 -Wall -Wno-unused-function -g -I ./include/ -o ./bin/Linux/main src/main.cpp src/Camera.hpp src/GraphicsManager.hpp  src/InputManager.hpp  src/lowlevel.hpp src/glad.c ./lib-linux/libglfw3.a -lrt -lm -ldl -lX11 -lpthread -lXrandr -lXinerama -lXxf86vm -lXcursor
+	g++ -std=c++11 -Wall -Wno-unused-function -g -I ./include/ -o ./bin/Linux/main src/*.{c,cpp} ./lib-linux/libglfw3.a -lrt -lm -ldl -lX11 -lpthread -lXrandr -lXinerama -lXxf86vm -lXcursor
 
 .PHONY: clean run
 clean:

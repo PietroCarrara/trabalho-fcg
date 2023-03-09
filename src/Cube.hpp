@@ -9,8 +9,9 @@
 #include "matrices.hpp"
 #include "GraphicsManager.hpp"
 #include "Camera.hpp"
+#include "Entity.h"
 
-class Cube {
+class Cube : public Entity {
 private:
     static GLuint vertexArrayID;
 
@@ -22,7 +23,7 @@ public:
     Cube();
 
     void update(float deltaTime);
-    void draw(LookAtCamera c);
+    void draw(Camera* c);
 };
 
 #endif // CUBE_HPP

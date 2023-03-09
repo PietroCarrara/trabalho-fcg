@@ -16,10 +16,9 @@ Cube::Cube() {
 }
 
 void Cube::update(float deltaTime) {
-
 }
 
-void Cube::draw(LookAtCamera cam) {
+void Cube::draw(Camera* cam) {
   glm::mat4 model =
       Matrix_Translate(this->position.x, this->position.y, this->position.z) *
       Matrix_Scale(this->scale.x, this->scale.y, this->scale.z) *
@@ -27,7 +26,7 @@ void Cube::draw(LookAtCamera cam) {
       Matrix_Rotate_Y(this->rotation.y) *
       Matrix_Rotate_Z(this->rotation.z);
 
-  GraphicsManager::DrawElements(model, cam.getMatrix(), vertexArrayID, GL_TRIANGLES, 36, GL_UNSIGNED_INT);
+  GraphicsManager::DrawElements(model, cam, vertexArrayID, GL_TRIANGLES, 36, GL_UNSIGNED_INT);
 }
 
 static GLuint BuildTriangles()
@@ -81,7 +80,7 @@ static GLuint BuildTriangles()
     glBindBuffer(GL_ARRAY_BUFFER, VBO_color_coefficients_id);
     glBufferData(GL_ARRAY_BUFFER, sizeof(color_coefficients), NULL, GL_STATIC_DRAW);
     glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(color_coefficients), color_coefficients);
-    location = 1; // "(location = 1)" em "shader_vertex.glsl"
+    location = 3; // "(location = 1)" em "shader_vertex.glsl"
     number_of_dimensions = 4; // vec4 em "shader_vertex.glsl"
     glVertexAttribPointer(location, number_of_dimensions, GL_FLOAT, GL_FALSE, 0, 0);
     glEnableVertexAttribArray(location);

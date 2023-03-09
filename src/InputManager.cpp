@@ -15,7 +15,7 @@ void InputManager::setMousePos(float x, float y) {
 }
 
 void InputManager::setKeyState(int key, int state) {
-keyDownStates[key] = state == GLFW_PRESS;
+    keyDownStates[key] = state == GLFW_PRESS || state == GLFW_REPEAT;
 }
 
 glm::vec2 InputManager::getMousePosition() {

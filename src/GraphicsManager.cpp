@@ -2,6 +2,7 @@
 
 #include <glcommon.h>
 
+
 static GLuint LoadShadersFromFiles();
 static GLuint LoadShader_Vertex(const char*);
 static GLuint LoadShader_Fragment(const char*);
@@ -10,43 +11,46 @@ static GLuint CreateGpuProgram(GLuint, GLuint);
 
 float GraphicsManager::screenRatio = 1;
 
-glm::mat4 GraphicsManager::perspectiveProjection = Matrix_Perspective(GraphicsManager::fov, 1, GraphicsManager::near, GraphicsManager::far);
+glm::mat4 GraphicsManager::perspectiveProjection = Matrix_Perspective(GraphicsManager::fov, 1, GraphicsManager::nearPlane, GraphicsManager::farPlane);
 
 float GraphicsManager::fov = 3.141592f / 3.0f;
-float GraphicsManager::near = -0.1;
-float GraphicsManager::far = -40.0;
+float GraphicsManager::nearPlane = -0.1;
+float GraphicsManager::farPlane = -40.0;
 
 GLuint GraphicsManager::shaderID = -1;
 GLint GraphicsManager::modelUniform = -1;
 GLint GraphicsManager::viewUniform = -1;
 GLint GraphicsManager::projectionUniform = -1;
+GLint GraphicsManager::viewVecUniform = -1;
 
 void GraphicsManager::init() {
   shaderID = LoadShadersFromFiles();
   modelUniform = glGetUniformLocation(shaderID, "model");
   viewUniform = glGetUniformLocation(shaderID, "view");
   projectionUniform = glGetUniformLocation(shaderID, "projection");
+  viewVecUniform = glGetUniformLocation(shaderID, "viewVec");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
   screenRatio = r;
-  perspectiveProjection = Matrix_Perspective(fov, r, near, far);
+  perspectiveProjection = Matrix_Perspective(fov, r, nearPlane, farPlane);
 }
 
-void GraphicsManager::DrawElements(glm::mat4 model, glm::mat4 view, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type) {
+void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
   glUseProgram(shaderID);
 
   glBindVertexArray(vertexArrayID);
 
   glUniformMatrix4fv(modelUniform, 1, GL_FALSE, glm::value_ptr(model));
-  glUniformMatrix4fv(viewUniform       , 1 , GL_FALSE , glm::value_ptr(view));
+  glUniformMatrix4fv(viewUniform       , 1 , GL_FALSE , glm::value_ptr(cam->getMatrix()));
   glUniformMatrix4fv(projectionUniform , 1 , GL_FALSE , glm::value_ptr(perspectiveProjection));
+  glUniform4fv(viewVecUniform, 1, glm::value_ptr(cam->getViewVec()));
 
   glDrawElements(
       drawMode,
       elCount,
       type,
-      (void*)0
+      firstIndex
   );
 
   glBindVertexArray(0);

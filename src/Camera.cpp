@@ -27,3 +27,34 @@ glm::mat4 LookAtCamera::getMatrix() {
   return Matrix_Camera_View(camera_position_c, camera_view_vector,
                             camera_up_vector);
 }
+
+glm::vec4 LookAtCamera::getViewVec() {
+    return glm::vec4(
+        cos(this->rotY)*sin(this->rotX),
+        -sin(this->rotY),
+        cos(this->rotY)*cos(this->rotX),
+        0.0f
+    );
+}
+
+glm::mat4 FreeCamera::getMatrix() {
+    float x = this->position.x;
+    float y = this->position.y;
+    float z = this->position.z;
+
+    glm::vec4 cam_view = this->getViewVec();
+
+    glm::vec4 up = glm::vec4(0, 1, 0, 0);
+
+    return Matrix_Camera_View(glm::vec4(x, y, z, 1.0f), cam_view, up);
+}
+
+
+glm::vec4 FreeCamera::getViewVec() {
+    return glm::vec4(
+        cos(this->rotY)*sin(this->rotX),
+        -sin(this->rotY),
+        cos(this->rotY)*cos(this->rotX),
+        0.0f
+    );
+}

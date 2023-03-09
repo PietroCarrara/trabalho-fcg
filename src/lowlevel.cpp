@@ -78,6 +78,10 @@ GLFWwindow* initialize_lowlevel() {
   glCullFace(GL_BACK);
   glFrontFace(GL_CCW);
 
+  double x, y;
+  glfwGetCursorPos(window, &x, &y);
+  InputManager::setMousePos((float)x, (float)y);
+
   return window;
 }
 
