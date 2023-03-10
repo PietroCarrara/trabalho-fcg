@@ -8,6 +8,7 @@ in vec4 vertexColor;
 in vec4 positionWorld;
 in vec4 normal;
 in vec2 texCoord;
+flat in int textureIndex;
 
 // Matrizes computadas no código C++ e enviadas para a GPU
 uniform mat4 model;
@@ -18,7 +19,8 @@ uniform vec4 viewVec;
 uniform vec3 bboxMin;
 uniform vec3 bboxMax;
 
-uniform sampler2D colorTexture;
+uniform sampler2D texture0;
+uniform sampler2D texture1;
 
 // O valor de saída ("out") de um Fragment Shader é a cor final do fragmento.
 out vec4 color;
@@ -59,7 +61,14 @@ void main()
     float q; // Expoente especular para o modelo de iluminação de Phong
 
     // Propriedades espectrais do coelho
-    Kd = texture(colorTexture, texCoord).rgb;
+    switch(textureIndex) {
+    case 0:
+        Kd = texture(texture0, texCoord).rgb;
+        break;
+    case 1:
+        Kd = texture(texture1, texCoord).rgb;
+        break;
+    }
     Ks = vec3(0.8, 0.8, 0.8);
     Ka = Kd / 2;
     q = 32;

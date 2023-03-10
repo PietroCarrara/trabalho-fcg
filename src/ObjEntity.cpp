@@ -153,6 +153,7 @@ void ObjEntity::buildTriangles() {
     std::vector<float>  model_coefficients;
     std::vector<float>  normal_coefficients;
     std::vector<float>  texture_coefficients;
+    std::vector<int> texture_index;
 
     const float minval = std::numeric_limits<float>::min();
     const float maxval = std::numeric_limits<float>::max();
@@ -218,6 +219,9 @@ void ObjEntity::buildTriangles() {
                     texture_coefficients.push_back( u );
                     texture_coefficients.push_back( v );
                 }
+
+                // TODO: Get texture index from .obj file
+                texture_index.push_back(1);
             }
         }
 
@@ -239,6 +243,17 @@ void ObjEntity::buildTriangles() {
     GLuint location = 0; // "(location = 0)" em "shader_vertex.glsl"
     GLint  number_of_dimensions = 4; // vec4 em "shader_vertex.glsl"
     glVertexAttribPointer(location, number_of_dimensions, GL_FLOAT, GL_FALSE, 0, 0);
+    glEnableVertexAttribArray(location);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    GLuint textureIndexBufferID;
+    glGenBuffers(1, &textureIndexBufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, textureIndexBufferID);
+    glBufferData(GL_ARRAY_BUFFER, texture_index.size() * sizeof(int), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, texture_index.size() * sizeof(int), texture_index.data());
+    location = 4;
+    number_of_dimensions = 1;
+    glVertexAttribPointer(location, number_of_dimensions, GL_INT, GL_FALSE, 0, 0);
     glEnableVertexAttribArray(location);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -287,53 +302,68 @@ void ObjEntity::buildTriangles() {
 
 static int loadedTexCount = 0;
 
-void ObjEntity::loadTexture(const char* filename) {
-    printf("Carregando imagem \"%s\"... ", filename);
+void ObjEntity::loadTexture(const char* fname) {
+    if (this->materials.size() > 0) {
+        const tinyobj::material_t m = this->materials[0];
 
-    // Primeiro fazemos a leitura da imagem do disco
-    stbi_set_flip_vertically_on_load(true);
-    int width;
-    int height;
-    int channels;
-    unsigned char *data = stbi_load(filename, &width, &height, &channels, 3);
-
-    if ( data == NULL )
-    {
-        fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename);
-        std::exit(EXIT_FAILURE);
+        std::cout << *(m.diffuse);
     }
 
-    printf("OK (%dx%d).\n", width, height);
+    const char* files[] = { fname, "../../assets/objects/firbark.png" };
+    const int textureCount = 2;
 
-    // Agora criamos objetos na GPU com OpenGL para armazenar a textura
-    GLuint texture_id;
-    GLuint sampler_id;
-    glGenTextures(1, &texture_id);
-    glGenSamplers(1, &sampler_id);
 
-    // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
-    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    for (int i = 0; i < textureCount; i++) {
+        const char* filename = files[i];
 
-    // Parâmetros de amostragem da textura.
-    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        printf("Carregando imagem \"%s\"... ", filename);
 
-    // Agora enviamos a imagem lida do disco para a GPU
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-    glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
-    glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
+        // Primeiro fazemos a leitura da imagem do disco
+        stbi_set_flip_vertically_on_load(true);
+        int width;
+        int height;
+        int channels;
+        unsigned char *data = stbi_load(filename, &width, &height, &channels, 3);
 
-    GLuint textureunit = loadedTexCount;
-    glActiveTexture(GL_TEXTURE0 + textureunit);
-    glBindTexture(GL_TEXTURE_2D, texture_id);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D);
-    glBindSampler(textureunit, sampler_id);
+        if ( data == NULL )
+        {
+            fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename);
+            std::exit(EXIT_FAILURE);
+        }
 
-    stbi_image_free(data);
-    loadedTexCount++;
+        printf("OK (%dx%d).\n", width, height);
 
-    this->textureID = textureunit;
+        GLuint texture_id;
+        GLuint sampler_id;
+        glGenTextures(1, &texture_id);
+        glGenSamplers(1, &sampler_id);
+        glActiveTexture(GL_TEXTURE0+loadedTexCount);
+        glBindTexture(GL_TEXTURE_2D_ARRAY, texture_id);
+
+        // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
+        glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+        // Parâmetros de amostragem da textura.
+        glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        // Agora enviamos a imagem lida do disco para a GPU
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+        glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+        glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
+        glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
+
+        GLuint textureunit = loadedTexCount;
+        glActiveTexture(GL_TEXTURE0 + textureunit);
+        glBindTexture(GL_TEXTURE_2D, texture_id);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        glBindSampler(textureunit, sampler_id);
+
+        stbi_image_free(data);
+
+        this->textureID.push_back(textureunit);
+        loadedTexCount++;
+    }
 }

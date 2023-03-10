@@ -2,7 +2,6 @@
 
 #include <glcommon.h>
 
-
 static GLuint LoadShadersFromFiles();
 static GLuint LoadShader_Vertex(const char*);
 static GLuint LoadShader_Fragment(const char*);
@@ -24,7 +23,8 @@ GLint GraphicsManager::projectionUniform = -1;
 GLint GraphicsManager::viewVecUniform = -1;
 GLint GraphicsManager::bboxMinUniform = -1;
 GLint GraphicsManager::bboxMaxUniform = -1;
-GLint GraphicsManager::textureUniform = -1;
+GLint GraphicsManager::texture0Uniform = -1;
+GLint GraphicsManager::texture1Uniform = -1;
 
 void GraphicsManager::init() {
   shaderID = LoadShadersFromFiles();
@@ -34,7 +34,8 @@ void GraphicsManager::init() {
   viewVecUniform = glGetUniformLocation(shaderID, "viewVec");
   bboxMinUniform = glGetUniformLocation(shaderID, "bboxMin");
   bboxMaxUniform = glGetUniformLocation(shaderID, "bboxMax");
-  textureUniform = glGetUniformLocation(shaderID, "colorTexture");
+  texture0Uniform = glGetUniformLocation(shaderID, "texture0");
+  texture1Uniform = glGetUniformLocation(shaderID, "texture1");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
@@ -42,7 +43,7 @@ void GraphicsManager::setScreenRatio(float r) {
   perspectiveProjection = Matrix_Perspective(fov, r, nearPlane, farPlane);
 }
 
-void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
+void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, std::vector<GLuint> texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
   glUseProgram(shaderID);
 
   glBindVertexArray(vertexArrayID);
@@ -53,7 +54,17 @@ void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxM
   glUniform4fv(viewVecUniform, 1, glm::value_ptr(cam->getViewVec()));
   glUniform4fv(bboxMinUniform, 1, glm::value_ptr(bboxMin));
   glUniform4fv(bboxMaxUniform, 1, glm::value_ptr(bboxMax));
-  glUniform1i(textureUniform, texture);
+
+  for (int i = 0; i < 2; i++) {
+    switch (i) {
+    case 0:
+        glUniform1i(texture0Uniform, texture[i]);
+        break;
+    case 1:
+        glUniform1i(texture1Uniform, texture[i]);
+        break;
+    }
+  }
 
   glDrawElements(
       drawMode,

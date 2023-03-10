@@ -18,7 +18,7 @@ private:
     std::vector<int> indexCount;
     std::vector<glm::vec3> bboxMin;
     std::vector<glm::vec3> bboxMax;
-    GLuint textureID;
+    std::vector<GLuint> textureID;
 
     tinyobj::attrib_t                 attrib;
     std::vector<tinyobj::shape_t>     shapes;

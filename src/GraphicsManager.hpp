@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <fstream>
+#include <vector>
 
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -23,7 +24,8 @@ private:
     static GLint viewVecUniform;
     static GLint bboxMinUniform;
     static GLint bboxMaxUniform;
-    static GLint textureUniform;
+    static GLint texture0Uniform;
+    static GLint texture1Uniform;
 
     static float fov;
     static float nearPlane;
@@ -33,7 +35,7 @@ public:
     static void init();
     static void setScreenRatio(float r);
 
-    static void DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex = 0);
+    static void DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, std::vector<GLuint> texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex = 0);
 };
 
 #endif

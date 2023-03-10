@@ -9,7 +9,7 @@ MainGameScene::MainGameScene() {
     this->entities.push_back(p);
     this->camera = p;
 
-    ObjEntity* theBunny = new ObjEntity("../../assets/objects/slender.obj", "../../assets/objects/slender.png");
+    ObjEntity* theBunny = new ObjEntity("../../assets/objects/firTree.obj", "../../assets/objects/firLeaf.png");
 
     this->entities.push_back(theBunny);
 }
