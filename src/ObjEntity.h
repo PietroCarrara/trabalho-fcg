@@ -13,9 +13,12 @@
 class ObjEntity : public Entity
 {
 private:
-    GLuint vboID;
-    int firstIndex;
-    int indexCount;
+    std::vector<GLuint> vboIDs;
+    std::vector<int> firstIndex;
+    std::vector<int> indexCount;
+    std::vector<glm::vec3> bboxMin;
+    std::vector<glm::vec3> bboxMax;
+    GLuint textureID;
 
     tinyobj::attrib_t                 attrib;
     std::vector<tinyobj::shape_t>     shapes;
@@ -23,13 +26,14 @@ private:
 
     void computeNormals();
     void buildTriangles();
+    void loadTexture(const char* filename);
 
 public:
     glm::vec3 position = glm::vec3(0);
     glm::vec3 rotation = glm::vec3(0);
     glm::vec3 scale = glm::vec3(1);
 
-    ObjEntity(const char* filename);
+    ObjEntity(const char* filename, const char* textureFilename);
 
     void update(float deltaTime);
     void draw(Camera* c);

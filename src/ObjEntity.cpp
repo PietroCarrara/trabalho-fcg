@@ -1,7 +1,12 @@
 #include "ObjEntity.h"
 #include "GraphicsManager.hpp"
 
-ObjEntity::ObjEntity(const char* filename)
+#include <cstdio>
+#include <iostream>
+
+#include "stb_image.h"
+
+ObjEntity::ObjEntity(const char* filename, const char* textureFilename)
 {
 
     const char* basepath = NULL;
@@ -31,6 +36,10 @@ ObjEntity::ObjEntity(const char* filename)
     if (!err.empty())
         fprintf(stderr, "\n%s\n", err.c_str());
 
+    if (!warn.empty()) {
+        fprintf(stderr, "\n%s\n", warn.c_str());
+    }
+
     if (!ret)
         throw std::runtime_error("Erro ao carregar modelo.");
 
@@ -53,6 +62,7 @@ ObjEntity::ObjEntity(const char* filename)
 
     this->computeNormals();
     this->buildTriangles();
+    this->loadTexture(textureFilename);
 }
 
 void ObjEntity::update(float deltaTime) {
@@ -67,7 +77,10 @@ void ObjEntity::draw(Camera* c) {
       Matrix_Rotate_Y(this->rotation.y) *
       Matrix_Rotate_Z(this->rotation.z);
 
-  GraphicsManager::DrawElements(model, c, this->vboID, GL_TRIANGLES, this->indexCount, GL_UNSIGNED_INT, (void*)(this->firstIndex*sizeof(GLuint)));
+    for (uint i = 0; i < this->vboIDs.size(); i++) {
+        GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID, this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
+    }
+
 }
 
 void ObjEntity::computeNormals() {
@@ -141,10 +154,18 @@ void ObjEntity::buildTriangles() {
     std::vector<float>  normal_coefficients;
     std::vector<float>  texture_coefficients;
 
+    const float minval = std::numeric_limits<float>::min();
+    const float maxval = std::numeric_limits<float>::max();
+
+
     for (size_t shape = 0; shape < this->shapes.size(); ++shape)
     {
         size_t first_index = indices.size();
         size_t num_triangles = this->shapes[shape].mesh.num_face_vertices.size();
+
+
+        glm::vec3 bboxMin = glm::vec3(maxval,maxval,maxval);
+        glm::vec3 bboxMax = glm::vec3(minval,minval,minval);
 
         for (size_t triangle = 0; triangle < num_triangles; ++triangle)
         {
@@ -164,6 +185,15 @@ void ObjEntity::buildTriangles() {
                 model_coefficients.push_back( vy ); // Y
                 model_coefficients.push_back( vz ); // Z
                 model_coefficients.push_back( 1.0f ); // W
+
+
+                bboxMin.x = std::min(bboxMin.x, vx);
+                bboxMin.y = std::min(bboxMin.y, vy);
+                bboxMin.z = std::min(bboxMin.z, vz);
+                bboxMax.x = std::max(bboxMax.x, vx);
+                bboxMax.y = std::max(bboxMax.y, vy);
+                bboxMax.z = std::max(bboxMax.z, vz);
+
 
                 // Inspecionando o código da tinyobjloader, o aluno Bernardo
                 // Sulzbach (2017/1) apontou que a maneira correta de testar se
@@ -194,9 +224,11 @@ void ObjEntity::buildTriangles() {
         size_t last_index = indices.size() - 1;
 
 
-        this->firstIndex = first_index; // Primeiro índice
-        this->indexCount = last_index - first_index + 1; // Número de indices
-        this->vboID = vertex_array_object_id;
+        this->firstIndex.push_back(first_index); // Primeiro índice
+        this->indexCount.push_back(last_index - first_index + 1); // Número de indices
+        this->vboIDs.push_back(vertex_array_object_id);
+        this->bboxMin.push_back(bboxMin);
+        this->bboxMax.push_back(bboxMax);
     }
 
     GLuint VBO_model_coefficients_id;
@@ -251,4 +283,57 @@ void ObjEntity::buildTriangles() {
     // "Desligamos" o VAO, evitando assim que operações posteriores venham a
     // alterar o mesmo. Isso evita bugs.
     glBindVertexArray(0);
+}
+
+static int loadedTexCount = 0;
+
+void ObjEntity::loadTexture(const char* filename) {
+    printf("Carregando imagem \"%s\"... ", filename);
+
+    // Primeiro fazemos a leitura da imagem do disco
+    stbi_set_flip_vertically_on_load(true);
+    int width;
+    int height;
+    int channels;
+    unsigned char *data = stbi_load(filename, &width, &height, &channels, 3);
+
+    if ( data == NULL )
+    {
+        fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename);
+        std::exit(EXIT_FAILURE);
+    }
+
+    printf("OK (%dx%d).\n", width, height);
+
+    // Agora criamos objetos na GPU com OpenGL para armazenar a textura
+    GLuint texture_id;
+    GLuint sampler_id;
+    glGenTextures(1, &texture_id);
+    glGenSamplers(1, &sampler_id);
+
+    // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    // Parâmetros de amostragem da textura.
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // Agora enviamos a imagem lida do disco para a GPU
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
+    glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
+
+    GLuint textureunit = loadedTexCount;
+    glActiveTexture(GL_TEXTURE0 + textureunit);
+    glBindTexture(GL_TEXTURE_2D, texture_id);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    glBindSampler(textureunit, sampler_id);
+
+    stbi_image_free(data);
+    loadedTexCount++;
+
+    this->textureID = textureunit;
 }

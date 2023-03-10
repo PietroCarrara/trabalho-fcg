@@ -8,6 +8,7 @@ layout (location = 3) in vec4 color_coefficients;
 out vec4 vertexColor;
 out vec4 positionWorld;
 out vec4 normal;
+out vec2 texCoord;
 
 uniform mat4 model;
 uniform mat4 view;
@@ -23,5 +24,7 @@ void main()
 
     normal = inverse(transpose(model)) * normal_coefficients;
     normal.w = 0.0;
+
+    texCoord = texture_coefficients;
 }
 

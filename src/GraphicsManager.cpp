@@ -22,6 +22,9 @@ GLint GraphicsManager::modelUniform = -1;
 GLint GraphicsManager::viewUniform = -1;
 GLint GraphicsManager::projectionUniform = -1;
 GLint GraphicsManager::viewVecUniform = -1;
+GLint GraphicsManager::bboxMinUniform = -1;
+GLint GraphicsManager::bboxMaxUniform = -1;
+GLint GraphicsManager::textureUniform = -1;
 
 void GraphicsManager::init() {
   shaderID = LoadShadersFromFiles();
@@ -29,6 +32,9 @@ void GraphicsManager::init() {
   viewUniform = glGetUniformLocation(shaderID, "view");
   projectionUniform = glGetUniformLocation(shaderID, "projection");
   viewVecUniform = glGetUniformLocation(shaderID, "viewVec");
+  bboxMinUniform = glGetUniformLocation(shaderID, "bboxMin");
+  bboxMaxUniform = glGetUniformLocation(shaderID, "bboxMax");
+  textureUniform = glGetUniformLocation(shaderID, "colorTexture");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
@@ -36,7 +42,7 @@ void GraphicsManager::setScreenRatio(float r) {
   perspectiveProjection = Matrix_Perspective(fov, r, nearPlane, farPlane);
 }
 
-void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
+void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
   glUseProgram(shaderID);
 
   glBindVertexArray(vertexArrayID);
@@ -45,6 +51,9 @@ void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, GLuint vertexAr
   glUniformMatrix4fv(viewUniform       , 1 , GL_FALSE , glm::value_ptr(cam->getMatrix()));
   glUniformMatrix4fv(projectionUniform , 1 , GL_FALSE , glm::value_ptr(perspectiveProjection));
   glUniform4fv(viewVecUniform, 1, glm::value_ptr(cam->getViewVec()));
+  glUniform4fv(bboxMinUniform, 1, glm::value_ptr(bboxMin));
+  glUniform4fv(bboxMaxUniform, 1, glm::value_ptr(bboxMax));
+  glUniform1i(textureUniform, texture);
 
   glDrawElements(
       drawMode,

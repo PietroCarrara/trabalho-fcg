@@ -374,7 +374,6 @@
 		<Unit filename="include/utils.h" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Camera.hpp" />
-		<Unit filename="src/Cube.cpp" />
 		<Unit filename="src/Cube.hpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Entity.h" />
@@ -398,6 +397,10 @@
 		<Unit filename="src/matrices.hpp" />
 		<Unit filename="src/shader_fragment.glsl" />
 		<Unit filename="src/shader_vertex.glsl" />
+		<Unit filename="src/stb_image.cpp" />
+		<Unit filename="src/stb_image.h" />
+		<Unit filename="src/tiny_obj_loader.cpp" />
+		<Unit filename="src/tiny_obj_loader.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<envvars />
