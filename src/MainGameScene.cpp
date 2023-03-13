@@ -1,3 +1,5 @@
+#include <glm/vec3.hpp>
+
 #include "MainGameScene.h"
 #include "InputManager.hpp"
 #include "Player.h"
@@ -9,7 +11,8 @@ MainGameScene::MainGameScene() {
     this->entities.push_back(p);
     this->camera = p;
 
-    ObjEntity* theBunny = new ObjEntity("../../assets/objects/firTree.obj", "../../assets/objects/firLeaf.png");
+    ObjEntity* theBunny = new ObjEntity("../../assets/objects/firTree.obj");
+    theBunny->scale = glm::vec3(0.1, 0.1, 0.1);
 
     this->entities.push_back(theBunny);
 }

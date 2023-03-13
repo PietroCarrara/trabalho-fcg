@@ -6,7 +6,7 @@
 
 #include "stb_image.h"
 
-ObjEntity::ObjEntity(const char* filename, const char* textureFilename)
+ObjEntity::ObjEntity(const char* filename)
 {
 
     const char* basepath = NULL;
@@ -61,8 +61,7 @@ ObjEntity::ObjEntity(const char* filename, const char* textureFilename)
     printf("OK.\n");
 
     this->computeNormals();
-    this->buildTriangles();
-    this->loadTexture(textureFilename);
+    this->buildTriangles(basepath);
 }
 
 void ObjEntity::update(float deltaTime) {
@@ -78,7 +77,8 @@ void ObjEntity::draw(Camera* c) {
       Matrix_Rotate_Z(this->rotation.z);
 
     for (uint i = 0; i < this->vboIDs.size(); i++) {
-        GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID, this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
+        printf("%d\n", this->textureID[i]);
+        GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
     }
 
 }
@@ -143,7 +143,7 @@ void ObjEntity::computeNormals() {
     }
 }
 
-void ObjEntity::buildTriangles() {
+void ObjEntity::buildTriangles(std::string basepath) {
 
     GLuint vertex_array_object_id;
     glGenVertexArrays(1, &vertex_array_object_id);
@@ -164,6 +164,11 @@ void ObjEntity::buildTriangles() {
         size_t first_index = indices.size();
         size_t num_triangles = this->shapes[shape].mesh.num_face_vertices.size();
 
+        unsigned int materialId, lastMaterialId = 0;
+		if(shapes[shape].mesh.material_ids.size() > 0)
+		{
+			materialId = lastMaterialId = shapes[shape].mesh.material_ids[0];
+		}
 
         glm::vec3 bboxMin = glm::vec3(maxval,maxval,maxval);
         glm::vec3 bboxMax = glm::vec3(minval,minval,minval);
@@ -171,6 +176,26 @@ void ObjEntity::buildTriangles() {
         for (size_t triangle = 0; triangle < num_triangles; ++triangle)
         {
             assert(this->shapes[shape].mesh.num_face_vertices[triangle] == 3);
+
+            lastMaterialId = materialId;
+            materialId = shapes[shape].mesh.material_ids[triangle];
+
+            if(materialId != lastMaterialId)
+            {
+                size_t last_index = indices.size() - 1;
+
+                this->firstIndex.push_back(first_index); // Primeiro índice
+                this->indexCount.push_back(last_index - first_index + 1); // Número de indices
+                this->vboIDs.push_back(vertex_array_object_id);
+                this->bboxMin.push_back(bboxMin);
+                this->bboxMax.push_back(bboxMax);
+                this->textureID.push_back(this->loadTexture(basepath + this->materials[materialId].diffuse_texname));
+                printf("%s\n", this->materials[materialId].diffuse_texname.c_str());
+
+                first_index = indices.size();
+                bboxMin = glm::vec3(maxval,maxval,maxval);
+                bboxMax = glm::vec3(minval,minval,minval);
+            }
 
             for (size_t vertex = 0; vertex < 3; ++vertex)
             {
@@ -219,9 +244,6 @@ void ObjEntity::buildTriangles() {
                     texture_coefficients.push_back( u );
                     texture_coefficients.push_back( v );
                 }
-
-                // TODO: Get texture index from .obj file
-                texture_index.push_back(1);
             }
         }
 
@@ -233,6 +255,8 @@ void ObjEntity::buildTriangles() {
         this->vboIDs.push_back(vertex_array_object_id);
         this->bboxMin.push_back(bboxMin);
         this->bboxMax.push_back(bboxMax);
+        printf("%s\n", (basepath + this->materials[materialId].diffuse_texname).c_str());
+        this->textureID.push_back(this->loadTexture(basepath + this->materials[materialId].diffuse_texname));
     }
 
     GLuint VBO_model_coefficients_id;
@@ -243,17 +267,6 @@ void ObjEntity::buildTriangles() {
     GLuint location = 0; // "(location = 0)" em "shader_vertex.glsl"
     GLint  number_of_dimensions = 4; // vec4 em "shader_vertex.glsl"
     glVertexAttribPointer(location, number_of_dimensions, GL_FLOAT, GL_FALSE, 0, 0);
-    glEnableVertexAttribArray(location);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    GLuint textureIndexBufferID;
-    glGenBuffers(1, &textureIndexBufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, textureIndexBufferID);
-    glBufferData(GL_ARRAY_BUFFER, texture_index.size() * sizeof(int), NULL, GL_STATIC_DRAW);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, texture_index.size() * sizeof(int), texture_index.data());
-    location = 4;
-    number_of_dimensions = 1;
-    glVertexAttribPointer(location, number_of_dimensions, GL_INT, GL_FALSE, 0, 0);
     glEnableVertexAttribArray(location);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -302,68 +315,52 @@ void ObjEntity::buildTriangles() {
 
 static int loadedTexCount = 0;
 
-void ObjEntity::loadTexture(const char* fname) {
-    if (this->materials.size() > 0) {
-        const tinyobj::material_t m = this->materials[0];
+GLuint ObjEntity::loadTexture(std::string filename) {
+    printf("Carregando imagem \"%s\"... ", filename.c_str());
 
-        std::cout << *(m.diffuse);
+    // Primeiro fazemos a leitura da imagem do disco
+    stbi_set_flip_vertically_on_load(true);
+    int width;
+    int height;
+    int channels;
+    unsigned char *data = stbi_load(filename.c_str(), &width, &height, &channels, 3);
+
+    if ( data == NULL )
+    {
+        fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename.c_str());
+        std::exit(EXIT_FAILURE);
     }
 
-    const char* files[] = { fname, "../../assets/objects/firbark.png" };
-    const int textureCount = 2;
+    printf("OK (%dx%d).\n", width, height);
 
+    GLuint texture_id;
+    GLuint sampler_id;
+    glGenTextures(1, &texture_id);
+    glGenSamplers(1, &sampler_id);
 
-    for (int i = 0; i < textureCount; i++) {
-        const char* filename = files[i];
+    // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-        printf("Carregando imagem \"%s\"... ", filename);
+    // Parâmetros de amostragem da textura.
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        // Primeiro fazemos a leitura da imagem do disco
-        stbi_set_flip_vertically_on_load(true);
-        int width;
-        int height;
-        int channels;
-        unsigned char *data = stbi_load(filename, &width, &height, &channels, 3);
+    // Agora enviamos a imagem lida do disco para a GPU
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
+    glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
 
-        if ( data == NULL )
-        {
-            fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename);
-            std::exit(EXIT_FAILURE);
-        }
+    GLuint textureunit = loadedTexCount;
+    glActiveTexture(GL_TEXTURE0 + textureunit);
+    glBindTexture(GL_TEXTURE_2D, texture_id);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    glBindSampler(textureunit, sampler_id);
 
-        printf("OK (%dx%d).\n", width, height);
+    stbi_image_free(data);
 
-        GLuint texture_id;
-        GLuint sampler_id;
-        glGenTextures(1, &texture_id);
-        glGenSamplers(1, &sampler_id);
-        glActiveTexture(GL_TEXTURE0+loadedTexCount);
-        glBindTexture(GL_TEXTURE_2D_ARRAY, texture_id);
-
-        // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
-        glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-        // Parâmetros de amostragem da textura.
-        glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-        glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-        // Agora enviamos a imagem lida do disco para a GPU
-        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-        glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-        glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
-        glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
-
-        GLuint textureunit = loadedTexCount;
-        glActiveTexture(GL_TEXTURE0 + textureunit);
-        glBindTexture(GL_TEXTURE_2D, texture_id);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-        glBindSampler(textureunit, sampler_id);
-
-        stbi_image_free(data);
-
-        this->textureID.push_back(textureunit);
-        loadedTexCount++;
-    }
+    loadedTexCount++;
+    return textureunit;
 }

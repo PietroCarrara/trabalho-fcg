@@ -25,15 +25,15 @@ private:
     std::vector<tinyobj::material_t>  materials;
 
     void computeNormals();
-    void buildTriangles();
-    void loadTexture(const char* filename);
+    void buildTriangles(std::string basepath);
+    GLuint loadTexture(std::string filename);
 
 public:
     glm::vec3 position = glm::vec3(0);
     glm::vec3 rotation = glm::vec3(0);
     glm::vec3 scale = glm::vec3(1);
 
-    ObjEntity(const char* filename, const char* textureFilename);
+    ObjEntity(const char* filename);
 
     void update(float deltaTime);
     void draw(Camera* c);
