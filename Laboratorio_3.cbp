@@ -374,7 +374,6 @@
 		<Unit filename="include/utils.h" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Camera.hpp" />
-		<Unit filename="src/Cube.hpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Entity.h" />
 		<Unit filename="src/GraphicsManager.cpp" />
@@ -387,6 +386,8 @@
 		<Unit filename="src/ObjEntity.h" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Player.h" />
+		<Unit filename="src/SlenderEntity.cpp" />
+		<Unit filename="src/SlenderEntity.h" />
 		<Unit filename="src/glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
