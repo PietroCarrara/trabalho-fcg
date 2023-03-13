@@ -13,9 +13,9 @@ MainGameScene::MainGameScene() {
 
     ObjEntity* tree = new ObjEntity("../../assets/objects/tree/N64_Tree.obj");
     tree->scale = glm::vec3(0.1, 0.1, 0.1);
-    this->entities.push_back(tree);
+    // this->entities.push_back(tree);
 
-    this->entities.push_back(new SlenderEntity());
+    this->entities.push_back(new SlenderEntity(p));
 }
 
 

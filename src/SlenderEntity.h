@@ -2,17 +2,19 @@
 #define SLENDERENTITY_H
 
 #include "ObjEntity.h"
-
+#include "Player.h"
 
 class SlenderEntity : public ObjEntity
 {
-    public:
-        SlenderEntity();
-        virtual ~SlenderEntity();
+private:
+    float timeStanding = 0;
+    Player* player;
 
-    protected:
+public:
+    SlenderEntity(Player* p);
+    virtual ~SlenderEntity();
 
-    private:
+    void update(float dt);
 };
 
 #endif // SLENDERENTITY_H

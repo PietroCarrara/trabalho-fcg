@@ -4,6 +4,9 @@
 #include "Player.h"
 #include "InputManager.hpp"
 
+Player::Player() {
+    this->position.y = 1.80;
+}
 
 void Player::update(float deltaTime) {
 

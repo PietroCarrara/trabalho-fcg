@@ -43,23 +43,6 @@ ObjEntity::ObjEntity(const char* filename)
     if (!ret)
         throw std::runtime_error("Erro ao carregar modelo.");
 
-    for (size_t shape = 0; shape < shapes.size(); ++shape)
-    {
-        if (shapes[shape].name.empty())
-        {
-            fprintf(stderr,
-                    "*********************************************\n"
-                    "Erro: Objeto sem nome dentro do arquivo '%s'.\n"
-                    "Veja https://www.inf.ufrgs.br/~eslgastal/fcg-faq-etc.html#Modelos-3D-no-formato-OBJ .\n"
-                    "*********************************************\n",
-                filename);
-            throw std::runtime_error("Objeto sem nome.");
-        }
-        printf("- Objeto '%s'\n", shapes[shape].name.c_str());
-    }
-
-    printf("OK.\n");
-
     this->computeNormals();
     this->buildTriangles(basepath);
 }
@@ -77,7 +60,6 @@ void ObjEntity::draw(Camera* c) {
       Matrix_Rotate_Z(this->rotation.z);
 
     for (uint i = 0; i < this->vboIDs.size(); i++) {
-        printf("%d\n", this->textureID[i]);
         GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
     }
 
@@ -339,8 +321,8 @@ GLuint ObjEntity::loadTexture(std::string filename) {
     glGenSamplers(1, &sampler_id);
 
     // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
-    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S,  GL_MIRRORED_REPEAT);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T,  GL_MIRRORED_REPEAT);
 
     // Parâmetros de amostragem da textura.
     glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);

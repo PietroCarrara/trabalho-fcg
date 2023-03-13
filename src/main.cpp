@@ -24,6 +24,7 @@
 
 int main()
 {
+    srand(time(NULL));
     GLFWwindow* w = initialize_lowlevel();
 
     MainGameScene s = MainGameScene();
