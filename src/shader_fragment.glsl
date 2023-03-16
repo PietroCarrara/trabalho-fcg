@@ -19,6 +19,7 @@ uniform vec3 bboxMin;
 uniform vec3 bboxMax;
 
 uniform float time;
+uniform float noisiness;
 
 uniform sampler2D colorTexture;
 
@@ -87,7 +88,7 @@ void main()
 
     // Cor final com correção gamma, considerando monitor sRGB.
     color.rgb = pow(color.rgb, vec3(1.0,1.0,1.0)/2.2);
-    color.rgb = mix(color.rgb, vec3(random(positionWorld.xz * time)), 0.5);
+    color.rgb = mix(color.rgb, vec3(random(positionWorld.xz * time)), noisiness);
     color.a = 1;
 
 

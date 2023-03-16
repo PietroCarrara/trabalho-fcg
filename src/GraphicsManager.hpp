@@ -26,6 +26,7 @@ private:
     static GLint bboxMaxUniform;
     static GLint colorTextureUniform;
     static GLint timeUniform;
+    static GLint noisinessUniform;
 
     static float fov;
     static float nearPlane;
@@ -35,6 +36,7 @@ public:
     static void init();
     static void setScreenRatio(float r);
     static void setTime(float t);
+    static void setNoisiness(float n);
 
     static void DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex = 0);
 };

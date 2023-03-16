@@ -25,6 +25,7 @@ GLint GraphicsManager::bboxMinUniform = -1;
 GLint GraphicsManager::bboxMaxUniform = -1;
 GLint GraphicsManager::colorTextureUniform = -1;
 GLint GraphicsManager::timeUniform = -1;
+GLint GraphicsManager::noisinessUniform = -1;
 
 void GraphicsManager::init() {
   shaderID = LoadShadersFromFiles();
@@ -36,6 +37,7 @@ void GraphicsManager::init() {
   bboxMaxUniform = glGetUniformLocation(shaderID, "bboxMax");
   colorTextureUniform = glGetUniformLocation(shaderID, "colorTexture");
   timeUniform = glGetUniformLocation(shaderID, "time");
+  noisinessUniform = glGetUniformLocation(shaderID, "noisiness");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
@@ -45,6 +47,10 @@ void GraphicsManager::setScreenRatio(float r) {
 
 void GraphicsManager::setTime(float t) {
   glUniform1f(timeUniform, t);
+}
+
+void GraphicsManager::setNoisiness(float n) {
+  glUniform1f(noisinessUniform, n);
 }
 
 void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {

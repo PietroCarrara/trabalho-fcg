@@ -4,8 +4,9 @@
 #include <cstdlib>
 #include <cmath>
 #include <cstdio>
-
 #include <utils.h>
+
+#include "GraphicsManager.hpp"
 
 SlenderEntity::SlenderEntity(Player* p) : ObjEntity("../../assets/objects/slender/slender.obj")
 {
@@ -38,8 +39,9 @@ void SlenderEntity::update(float dt)
     glm::vec3 fromPlayerToSlender = this->position - this->player->position;
     fromPlayerToSlender.y = playerView.y; // Put both vectors on the same Y plane
     const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, playerView, glm::vec3(0, 0, 0)));
+    const bool looking = angleSlenderPlayer < 33;
 
-    if (angleSlenderPlayer >= 33 && this->timeStanding > 5) {
+    if (!looking && this->timeStanding > 5) {
         // Teleport my man slender close to the player
         float minAngle = 90 + playerAngle;
 
@@ -57,4 +59,17 @@ void SlenderEntity::update(float dt)
         float y1 = this->player->position.z;
         this->rotation.y = -atan2(y2 - y1, x2 - x1);
     }
+
+    if (looking) {
+        player->sanity -= dt;
+    } else {
+        player->sanity += dt;
+    }
+
+    if (player->sanity < 0) {
+        player->sanity = 0;
+    } else if (player->sanity > 1) {
+        player->sanity = 1;
+    }
+    GraphicsManager::setNoisiness(1 - player->sanity);
 }
