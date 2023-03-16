@@ -374,6 +374,8 @@
 		<Unit filename="include/utils.h" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Camera.hpp" />
+		<Unit filename="src/CubicBezier.cpp" />
+		<Unit filename="src/CubicBezier.h" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Entity.h" />
 		<Unit filename="src/GraphicsManager.cpp" />
@@ -384,6 +386,8 @@
 		<Unit filename="src/MainGameScene.h" />
 		<Unit filename="src/ObjEntity.cpp" />
 		<Unit filename="src/ObjEntity.h" />
+		<Unit filename="src/PageEntity.cpp" />
+		<Unit filename="src/PageEntity.h" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Player.h" />
 		<Unit filename="src/SlenderEntity.cpp" />
