@@ -19,22 +19,28 @@ SlenderEntity::~SlenderEntity()
 }
 
 float angleBetween(
- glm::vec3 a,
- glm::vec3 b,
- glm::vec3 origin
+     glm::vec3 a,
+     glm::vec3 b,
+     glm::vec3 origin
 ){
- glm::vec3 da=glm::normalize(a-origin);
- glm::vec3 db=glm::normalize(b-origin);
- return glm::acos(glm::dot(da, db));
+     glm::vec3 da=glm::normalize(a-origin);
+     glm::vec3 db=glm::normalize(b-origin);
+     return glm::acos(glm::dot(da, db));
 }
 
 void SlenderEntity::update(float dt)
 {
     this->timeStanding += dt;
 
-    if (this->timeStanding > 5) {
-        glm::vec4 playerView = this->player->getViewVec();
-        float playerAngle = rad2deg(atan2(playerView.z, playerView.x));
+    const glm::vec4 playerView = this->player->getViewVec();
+    const float playerAngle = rad2deg(atan2(playerView.z, playerView.x));
+
+    glm::vec3 fromPlayerToSlender = this->position - this->player->position;
+    fromPlayerToSlender.y = playerView.y; // Put both vectors on the same Y plane
+    const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, playerView, glm::vec3(0, 0, 0)));
+
+    if (angleSlenderPlayer >= 33 && this->timeStanding > 5) {
+        // Teleport my man slender close to the player
         float minAngle = 90 + playerAngle;
 
         float angle = deg2rad(rand() % 180 + minAngle);
@@ -51,5 +57,4 @@ void SlenderEntity::update(float dt)
         float y1 = this->player->position.z;
         this->rotation.y = -atan2(y2 - y1, x2 - x1);
     }
-
 }

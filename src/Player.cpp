@@ -64,6 +64,5 @@ void Player::update(float deltaTime) {
 }
 
 void Player::draw(Camera* c) {
-
 }
 
