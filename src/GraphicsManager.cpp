@@ -24,6 +24,7 @@ GLint GraphicsManager::viewVecUniform = -1;
 GLint GraphicsManager::bboxMinUniform = -1;
 GLint GraphicsManager::bboxMaxUniform = -1;
 GLint GraphicsManager::colorTextureUniform = -1;
+GLint GraphicsManager::timeUniform = -1;
 
 void GraphicsManager::init() {
   shaderID = LoadShadersFromFiles();
@@ -34,11 +35,16 @@ void GraphicsManager::init() {
   bboxMinUniform = glGetUniformLocation(shaderID, "bboxMin");
   bboxMaxUniform = glGetUniformLocation(shaderID, "bboxMax");
   colorTextureUniform = glGetUniformLocation(shaderID, "colorTexture");
+  timeUniform = glGetUniformLocation(shaderID, "time");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
   screenRatio = r;
   perspectiveProjection = Matrix_Perspective(fov, r, nearPlane, farPlane);
+}
+
+void GraphicsManager::setTime(float t) {
+  glUniform1f(timeUniform, t);
 }
 
 void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {

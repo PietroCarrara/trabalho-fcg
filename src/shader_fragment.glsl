@@ -18,10 +18,16 @@ uniform vec4 viewVec;
 uniform vec3 bboxMin;
 uniform vec3 bboxMax;
 
+uniform float time;
+
 uniform sampler2D colorTexture;
 
 // O valor de saída ("out") de um Fragment Shader é a cor final do fragmento.
 out vec4 color;
+
+float random (vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43757.441);
+}
 
 void main()
 {
@@ -66,32 +72,12 @@ void main()
 
     // Espectro da fonte de iluminação
     vec3 I = vec3(1, 1, 1);
-
     // Espectro da luz ambiente
     vec3 Ia = vec3(0.2);
 
-    // Termo difuso utilizando a lei dos cossenos de Lambert
     vec3 lambert_diffuse_term = Kd*I*max(0, dot(n, l));
-
-    // Termo ambiente
     vec3 ambient_term = Ka*Ia;
-
-    // Termo especular utilizando o modelo de iluminação de Phong
     vec3 phong_specular_term  = Ks*I*pow(max(0, dot(r, v)), q);
-
-    // NOTE: Se você quiser fazer o rendering de objetos transparentes, é
-    // necessário:
-    // 1) Habilitar a operação de "blending" de OpenGL logo antes de realizar o
-    //    desenho dos objetos transparentes, com os comandos abaixo no código C++:
-    //      glEnable(GL_BLEND);
-    //      glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    // 2) Realizar o desenho de todos objetos transparentes *após* ter desenhado
-    //    todos os objetos opacos; e
-    // 3) Realizar o desenho de objetos transparentes ordenados de acordo com
-    //    suas distâncias para a câmera (desenhando primeiro objetos
-    //    transparentes que estão mais longe da câmera).
-    // Alpha default = 1 = 100% opaco = 0% transparente
-    color.a = 1;
 
     float beta = dot(-l, viewVec);
     int inside = int(beta <= cos(spotAngle));
@@ -99,13 +85,12 @@ void main()
     color.rgb = (1-inside) * (lambert_diffuse_term + ambient_term + phong_specular_term) +
                 (inside) * ambient_term;
 
-
-    // color.rgb = lambert_diffuse_term + ambient_term + phong_specular_term;
-
     // Cor final com correção gamma, considerando monitor sRGB.
     color.rgb = pow(color.rgb, vec3(1.0,1.0,1.0)/2.2);
+    color.rgb = mix(color.rgb, vec3(random(positionWorld.xz * time)), 0.5);
+    color.a = 1;
 
-    // color = positionWorld;
+
 }
 
 

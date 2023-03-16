@@ -26,7 +26,10 @@ void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mod);
 void ErrorCallback(int error, const char* description);
 
-void update_lowlevel(GLFWwindow* w) {
+static float currTime = 0;
+static float prevTime = 0;
+
+float update_lowlevel(GLFWwindow* w) {
   double x, y;
   glfwGetCursorPos(w, &x, &y);
   InputManager::setMousePos((float)x, (float)y);
@@ -48,7 +51,12 @@ void update_lowlevel(GLFWwindow* w) {
     InputManager::setKeyState(k, glfwGetKey(w, k));
   }
 
-  // InputManager::setKeyState(GLFW_MOUSE_BUTTON_1, )
+  prevTime = currTime;
+  currTime = (float)glfwGetTime();
+
+  GraphicsManager::setTime(currTime);
+
+  return currTime - prevTime;
 }
 
 void destroy_lowlevel() {
