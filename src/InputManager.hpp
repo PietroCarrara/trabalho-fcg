@@ -8,6 +8,7 @@
 class InputManager {
 private:
     static float mouseLastX, mouseLastY, mouseX, mouseY;
+    static std::map<int, bool> prevKeyDownStates;
     static std::map<int, bool> keyDownStates;
 
 public:
@@ -16,6 +17,7 @@ public:
     static glm::vec2 getMouseDelta();
 
     static bool isKeyDown(int key);
+    static bool isKeyPressed(int key);
     static void setKeyState(int key, int state);
 };
 

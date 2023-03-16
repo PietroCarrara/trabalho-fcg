@@ -1,9 +1,16 @@
 #include "InputManager.hpp"
 
+#include <cstdio>
+
+#include "ObjEntity.h"
+
+void assertExists(int, std::map<int, bool>);
+
 float InputManager::mouseLastX = 0;
 float InputManager::mouseLastY = 0;
 float InputManager::mouseX = 0;
 float InputManager::mouseY = 0;
+std::map<int, bool> InputManager::prevKeyDownStates;
 std::map<int, bool> InputManager::keyDownStates;
 
 void InputManager::setMousePos(float x, float y) {
@@ -15,7 +22,10 @@ void InputManager::setMousePos(float x, float y) {
 }
 
 void InputManager::setKeyState(int key, int state) {
-    keyDownStates[key] = state == GLFW_PRESS || state == GLFW_REPEAT;
+    bool down = state == GLFW_PRESS || state == GLFW_REPEAT;
+
+    prevKeyDownStates[key] = keyDownStates[key];
+    keyDownStates[key] = down;
 }
 
 glm::vec2 InputManager::getMousePosition() {
@@ -27,7 +37,20 @@ glm::vec2 InputManager::getMouseDelta() {
 }
 
 bool InputManager::isKeyDown(int key) {
-  // If key is defined AND down
-  return keyDownStates.count(key) && keyDownStates[key];
+  assertExists(key, keyDownStates);
+  return keyDownStates[key];
 }
 
+bool InputManager::isKeyPressed(int key) {
+  assertExists(key, keyDownStates);
+  assertExists(key, prevKeyDownStates);
+  return !prevKeyDownStates[key] && keyDownStates[key];
+}
+
+void assertExists(int key, std::map<int, bool> keys) {
+  if (!keys.count(key)) {
+    const char* name = glfwGetKeyName(key, 0);
+    fprintf(stderr, "Key \"%s\" (code %d) not registered on lowlevel.cpp! Exiting...", name, key);
+    exit(1);
+  }
+}

@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "ObjEntity.h"
 #include "SlenderEntity.h"
+#include "PageEntity.h"
 
 MainGameScene::MainGameScene() {
     Player* p = new Player();
@@ -13,13 +14,16 @@ MainGameScene::MainGameScene() {
 
     ObjEntity* tree = new ObjEntity("../../assets/objects/tree/N64_Tree.obj");
     tree->scale = glm::vec3(0.1, 0.1, 0.1);
-    this->entities.push_back(tree);
+    // this->entities.push_back(tree);
 
     ObjEntity* plane = new ObjEntity("../../assets/objects/plane/plane.obj");
     plane->scale = glm::vec3(100, 1, 100);
     this->entities.push_back(plane);
 
     this->entities.push_back(new SlenderEntity(p));
+
+    PageEntity* page1 = new PageEntity(glm::vec3(1, 1, 0), 0);
+    this->entities.push_back(page1);
 }
 
 

@@ -5,8 +5,7 @@
 #include <cmath>
 #include <cstdio>
 
-#define deg2rad(x) ((x)/57.2958f)
-#define rad2deg(x) ((x)*57.2958f)
+#include <utils.h>
 
 SlenderEntity::SlenderEntity(Player* p) : ObjEntity("../../assets/objects/slender/slender.obj")
 {

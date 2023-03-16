@@ -3,6 +3,11 @@
 
 #include <cstdio>
 
+#include <glcommon.h>
+
+#define deg2rad(x) ((x)/57.2958f)
+#define rad2deg(x) ((x)*57.2958f)
+
 static GLenum glCheckError_(const char *file, int line)
 {
     GLenum errorCode;

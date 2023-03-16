@@ -34,6 +34,8 @@ int main()
     float delta_t = current_time;
     float prev_time = 0;
 
+    update_lowlevel(w);
+
     while (programAlive(w) && !InputManager::isKeyDown(GLFW_KEY_ESCAPE))
     {
         // UPDATE:
