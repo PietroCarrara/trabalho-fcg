@@ -18,7 +18,7 @@
 #include "GraphicsManager.hpp"
 #include "InputManager.hpp"
 #include "matrices.hpp"
-#include "utils.h"
+#include <utilities.h>
 
 void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
 void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
@@ -56,6 +56,13 @@ float update_lowlevel(GLFWwindow* w) {
 
   GraphicsManager::setTime(currTime);
 
+  GLenum err;
+  while((err = glGetError()) != GL_NO_ERROR)
+  {
+    ErrorCallback(err, "glGetError() returned an error:");
+    exit(1);
+  }
+
   return currTime - prevTime;
 }
 
@@ -73,6 +80,7 @@ GLFWwindow* initialize_lowlevel() {
 
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 
 #ifdef __APPLE__
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -134,5 +142,5 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mod)
 }
 
 void ErrorCallback(int error, const char* description) {
-  fprintf(stderr, "ERROR: GLFW: %s\n", description);
+  fprintf(stderr, "ERROR: GLFW: %s %d\n", description, error);
 }

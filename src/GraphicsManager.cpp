@@ -2,7 +2,9 @@
 
 #include <glcommon.h>
 
-static GLuint LoadShadersFromFiles();
+#include "stb_image.h"
+
+static GLuint LoadShadersFromFiles(const char*, const char*);
 static GLuint LoadShader_Vertex(const char*);
 static GLuint LoadShader_Fragment(const char*);
 static void LoadShader(const char*, GLuint);
@@ -17,6 +19,7 @@ float GraphicsManager::nearPlane = -0.1;
 float GraphicsManager::farPlane = -40.0;
 
 GLuint GraphicsManager::shaderID = -1;
+GLuint GraphicsManager::skyboxShaderID = -1;
 GLint GraphicsManager::modelUniform = -1;
 GLint GraphicsManager::viewUniform = -1;
 GLint GraphicsManager::projectionUniform = -1;
@@ -27,8 +30,16 @@ GLint GraphicsManager::colorTextureUniform = -1;
 GLint GraphicsManager::timeUniform = -1;
 GLint GraphicsManager::noisinessUniform = -1;
 
+GLint GraphicsManager::skyboxViewUniform = -1;
+GLint GraphicsManager::skyboxProjectionUniform = -1;
+GLint GraphicsManager::skyboxColorTextureUniform = -1;
+GLint GraphicsManager::skyboxTimeUniform = -1;
+GLint GraphicsManager::skyboxNoisinessUniform = -1;
+
 void GraphicsManager::init() {
-  shaderID = LoadShadersFromFiles();
+  shaderID = LoadShadersFromFiles("../../src/shader_vertex.glsl", "../../src/shader_fragment.glsl");
+  skyboxShaderID = LoadShadersFromFiles("../../src/skybox.vert.glsl", "../../src/skybox.frag.glsl");
+
   modelUniform = glGetUniformLocation(shaderID, "model");
   viewUniform = glGetUniformLocation(shaderID, "view");
   projectionUniform = glGetUniformLocation(shaderID, "projection");
@@ -38,6 +49,12 @@ void GraphicsManager::init() {
   colorTextureUniform = glGetUniformLocation(shaderID, "colorTexture");
   timeUniform = glGetUniformLocation(shaderID, "time");
   noisinessUniform = glGetUniformLocation(shaderID, "noisiness");
+
+  skyboxViewUniform = glGetUniformLocation(skyboxShaderID, "view");
+  skyboxProjectionUniform = glGetUniformLocation(skyboxShaderID, "projection");
+  skyboxColorTextureUniform = glGetUniformLocation(skyboxShaderID, "skybox");
+  skyboxTimeUniform = glGetUniformLocation(skyboxShaderID, "time");
+  skyboxNoisinessUniform = glGetUniformLocation(skyboxShaderID, "noisiness");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
@@ -46,11 +63,19 @@ void GraphicsManager::setScreenRatio(float r) {
 }
 
 void GraphicsManager::setTime(float t) {
+  glUseProgram(shaderID);
   glUniform1f(timeUniform, t);
+
+  glUseProgram(skyboxShaderID);
+  glUniform1f(skyboxTimeUniform, t);
 }
 
 void GraphicsManager::setNoisiness(float n) {
+  glUseProgram(shaderID);
   glUniform1f(noisinessUniform, n);
+
+  glUseProgram(skyboxShaderID);
+  glUniform1f(skyboxNoisinessUniform, n);
 }
 
 void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
@@ -58,9 +83,9 @@ void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxM
 
   glBindVertexArray(vertexArrayID);
 
-  glUniformMatrix4fv(modelUniform, 1, GL_FALSE, glm::value_ptr(model));
-  glUniformMatrix4fv(viewUniform       , 1 , GL_FALSE , glm::value_ptr(cam->getMatrix()));
-  glUniformMatrix4fv(projectionUniform , 1 , GL_FALSE , glm::value_ptr(perspectiveProjection));
+  glUniformMatrix4fv(modelUniform     , 1, GL_FALSE, glm::value_ptr(model));
+  glUniformMatrix4fv(viewUniform      , 1, GL_FALSE, glm::value_ptr(cam->getMatrix()));
+  glUniformMatrix4fv(projectionUniform, 1, GL_FALSE, glm::value_ptr(perspectiveProjection));
   glUniform4fv(viewVecUniform, 1, glm::value_ptr(cam->getViewVec()));
   glUniform4fv(bboxMinUniform, 1, glm::value_ptr(bboxMin));
   glUniform4fv(bboxMaxUniform, 1, glm::value_ptr(bboxMax));
@@ -76,6 +101,128 @@ void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxM
   glBindVertexArray(0);
 }
 
+void GraphicsManager::DrawSkybox(Camera* cam, GLuint texture, GLuint vertexArrayID) {
+  glUseProgram(skyboxShaderID);
+  glDepthMask(GL_FALSE);
+  glDisable(GL_CULL_FACE);
+
+  glBindVertexArray(vertexArrayID);
+  glUniformMatrix4fv(skyboxViewUniform      , 1, GL_FALSE, glm::value_ptr(glm::mat4(glm::mat3(cam->getMatrix()))));
+  glUniformMatrix4fv(skyboxProjectionUniform, 1, GL_FALSE, glm::value_ptr(perspectiveProjection));
+  glUniform1i(skyboxColorTextureUniform, texture);
+
+  glDrawElements(
+    GL_TRIANGLES,
+    36,
+    GL_UNSIGNED_INT,
+    (void*)0
+  );
+  glBindVertexArray(0);
+
+  glEnable(GL_CULL_FACE);
+  glDepthMask(GL_TRUE);
+}
+
+static int loadedTexCount = 0;
+
+GLuint GraphicsManager::loadTexture(std::string filename) {
+    printf("Carregando imagem \"%s\"... ", filename.c_str());
+
+    // Primeiro fazemos a leitura da imagem do disco
+    stbi_set_flip_vertically_on_load(true);
+    int width;
+    int height;
+    int channels;
+    unsigned char *data = stbi_load(filename.c_str(), &width, &height, &channels, 3);
+
+    if ( data == NULL )
+    {
+        fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename.c_str());
+        std::exit(EXIT_FAILURE);
+    }
+
+    printf("OK (%dx%d).\n", width, height);
+
+    GLuint texture_id;
+    GLuint sampler_id;
+    glGenTextures(1, &texture_id);
+    glGenSamplers(1, &sampler_id);
+
+    // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S,  GL_REPEAT);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T,  GL_REPEAT);
+
+    // Parâmetros de amostragem da textura.
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    // Agora enviamos a imagem lida do disco para a GPU
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
+    glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
+
+    GLuint textureunit = loadedTexCount;
+    glActiveTexture(GL_TEXTURE0 + textureunit);
+    glBindTexture(GL_TEXTURE_2D, texture_id);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    glBindSampler(textureunit, sampler_id);
+
+    stbi_image_free(data);
+
+    loadedTexCount++;
+    return textureunit;
+}
+
+/**
+ * Texture order:
+ * - GL_TEXTURE_CUBE_MAP_POSITIVE_X  Right
+ * - GL_TEXTURE_CUBE_MAP_NEGATIVE_X  Left
+ * - GL_TEXTURE_CUBE_MAP_POSITIVE_Y  Top
+ * - GL_TEXTURE_CUBE_MAP_NEGATIVE_Y  Bottom
+ * - GL_TEXTURE_CUBE_MAP_POSITIVE_Z  Back
+ * - GL_TEXTURE_CUBE_MAP_NEGATIVE_Z  Front
+ */
+GLuint GraphicsManager::loadCubeMap(std::vector<const char*> filenames) {
+    GLuint textureunit = loadedTexCount;
+    loadedTexCount++;
+    GLuint texture_id;
+
+    glGenTextures(1, &texture_id);
+    glActiveTexture(GL_TEXTURE0 + textureunit);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, texture_id);
+
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    stbi_set_flip_vertically_on_load(false);
+    for (int i = 0; i < 6; i++) {
+        const char* filename = filenames[i];
+        printf("Carregando imagem \"%s\"... ", filename);
+
+        int width;
+        int height;
+        int channels;
+        unsigned char *data = stbi_load(filename, &width, &height, &channels, 3);
+        if ( data == NULL )
+        {
+            fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename);
+            std::exit(EXIT_FAILURE);
+        }
+
+        glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X+i, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        // glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X+i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        stbi_image_free(data);
+
+        printf("OK (%dx%d).\n", width, height);
+    }
+
+    return textureunit;
+}
 
 static GLuint LoadShader_Vertex(const char* filename)
 {
@@ -144,10 +291,10 @@ static void LoadShader(const char* filename, GLuint shader_id)
     delete [] log;
 }
 
-static GLuint LoadShadersFromFiles()
+static GLuint LoadShadersFromFiles(const char* vertex, const char* frag)
 {
-    GLuint vertex_shader_id = LoadShader_Vertex("../../src/shader_vertex.glsl");
-    GLuint fragment_shader_id = LoadShader_Fragment("../../src/shader_fragment.glsl");
+    GLuint vertex_shader_id = LoadShader_Vertex(vertex);
+    GLuint fragment_shader_id = LoadShader_Fragment(frag);
 
     return CreateGpuProgram(vertex_shader_id, fragment_shader_id);
 }

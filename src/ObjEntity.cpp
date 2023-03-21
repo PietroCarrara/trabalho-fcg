@@ -4,8 +4,6 @@
 #include <cstdio>
 #include <iostream>
 
-#include "stb_image.h"
-
 ObjEntity::ObjEntity(const char* filename)
 {
 
@@ -62,7 +60,6 @@ void ObjEntity::draw(Camera* c) {
     for (uint i = 0; i < this->vboIDs.size(); i++) {
         GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
     }
-
 }
 
 void ObjEntity::computeNormals() {
@@ -171,7 +168,7 @@ void ObjEntity::buildTriangles(std::string basepath) {
                 this->vboIDs.push_back(vertex_array_object_id);
                 this->bboxMin.push_back(bboxMin);
                 this->bboxMax.push_back(bboxMax);
-                this->textureID.push_back(this->loadTexture(basepath + this->materials[materialId].diffuse_texname));
+                this->textureID.push_back(GraphicsManager::loadTexture(basepath + this->materials[materialId].diffuse_texname));
                 printf("%s\n", this->materials[materialId].diffuse_texname.c_str());
 
                 first_index = indices.size();
@@ -238,7 +235,7 @@ void ObjEntity::buildTriangles(std::string basepath) {
         this->bboxMin.push_back(bboxMin);
         this->bboxMax.push_back(bboxMax);
         printf("%s\n", (basepath + this->materials[materialId].diffuse_texname).c_str());
-        this->textureID.push_back(this->loadTexture(basepath + this->materials[materialId].diffuse_texname));
+        this->textureID.push_back(GraphicsManager::loadTexture(basepath + this->materials[materialId].diffuse_texname));
     }
 
     GLuint VBO_model_coefficients_id;
@@ -293,56 +290,4 @@ void ObjEntity::buildTriangles(std::string basepath) {
     // "Desligamos" o VAO, evitando assim que operações posteriores venham a
     // alterar o mesmo. Isso evita bugs.
     glBindVertexArray(0);
-}
-
-static int loadedTexCount = 0;
-
-GLuint ObjEntity::loadTexture(std::string filename) {
-    printf("Carregando imagem \"%s\"... ", filename.c_str());
-
-    // Primeiro fazemos a leitura da imagem do disco
-    stbi_set_flip_vertically_on_load(true);
-    int width;
-    int height;
-    int channels;
-    unsigned char *data = stbi_load(filename.c_str(), &width, &height, &channels, 3);
-
-    if ( data == NULL )
-    {
-        fprintf(stderr, "ERROR: Cannot open image file \"%s\".\n", filename.c_str());
-        std::exit(EXIT_FAILURE);
-    }
-
-    printf("OK (%dx%d).\n", width, height);
-
-    GLuint texture_id;
-    GLuint sampler_id;
-    glGenTextures(1, &texture_id);
-    glGenSamplers(1, &sampler_id);
-
-    // Veja slides 95-96 do documento Aula_20_Mapeamento_de_Texturas.pdf
-    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_S,  GL_MIRRORED_REPEAT);
-    glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T,  GL_MIRRORED_REPEAT);
-
-    // Parâmetros de amostragem da textura.
-    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    // Agora enviamos a imagem lida do disco para a GPU
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-    glPixelStorei(GL_UNPACK_SKIP_PIXELS, 0);
-    glPixelStorei(GL_UNPACK_SKIP_ROWS, 0);
-
-    GLuint textureunit = loadedTexCount;
-    glActiveTexture(GL_TEXTURE0 + textureunit);
-    glBindTexture(GL_TEXTURE_2D, texture_id);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D);
-    glBindSampler(textureunit, sampler_id);
-
-    stbi_image_free(data);
-
-    loadedTexCount++;
-    return textureunit;
 }

@@ -86,12 +86,12 @@ void main()
     color.rgb = (1-inside) * (lambert_diffuse_term + ambient_term + phong_specular_term) +
                 (inside) * ambient_term;
 
+    // Slender noise
+    color.rgb = mix(color.rgb, vec3(random(vec2((vertexColor.xz + texCoord.xy) * time))), noisiness);
+
     // Cor final com correção gamma, considerando monitor sRGB.
     color.rgb = pow(color.rgb, vec3(1.0,1.0,1.0)/2.2);
-    color.rgb = mix(color.rgb, vec3(random(positionWorld.xz * time)), noisiness);
     color.a = 1;
-
-
 }
 
 

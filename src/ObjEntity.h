@@ -26,7 +26,6 @@ private:
 
     void computeNormals();
     void buildTriangles(std::string basepath);
-    GLuint loadTexture(std::string filename);
 
 public:
     glm::vec3 position = glm::vec3(0);

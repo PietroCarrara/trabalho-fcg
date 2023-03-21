@@ -4,20 +4,22 @@
 #include <list>
 
 #include "Entity.h"
-
+#include "Skybox.h"
 
 class MainGameScene
 {
+private:
+  Skybox* skybox;
+
 public:
-    Camera* camera;
+  Camera* camera;
 
-    MainGameScene();
-    std::list<Entity*> entities = {};
+  MainGameScene();
+  std::list<Entity*> entities = {};
 
-    void update(float deltaTime);
+  void update(float deltaTime);
 
-    void draw();
-
+  void draw();
 };
 
 #endif // MAINGAMESCENE_H

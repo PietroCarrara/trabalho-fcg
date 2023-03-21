@@ -12,7 +12,6 @@ private:
 
 public:
     SlenderEntity(Player* p);
-    virtual ~SlenderEntity();
 
     void update(float dt);
 };

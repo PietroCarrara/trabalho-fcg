@@ -11,12 +11,12 @@
 
 #include "matrices.hpp"
 #include <glcommon.h>
+#include <utilities.h>
 
 #include <glm/mat4x4.hpp>
 #include <glm/vec4.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "utils.h"
 #include "lowlevel.hpp"
 #include "InputManager.hpp"
 #include "Camera.hpp"

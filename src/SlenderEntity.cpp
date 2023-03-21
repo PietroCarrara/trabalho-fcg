@@ -4,19 +4,18 @@
 #include <cstdlib>
 #include <cmath>
 #include <cstdio>
-#include <utils.h>
+#include <utilities.h>
 
 #include "GraphicsManager.hpp"
+
+#define DAMAGE_PER_SECOND 0.33
+#define HEAL_PER_SECOND 1
+
 
 SlenderEntity::SlenderEntity(Player* p) : ObjEntity("../../assets/objects/slender/slender.obj")
 {
     this->position = glm::vec3(10, 0, 10);
     this->player = p;
-}
-
-SlenderEntity::~SlenderEntity()
-{
-    //dtor
 }
 
 float angleBetween(
@@ -61,9 +60,9 @@ void SlenderEntity::update(float dt)
     }
 
     if (looking) {
-        player->sanity -= dt;
+        player->sanity -= dt * DAMAGE_PER_SECOND;
     } else {
-        player->sanity += dt;
+        player->sanity += dt * HEAL_PER_SECOND;
     }
 
     if (player->sanity < 0) {
