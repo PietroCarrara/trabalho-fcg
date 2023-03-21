@@ -73,7 +73,7 @@ void main()
 
     Kd = texture(colorTexture, texCoord).rgb;
     Ks = vec3(0.8, 0.8, 0.8);
-    Ka = Kd / 2;
+    Ka = Kd * 0.05;
     q = 32;
 
     // Espectro da fonte de iluminação
