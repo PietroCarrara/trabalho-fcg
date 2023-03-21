@@ -37,7 +37,7 @@ int main()
         s.update(deltaTime);
 
         // DRAW:
-        glClearColor(0.2, 0.2, 0.2, 0.2);
+        glClearColor(0, 0, 0, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         s.draw();
 

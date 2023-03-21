@@ -19,7 +19,4 @@ void main()
 
   // Slender noise
   color.rgb = mix(color.rgb, vec3(random(vec2((texCoord.xy) * time))), noisiness);
-
-  // Cor final com correção gamma, considerando monitor sRGB.
-  color.rgb = pow(color.rgb, vec3(1)/2.2);
 }

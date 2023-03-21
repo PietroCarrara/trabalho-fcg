@@ -30,6 +30,11 @@ float random (vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43757.441);
 }
 
+float easeInOutSine(float x) {
+  return -(cos(3.1415 * x) - 1) / 2;
+
+}
+
 void main()
 {
     // Obtemos a posição da câmera utilizando a inversa da matriz que define o
@@ -83,14 +88,19 @@ void main()
     float beta = dot(-l, viewVec);
     int inside = int(beta <= cos(spotAngle));
 
+    // Illumination
     color.rgb = (1-inside) * (lambert_diffuse_term + ambient_term + phong_specular_term) +
                 (inside) * ambient_term;
 
-    // Slender noise
-    color.rgb = mix(color.rgb, vec3(random(vec2((vertexColor.xz + texCoord.xy) * time))), noisiness);
+    // "Fog", maximum distance to illuminate things
+    float d = distance(p, camera_position);
+    float distanceNormalized = min(1, d / 40);
+    color.rgb *= 1 - easeInOutSine(distanceNormalized);
 
     // Cor final com correção gamma, considerando monitor sRGB.
     color.rgb = pow(color.rgb, vec3(1.0,1.0,1.0)/2.2);
+    // Slender noise
+    color.rgb = mix(color.rgb, vec3(random(vec2((vertexColor.xz + texCoord.xy) * time))), noisiness);
     color.a = 1;
 }
 
