@@ -15,19 +15,23 @@
  * @param s           The scene to which we'll be adding these trees in
  * @param count       The number of trees to be added
  * @param origin      The center of the "donut"
- * @param outerRadius The radius of the larger (outer border) circle of the donut
  * @param innerRadius The radius of the smaller (inner border) circle of the donut
+ * @param outerRadius The radius of the larger (outer border) circle of the donut
  */
 void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float outerRadius, float innerRadius);
 
 MainGameScene::MainGameScene() {
     this->skybox = new Skybox();
 
+    // Spawn player in between the two tree rings
     Player* p = new Player();
+    p->position.z = -70;
     this->entities.push_back(p);
     this->camera = p;
 
-    spawnTrees(this, 100, glm::vec3(0), 4, 50);
+    // Dense inner and outer tree rings
+    spawnTrees(this, 80, glm::vec3(0), 20, 60);
+    spawnTrees(this, 300, glm::vec3(0), 80, 110);
 
     ObjEntity* plane = new ObjEntity("../../assets/objects/plane/plane.obj");
     plane->scale = glm::vec3(1, 1, 1);
@@ -54,7 +58,7 @@ void MainGameScene::draw() {
     }
 }
 
-void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float outerRadius, float innerRadius) {
+void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float innerRadius, float outerRadius) {
     // Multiply by hundred so we carry to decimal places to the int
     // conversion. Divide by 100.0f later to "push" them back
     float radiusRange = outerRadius - innerRadius;

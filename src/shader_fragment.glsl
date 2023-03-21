@@ -94,7 +94,7 @@ void main()
 
     // "Fog", maximum distance to illuminate things
     float d = distance(p, camera_position);
-    float distanceNormalized = min(1, d / 40);
+    float distanceNormalized = min(1, d / 60);
     color.rgb *= 1 - easeInOutSine(distanceNormalized);
 
     // Cor final com correção gamma, considerando monitor sRGB.

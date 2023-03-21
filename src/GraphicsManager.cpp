@@ -16,7 +16,7 @@ glm::mat4 GraphicsManager::perspectiveProjection = Matrix_Perspective(GraphicsMa
 
 float GraphicsManager::fov = 3.141592f / 3.0f;
 float GraphicsManager::nearPlane = -0.1;
-float GraphicsManager::farPlane = -40.0;
+float GraphicsManager::farPlane = -60.0;
 
 GLuint GraphicsManager::shaderID = -1;
 GLuint GraphicsManager::skyboxShaderID = -1;
