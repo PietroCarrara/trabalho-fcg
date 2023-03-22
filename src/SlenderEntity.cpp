@@ -42,10 +42,10 @@ void SlenderEntity::update(float dt)
 
     glm::vec3 fromPlayerToSlender = this->position - this->player->position;
     fromPlayerToSlender.y = playerView.y; // Put both vectors on the same Y plane
-    const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, playerView, glm::vec3(0, 0, 0)));
-    const bool looking = angleSlenderPlayer < 33;
-
     const float distance = glm::length(fromPlayerToSlender);
+
+    const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, playerView, glm::vec3(0, 0, 0)));
+    const bool looking = angleSlenderPlayer < 33 && distance < 60;
 
     if (!looking && this->timeStanding > 5) {
         // Teleport my man slender close to the player
