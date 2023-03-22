@@ -12,10 +12,11 @@ struct Sound {
   ma_sound sound;
 };
 
-Sound* AudioManager::makeSound(const char* fname, bool loop) {
+Sound* AudioManager::makeSound(const char* fname, bool loop, float volume) {
   Sound* s = new Sound();
   ma_sound_init_from_file(&engine, fname, 0, NULL, NULL, &s->sound);
   ma_sound_set_looping(&s->sound, loop);
+  ma_sound_set_volume(&s->sound, volume);
   return s;
 }
 
@@ -43,4 +44,8 @@ void AudioManager::playSound(Sound *s) {
 
 void AudioManager::stopSound(Sound *s) {
   ma_sound_stop(&s->sound);
+}
+
+bool AudioManager::isSoundPlaying(Sound* s) {
+  return ma_sound_is_playing(&s->sound);
 }

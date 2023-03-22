@@ -6,6 +6,14 @@
 
 Player::Player() {
     this->position.y = 1.80;
+
+    this->step1 = AudioManager::makeSound("../../assets/audio/stepleft.wav", false, 0.4);
+    this->step2 = AudioManager::makeSound("../../assets/audio/stepright.wav", false, 0.4);
+}
+
+Player::~Player() {
+    AudioManager::destroySound(this->step1);
+    AudioManager::destroySound(this->step2);
 }
 
 void Player::update(float deltaTime) {
@@ -59,8 +67,14 @@ void Player::update(float deltaTime) {
     }
 
     glm::vec3 mov3 = glm::vec3(movement.x, movement.y, movement.z);
-
     this->position += mov3 * deltaTime * 5.0f;
+
+    if (!AudioManager::isSoundPlaying(this->step2) && norm(movement) > 0) {
+        AudioManager::playSound(this->step1);
+        Sound* tmp = this->step2;
+        this->step2 = this->step2;
+        this->step1 = tmp;
+    }
 }
 
 void Player::draw(Camera* c) {
