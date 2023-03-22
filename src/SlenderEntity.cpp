@@ -14,8 +14,13 @@
 
 SlenderEntity::SlenderEntity(Player* p) : ObjEntity("../../assets/objects/slender/slender.obj")
 {
+    this->scary = AudioManager::makeSound("../../assets/audio/dramatic-piano.wav");
     this->position = glm::vec3(10, 0, 10);
     this->player = p;
+}
+
+SlenderEntity::~SlenderEntity() {
+    AudioManager::destroySound(this->scary);
 }
 
 float angleBetween(
@@ -40,26 +45,27 @@ void SlenderEntity::update(float dt)
     const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, playerView, glm::vec3(0, 0, 0)));
     const bool looking = angleSlenderPlayer < 33;
 
+    const float distance = glm::length(fromPlayerToSlender);
+
     if (!looking && this->timeStanding > 5) {
         // Teleport my man slender close to the player
         float minAngle = 90 + playerAngle;
 
         float angle = deg2rad(rand() % 180 + minAngle);
-        float radius = rand() % 10 + 10;
+        float radius = rand() % 20 + 2;
 
         this->position.x = this->player->position.x + cos(angle) * radius;
         this->position.z = this->player->position.z + sin(angle) * radius;
 
         this->timeStanding = 0;
-
-        float x2 = this->position.x;
-        float y2 = this->position.z;
-        float x1 = this->player->position.x;
-        float y1 = this->player->position.z;
-        this->rotation.y = -atan2(y2 - y1, x2 - x1);
     }
 
     if (looking) {
+        // Check for jumpscare
+        if (lastSeenPos != this->position && distance <= 15) {
+            AudioManager::playSound(this->scary);
+        }
+        lastSeenPos = this->position;
         player->sanity -= dt * DAMAGE_PER_SECOND;
     } else {
         player->sanity += dt * HEAL_PER_SECOND;
@@ -71,4 +77,11 @@ void SlenderEntity::update(float dt)
         player->sanity = 1;
     }
     GraphicsManager::setNoisiness(1 - player->sanity);
+
+    // Look at player
+    float x2 = this->position.x;
+    float y2 = this->position.z;
+    float x1 = this->player->position.x;
+    float y1 = this->player->position.z;
+    this->rotation.y = -atan2(y2 - y1, x2 - x1);
 }

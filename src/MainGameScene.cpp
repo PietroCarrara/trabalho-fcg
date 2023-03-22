@@ -21,6 +21,9 @@
 void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float outerRadius, float innerRadius);
 
 MainGameScene::MainGameScene() {
+    this->music = AudioManager::makeSound("../../assets/audio/music1.wav", true);
+    AudioManager::playSound(this->music);
+
     this->skybox = new Skybox();
 
     // Spawn player in between the two tree rings
@@ -43,6 +46,12 @@ MainGameScene::MainGameScene() {
     this->entities.push_back(page1);
 }
 
+MainGameScene::~MainGameScene() {
+    for (Entity* e : this->entities) {
+        delete e;
+    }
+    AudioManager::destroySound(this->music);
+}
 
 void MainGameScene::update(float deltaTime) {
     for (Entity* e : this->entities) {

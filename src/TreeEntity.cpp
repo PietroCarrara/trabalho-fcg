@@ -20,7 +20,6 @@ TreeEntity::TreeEntity(glm::vec3 position, float tiltZ, float tiltX) {
   this->tiltX = tiltX;
 }
 
-
 void TreeEntity::update(float delta) {
 
 }

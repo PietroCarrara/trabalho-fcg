@@ -20,7 +20,6 @@ PageEntity::PageEntity(glm::vec3 position, float rotation)
     this->rotation = rotation;
 }
 
-
 void PageEntity::update(float delta) {
     this->rotation += delta;
 }

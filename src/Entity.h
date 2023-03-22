@@ -6,6 +6,7 @@
 class Entity
 {
 public:
+    virtual ~Entity();
     virtual void update(float deltaTime) = 0;
     virtual void draw(Camera* c) = 0;
 };

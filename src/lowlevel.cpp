@@ -15,6 +15,7 @@
 
 #include <glcommon.h>
 
+#include "AudioManager.h"
 #include "GraphicsManager.hpp"
 #include "InputManager.hpp"
 #include "matrices.hpp"
@@ -67,6 +68,7 @@ float update_lowlevel(GLFWwindow* w) {
 }
 
 void destroy_lowlevel() {
+  AudioManager::destroy();
   glfwTerminate();
 }
 
@@ -107,6 +109,7 @@ GLFWwindow* initialize_lowlevel() {
   gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
   GraphicsManager::init();
+  AudioManager::init();
 
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_CULL_FACE);
