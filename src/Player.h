@@ -7,7 +7,7 @@
 class Player : public Entity, public FreeCamera
 {
 private:
-    Sound *step1, *step2;
+    Sound *step;
 
 public:
     Player();
