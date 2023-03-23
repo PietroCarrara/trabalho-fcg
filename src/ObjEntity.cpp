@@ -57,7 +57,7 @@ void ObjEntity::draw(Camera* c) {
       Matrix_Rotate_Y(this->rotation.y) *
       Matrix_Rotate_Z(this->rotation.z);
 
-    for (uint i = 0; i < this->vboIDs.size(); i++) {
+    for (unsigned int i = 0; i < this->vboIDs.size(); i++) {
         GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
     }
 }
@@ -137,13 +137,12 @@ void ObjEntity::buildTriangles(std::string basepath) {
     const float minval = std::numeric_limits<float>::min();
     const float maxval = std::numeric_limits<float>::max();
 
-
     for (size_t shape = 0; shape < this->shapes.size(); ++shape)
     {
         size_t first_index = indices.size();
         size_t num_triangles = this->shapes[shape].mesh.num_face_vertices.size();
 
-        unsigned int materialId, lastMaterialId = 0;
+        unsigned int materialId = 0, lastMaterialId = 0;
 		if(shapes[shape].mesh.material_ids.size() > 0)
 		{
 			materialId = lastMaterialId = shapes[shape].mesh.material_ids[0];
@@ -169,7 +168,6 @@ void ObjEntity::buildTriangles(std::string basepath) {
                 this->bboxMin.push_back(bboxMin);
                 this->bboxMax.push_back(bboxMax);
                 this->textureID.push_back(GraphicsManager::loadTexture(basepath + this->materials[materialId].diffuse_texname));
-                printf("%s\n", this->materials[materialId].diffuse_texname.c_str());
 
                 first_index = indices.size();
                 bboxMin = glm::vec3(maxval,maxval,maxval);
@@ -185,7 +183,6 @@ void ObjEntity::buildTriangles(std::string basepath) {
                 const float vx = this->attrib.vertices[3*idx.vertex_index + 0];
                 const float vy = this->attrib.vertices[3*idx.vertex_index + 1];
                 const float vz = this->attrib.vertices[3*idx.vertex_index + 2];
-                //printf("tri %d vert %d = (%.2f, %.2f, %.2f)\n", (int)triangle, (int)vertex, vx, vy, vz);
                 model_coefficients.push_back( vx ); // X
                 model_coefficients.push_back( vy ); // Y
                 model_coefficients.push_back( vz ); // Z
@@ -234,7 +231,6 @@ void ObjEntity::buildTriangles(std::string basepath) {
         this->vboIDs.push_back(vertex_array_object_id);
         this->bboxMin.push_back(bboxMin);
         this->bboxMax.push_back(bboxMax);
-        printf("%s\n", (basepath + this->materials[materialId].diffuse_texname).c_str());
         this->textureID.push_back(GraphicsManager::loadTexture(basepath + this->materials[materialId].diffuse_texname));
     }
 

@@ -3,7 +3,11 @@
 #include <cstdlib>
 #include <cstdio>
 
+// There must be exactly one MINIAUDIO_IMPLEMENTATION define in your entire project, and it
+// must be on a source file (.c, .cpp, ...), NOT a header file (.h, .hpp, ...).
+// After defining MINIAUDIO_IMPLEMENTATION, include miniaudio.h and you're good to go.
 #define MINIAUDIO_IMPLEMENTATION
+#define strcasecmp strcmp // Hack to make miniaudio compile on windows
 #include <miniaudio.h>
 
 static ma_engine engine;
@@ -13,7 +17,7 @@ struct Sound {
 };
 
 Sound* AudioManager::makeSound(const char* fname, bool loop, float volume) {
-  Sound* s = new Sound();
+  Sound* s = (Sound*)malloc(sizeof(Sound));
   ma_sound_init_from_file(&engine, fname, 0, NULL, NULL, &s->sound);
   ma_sound_set_looping(&s->sound, loop);
   ma_sound_set_volume(&s->sound, volume);
@@ -22,7 +26,7 @@ Sound* AudioManager::makeSound(const char* fname, bool loop, float volume) {
 
 void AudioManager::destroySound(Sound* s) {
   ma_sound_uninit(&s->sound);
-  delete s;
+  free(s);
 }
 
 void AudioManager::init() {

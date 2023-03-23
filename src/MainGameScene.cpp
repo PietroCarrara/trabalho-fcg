@@ -1,13 +1,20 @@
+#include "MainGameScene.h"
+
 #include <glm/vec3.hpp>
 #include <utilities.h>
+#include <cmath>
 
-#include "MainGameScene.h"
 #include "InputManager.hpp"
 #include "Player.h"
 #include "ObjEntity.h"
 #include "SlenderEntity.h"
 #include "PageEntity.h"
 #include "TreeEntity.h"
+#include "CameraAlternatorEntity.h"
+
+#ifndef M_PI
+#define M_PI 3.14159265358979
+#endif
 
 /**
  * @brief Spawns N trees uniformly distributed in a "donut" shaped area
@@ -30,7 +37,6 @@ MainGameScene::MainGameScene() {
     Player* p = new Player();
     p->position.z = -70;
     this->entities.push_back(p);
-    this->camera = p;
 
     // Dense inner and outer tree rings
     spawnTrees(this, 80, glm::vec3(0), 20, 60);
@@ -44,6 +50,10 @@ MainGameScene::MainGameScene() {
 
     PageEntity* page1 = new PageEntity(glm::vec3(0, 1, 1), 0);
     this->entities.push_back(page1);
+
+    CameraAlternatorEntity* cam = new CameraAlternatorEntity(p, {page1});
+    this->entities.push_back(cam);
+    this->camera = cam;
 }
 
 MainGameScene::~MainGameScene() {

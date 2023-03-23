@@ -44,6 +44,8 @@ float update_lowlevel(GLFWwindow* w) {
 
     GLFW_KEY_ESCAPE,
 
+    GLFW_KEY_N,
+
     GLFW_KEY_X,
     GLFW_KEY_Y,
     GLFW_KEY_Z
@@ -70,6 +72,7 @@ float update_lowlevel(GLFWwindow* w) {
 void destroy_lowlevel() {
   AudioManager::destroy();
   glfwTerminate();
+  exit(0);
 }
 
 GLFWwindow* initialize_lowlevel() {

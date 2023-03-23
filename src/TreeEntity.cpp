@@ -1,7 +1,6 @@
 #include "TreeEntity.h"
 
 #include <utilities.h>
-#include <glcommon.h>
 #include <glm/vec3.hpp>
 
 #include "InputManager.hpp"

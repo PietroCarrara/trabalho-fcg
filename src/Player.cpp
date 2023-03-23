@@ -1,7 +1,8 @@
-#include <glcommon.h>
-#include <glm/vec4.hpp>
-
 #include "Player.h"
+
+#include <glm/vec4.hpp>
+#include <glcommon.h>
+
 #include "InputManager.hpp"
 
 Player::Player() {

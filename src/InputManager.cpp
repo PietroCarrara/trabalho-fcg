@@ -1,8 +1,8 @@
 #include "InputManager.hpp"
 
+#include <glcommon.h>
 #include <cstdio>
-
-#include "ObjEntity.h"
+#include <cstdlib>
 
 void assertExists(int, std::map<int, bool>);
 

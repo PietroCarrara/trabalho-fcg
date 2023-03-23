@@ -3,7 +3,6 @@
 
 #include <map>
 #include <glm/vec2.hpp>
-#include <glcommon.h>
 
 class InputManager {
 private:

@@ -371,9 +371,16 @@
 		<Unit filename="include/glm/vec3.hpp" />
 		<Unit filename="include/glm/vec4.hpp" />
 		<Unit filename="include/glm/vector_relational.hpp" />
-		<Unit filename="include/utils.h" />
+		<Unit filename="include/miniaudio.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="include/utilities.h" />
+		<Unit filename="src/AudioManager.cpp" />
+		<Unit filename="src/AudioManager.h" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Camera.hpp" />
+		<Unit filename="src/CameraAlternatorEntity.cpp" />
+		<Unit filename="src/CameraAlternatorEntity.h" />
 		<Unit filename="src/CubicBezier.cpp" />
 		<Unit filename="src/CubicBezier.h" />
 		<Unit filename="src/Entity.cpp" />
@@ -390,8 +397,12 @@
 		<Unit filename="src/PageEntity.h" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Player.h" />
+		<Unit filename="src/Skybox.cpp" />
+		<Unit filename="src/Skybox.h" />
 		<Unit filename="src/SlenderEntity.cpp" />
 		<Unit filename="src/SlenderEntity.h" />
+		<Unit filename="src/TreeEntity.cpp" />
+		<Unit filename="src/TreeEntity.h" />
 		<Unit filename="src/glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
