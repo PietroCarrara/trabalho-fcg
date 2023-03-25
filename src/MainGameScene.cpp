@@ -34,47 +34,32 @@ MainGameScene::MainGameScene() {
     this->skybox = new Skybox();
 
     // Spawn player in between the two tree rings
-    Player* p = new Player();
+    Player* p = this->addEntity(new Player());
     p->position.z = -70;
-    this->entities.push_back(p);
 
     // Dense inner and outer tree rings
     spawnTrees(this, 80, glm::vec3(0), 20, 60);
     spawnTrees(this, 300, glm::vec3(0), 80, 110);
 
-    ObjEntity* plane = new ObjEntity("../../assets/objects/plane/plane.obj");
+    ObjEntity* plane = this->addEntity(new ObjEntity("../../assets/objects/plane/plane.obj"));
     plane->scale = glm::vec3(1, 1, 1);
-    this->entities.push_back(plane);
 
-    this->entities.push_back(new SlenderEntity(p));
+    this->addEntity(new SlenderEntity(p));
 
-    PageEntity* page1 = new PageEntity(glm::vec3(0, 1, 1), 0);
-    this->entities.push_back(page1);
+    PageEntity* page1 = this->addEntity(new PageEntity(glm::vec3(0, 1, 1), 0));
 
     CameraAlternatorEntity* cam = new CameraAlternatorEntity(p, {page1});
-    this->entities.push_back(cam);
+    this->addEntity(cam);
     this->camera = cam;
 }
 
 MainGameScene::~MainGameScene() {
-    for (Entity* e : this->entities) {
-        delete e;
-    }
     AudioManager::destroySound(this->music);
-}
-
-void MainGameScene::update(float deltaTime) {
-    for (Entity* e : this->entities) {
-        e->update(deltaTime);
-    }
 }
 
 void MainGameScene::draw() {
     this->skybox->draw(this->camera);
-
-    for (Entity* e : this->entities) {
-        e->draw(this->camera);
-    }
+    Scene::draw();
 }
 
 void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float innerRadius, float outerRadius) {
@@ -93,11 +78,11 @@ void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float innerRadius
         float tiltZ = randomFloat(tiltAngleVariation) - tiltAngleVariation/2;
         float tiltX = randomFloat(tiltAngleVariation) - tiltAngleVariation/2;
 
-        TreeEntity* tree = new TreeEntity(
+        s->addEntity(new TreeEntity(
+            s,
             glm::vec3(x, 0, z) + origin,
             tiltZ,
             tiltX
-        );
-        s->entities.push_back(tree);
+        ));
     }
 }

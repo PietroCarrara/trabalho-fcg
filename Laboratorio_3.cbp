@@ -381,6 +381,10 @@
 		<Unit filename="src/Camera.hpp" />
 		<Unit filename="src/CameraAlternatorEntity.cpp" />
 		<Unit filename="src/CameraAlternatorEntity.h" />
+		<Unit filename="src/CollisionManager.cpp" />
+		<Unit filename="src/CollisionManager.h" />
+		<Unit filename="src/CubeEntity.cpp" />
+		<Unit filename="src/CubeEntity.h" />
 		<Unit filename="src/CubicBezier.cpp" />
 		<Unit filename="src/CubicBezier.h" />
 		<Unit filename="src/Entity.cpp" />
@@ -391,12 +395,16 @@
 		<Unit filename="src/InputManager.hpp" />
 		<Unit filename="src/MainGameScene.cpp" />
 		<Unit filename="src/MainGameScene.h" />
+		<Unit filename="src/MenuScene.cpp" />
+		<Unit filename="src/MenuScene.h" />
 		<Unit filename="src/ObjEntity.cpp" />
 		<Unit filename="src/ObjEntity.h" />
 		<Unit filename="src/PageEntity.cpp" />
 		<Unit filename="src/PageEntity.h" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Player.h" />
+		<Unit filename="src/Scene.cpp" />
+		<Unit filename="src/Scene.h" />
 		<Unit filename="src/Skybox.cpp" />
 		<Unit filename="src/Skybox.h" />
 		<Unit filename="src/SlenderEntity.cpp" />

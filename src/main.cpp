@@ -29,22 +29,23 @@ int main()
     GLFWwindow* w = initialize_lowlevel();
     update_lowlevel(w);
 
-    MainGameScene s = MainGameScene();
+    Scene *s = new MainGameScene();
 
     while (programAlive(w) && !InputManager::isKeyDown(GLFW_KEY_ESCAPE))
     {
         // UPDATE:
         float deltaTime = update_lowlevel(w);
-        s.update(deltaTime);
+        s->update(deltaTime);
 
         // DRAW:
         glClearColor(0, 0, 0, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        s.draw();
+        s->draw();
 
         glfwSwapBuffers(w);
         glfwPollEvents();
     }
+    delete s;
 
     destroy_lowlevel();
     return 0;

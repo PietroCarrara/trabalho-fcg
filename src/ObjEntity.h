@@ -16,8 +16,6 @@ private:
     std::vector<GLuint> vboIDs;
     std::vector<int> firstIndex;
     std::vector<int> indexCount;
-    std::vector<glm::vec3> bboxMin;
-    std::vector<glm::vec3> bboxMax;
     std::vector<GLuint> textureID;
 
     tinyobj::attrib_t                 attrib;
@@ -31,6 +29,9 @@ public:
     glm::vec3 position = glm::vec3(0);
     glm::vec3 rotation = glm::vec3(0);
     glm::vec3 scale = glm::vec3(1);
+
+    std::vector<glm::vec3> bboxMin;
+    std::vector<glm::vec3> bboxMax;
 
     ObjEntity(const char* filename);
 

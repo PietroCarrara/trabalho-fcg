@@ -1,26 +1,19 @@
 #ifndef MAINGAMESCENE_H
 #define MAINGAMESCENE_H
 
-#include <list>
-
+#include "Scene.h"
 #include "AudioManager.h"
-#include "Entity.h"
 #include "Skybox.h"
 
-class MainGameScene
+class MainGameScene : public Scene
 {
 private:
   Skybox* skybox;
   Sound* music;
 
 public:
-  Camera* camera;
-
   MainGameScene();
   ~MainGameScene();
-  std::list<Entity*> entities = {};
-
-  void update(float deltaTime);
 
   void draw();
 };

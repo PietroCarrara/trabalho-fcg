@@ -4,6 +4,7 @@
 #include <glcommon.h>
 
 #include "InputManager.hpp"
+#include "CollisionManager.h"
 
 Player::Player() {
     this->position.y = 1.80;
@@ -65,8 +66,14 @@ void Player::update(float deltaTime) {
         movement = movement / norm(movement);
     }
 
-    glm::vec3 mov3 = glm::vec3(movement.x, movement.y, movement.z);
-    this->position += mov3 * deltaTime * 5.0f;
+    glm::vec3 newPos = this->position + glm::vec3(movement.x, movement.y, movement.z) * deltaTime * 5.0f;
+    HitBox hb(
+      newPos + glm::vec3(-0.5, 0, -0.5f),
+      newPos + glm::vec3(0.5, 1.8, 0.5f)
+    );
+    if  (!CollisionManager::collides(hb)) {
+        this->position = newPos;
+    }
 
     if (!AudioManager::isSoundPlaying(this->step) && norm(movement) > 0) {
         AudioManager::playSound(this->step);

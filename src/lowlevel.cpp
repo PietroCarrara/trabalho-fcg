@@ -72,7 +72,6 @@ float update_lowlevel(GLFWwindow* w) {
 void destroy_lowlevel() {
   AudioManager::destroy();
   glfwTerminate();
-  exit(0);
 }
 
 GLFWwindow* initialize_lowlevel() {
@@ -105,9 +104,9 @@ GLFWwindow* initialize_lowlevel() {
   glfwSetScrollCallback(window, ScrollCallback);
   glfwSetFramebufferSizeCallback(window, FramebufferSizeCallback);
 
-  glfwSetWindowSize(window, 800, 800);  // Forçamos a chamada do callback acima,
-                    // para definir g_ScreenRatio.
+  glfwSetWindowSize(window, 800, 800);
   glfwMakeContextCurrent(window);
+  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
   gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
