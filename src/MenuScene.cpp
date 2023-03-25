@@ -10,8 +10,8 @@ MenuScene::MenuScene()
     this->player = this->addEntity(new Player());
     this->camera = this->player;
 
-    this->playPage = this->addEntity(new PageEntity(glm::vec3(1, 1, 2)));
-    this->quitPage = this->addEntity(new PageEntity(glm::vec3(-1, 1, 2)));
+    this->playPage = this->addEntity(new PageEntity(glm::vec3(1, 1, 2), "play"));
+    this->quitPage = this->addEntity(new PageEntity(glm::vec3(-1, 1, 2), "quit"));
 }
 
 Scene* MenuScene::update(float dt) {

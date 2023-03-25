@@ -33,7 +33,7 @@ public:
     std::vector<glm::vec3> bboxMin;
     std::vector<glm::vec3> bboxMax;
 
-    ObjEntity(const char* filename);
+    ObjEntity(std::string filename);
 
     void update(float deltaTime);
     void draw(Camera* c);

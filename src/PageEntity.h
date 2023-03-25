@@ -1,27 +1,22 @@
 #ifndef PAGE_ENTITY_H
 #define PAGE_ENTITY_H
 
+#include <string>
+
 #include <glm/vec3.hpp>
 
-#include "Entity.h"
 #include "ObjEntity.h"
 #include "Camera.hpp"
 #include "CollisionManager.h"
 
-class PageEntity : public Entity
+class PageEntity : public ObjEntity
 {
-    private:
-        static ObjEntity* page;
-
     public:
-        PageEntity(glm::vec3 position);
+        PageEntity(glm::vec3 position, std::string name = "page1");
 
-        glm::vec3 position;
-        float rotation;
         HitSphere* hitZone;
 
         void update(float delta);
-        void draw(Camera* c);
 };
 
 #endif // PAGE_ENTITY_H

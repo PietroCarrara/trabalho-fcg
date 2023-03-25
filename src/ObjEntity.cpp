@@ -4,13 +4,13 @@
 #include <cstdio>
 #include <iostream>
 
-ObjEntity::ObjEntity(const char* filename)
+ObjEntity::ObjEntity(std::string filename)
 {
 
     const char* basepath = NULL;
     const bool triangulate = true;
 
-    printf("Carregando objetos do arquivo \"%s\"...\n", filename);
+    printf("Carregando objetos do arquivo \"%s\"...\n", filename.c_str());
 
     // Se basepath == NULL, então setamos basepath como o dirname do
     // filename, para que os arquivos MTL sejam corretamente carregados caso
@@ -29,7 +29,7 @@ ObjEntity::ObjEntity(const char* filename)
 
     std::string warn;
     std::string err;
-    bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, filename, basepath, triangulate);
+    bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, filename.c_str(), basepath, triangulate);
 
     if (!err.empty())
         fprintf(stderr, "\n%s\n", err.c_str());
