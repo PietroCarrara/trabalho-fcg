@@ -2,8 +2,13 @@
 #define _UTILS_H
 
 #include <cstdio>
+#include <cmath>
 
 #include <glcommon.h>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979
+#endif
 
 #define deg2rad(x) ((x)/57.2958f)
 #define rad2deg(x) ((x)*57.2958f)

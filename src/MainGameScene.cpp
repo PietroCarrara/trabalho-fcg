@@ -12,10 +12,6 @@
 #include "TreeEntity.h"
 #include "CameraAlternatorEntity.h"
 
-#ifndef M_PI
-#define M_PI 3.14159265358979
-#endif
-
 /**
  * @brief Spawns N trees uniformly distributed in a "donut" shaped area
  *
@@ -46,7 +42,7 @@ MainGameScene::MainGameScene() {
 
     this->addEntity(new SlenderEntity(p));
 
-    PageEntity* page1 = this->addEntity(new PageEntity(glm::vec3(0, 1, 1), 0));
+    PageEntity* page1 = this->addEntity(new PageEntity(glm::vec3(0, 1, 1)));
 
     CameraAlternatorEntity* cam = new CameraAlternatorEntity(p, {page1});
     this->addEntity(cam);

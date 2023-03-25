@@ -12,11 +12,12 @@ Scene::~Scene()
     }
 }
 
-void Scene::update(float dt)
+Scene* Scene::update(float dt)
 {
     for (Entity* e : this->entities) {
         e->update(dt);
     }
+    return this;
 }
 
 void Scene::draw()

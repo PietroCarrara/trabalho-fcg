@@ -71,7 +71,7 @@ void Player::update(float deltaTime) {
       newPos + glm::vec3(-0.5, 0, -0.5f),
       newPos + glm::vec3(0.5, 1.8, 0.5f)
     );
-    if  (!CollisionManager::collides(hb)) {
+    if  (!CollisionManager::collidesWall(hb)) {
         this->position = newPos;
     }
 

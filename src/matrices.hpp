@@ -83,6 +83,7 @@ glm::mat4 Matrix_Rotate_Z(float angle);
 // Função que calcula a norma Euclidiana de um vetor cujos coeficientes são
 // definidos em uma base ortonormal qualquer.
 float norm(glm::vec4 v);
+float norm(glm::vec3 v);
 
 // Matriz R de "rotação de um ponto" em relação à origem do sistema de
 // coordenadas e em torno do eixo definido pelo vetor 'axis'. Esta matriz pode

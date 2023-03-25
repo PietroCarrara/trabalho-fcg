@@ -6,6 +6,7 @@
 #include "Entity.h"
 #include "ObjEntity.h"
 #include "Camera.hpp"
+#include "CollisionManager.h"
 
 class PageEntity : public Entity
 {
@@ -13,10 +14,11 @@ class PageEntity : public Entity
         static ObjEntity* page;
 
     public:
-        PageEntity(glm::vec3 position, float rotation);
+        PageEntity(glm::vec3 position);
 
         glm::vec3 position;
         float rotation;
+        HitSphere* hitZone;
 
         void update(float delta);
         void draw(Camera* c);

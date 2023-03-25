@@ -7,7 +7,7 @@
 
 ObjEntity* PageEntity::page = nullptr;
 
-PageEntity::PageEntity(glm::vec3 position, float rotation)
+PageEntity::PageEntity(glm::vec3 position)
 {
     // Load model to be used for all pages
     if (page == nullptr) {
@@ -16,7 +16,9 @@ PageEntity::PageEntity(glm::vec3 position, float rotation)
     }
 
     this->position = position;
-    this->rotation = rotation;
+    this->rotation = 0;
+    this->hitZone = new HitSphere(this, this->position, 1);
+    CollisionManager::registerZone(this->hitZone);
 }
 
 void PageEntity::update(float delta) {

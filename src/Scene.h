@@ -17,7 +17,7 @@ class Scene
         Scene();
         virtual ~Scene();
 
-        virtual void update(float dt);
+        virtual Scene* update(float dt);
         virtual void draw();
 
         template<typename T>
