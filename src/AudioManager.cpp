@@ -16,7 +16,7 @@ struct Sound {
   ma_sound sound;
 };
 
-Sound* AudioManager::makeSound(const char* fname, bool loop, float volume, float stream) {
+Sound* AudioManager::makeSound(const char* fname, bool loop, float volume, bool stream) {
   Sound* s = (Sound*)malloc(sizeof(Sound));
   if (stream) {
     ma_sound_init_from_file(&engine, fname, MA_SOUND_FLAG_STREAM, NULL, NULL, &s->sound);

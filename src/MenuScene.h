@@ -4,6 +4,7 @@
 #include "Scene.h"
 #include "Player.h"
 #include "PageEntity.h"
+#include "AudioManager.h"
 
 class MenuScene : public Scene
 {
@@ -11,9 +12,11 @@ class MenuScene : public Scene
         Player *player;
         PageEntity* playPage;
         PageEntity* quitPage;
+        Sound* song;
 
     public:
         MenuScene();
+        ~MenuScene();
 
         Scene* update(float dt);
 };
