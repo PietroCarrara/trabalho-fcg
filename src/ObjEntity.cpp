@@ -45,10 +45,6 @@ ObjEntity::ObjEntity(std::string filename)
     this->buildTriangles(basepath);
 }
 
-void ObjEntity::update(float deltaTime) {
-
-}
-
 void ObjEntity::draw(Camera* c) {
     glm::mat4 model =
       Matrix_Translate(this->position.x, this->position.y, this->position.z) *

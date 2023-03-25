@@ -28,3 +28,8 @@ void Scene::draw()
         e->draw(this->camera);
     }
 }
+
+void Scene::removeEntity(Entity* e) {
+    this->entities.remove(e);
+    delete e;
+}

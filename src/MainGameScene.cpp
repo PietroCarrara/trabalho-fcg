@@ -5,12 +5,11 @@
 #include <cmath>
 
 #include "InputManager.hpp"
-#include "Player.h"
 #include "ObjEntity.h"
 #include "SlenderEntity.h"
-#include "PageEntity.h"
 #include "TreeEntity.h"
-#include "CameraAlternatorEntity.h"
+#include "CollisionManager.h"
+#include "WinScene.h"
 
 /**
  * @brief Spawns N trees uniformly distributed in a "donut" shaped area
@@ -24,14 +23,16 @@
 void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float outerRadius, float innerRadius);
 
 MainGameScene::MainGameScene() {
+    this->pageGrab = AudioManager::makeSound("../../assets/audio/page-grab.wav");
     this->music = AudioManager::makeSound("../../assets/audio/music1.wav", true);
     AudioManager::playSound(this->music);
+
 
     this->skybox = new Skybox();
 
     // Spawn player in between the two tree rings
-    Player* p = this->addEntity(new Player());
-    p->position.z = -70;
+    this->player = this->addEntity(new Player());
+    this->player->position.z = -70;
 
     // Dense inner and outer tree rings
     spawnTrees(this, 80, glm::vec3(0), 20, 60);
@@ -40,17 +41,37 @@ MainGameScene::MainGameScene() {
     ObjEntity* plane = this->addEntity(new ObjEntity("../../assets/objects/plane/plane.obj"));
     plane->scale = glm::vec3(1, 1, 1);
 
-    this->addEntity(new SlenderEntity(p));
+    this->addEntity(new SlenderEntity(this->player));
 
-    PageEntity* page1 = this->addEntity(new PageEntity(glm::vec3(0, 1, 1)));
+    this->pages = {
+        this->addEntity(new PageEntity(glm::vec3(0, 1, 1))),
+        this->addEntity(new PageEntity(glm::vec3(3, 1, 2))),
+    };
 
-    CameraAlternatorEntity* cam = new CameraAlternatorEntity(p, {page1});
-    this->addEntity(cam);
-    this->camera = cam;
+    this->alternator = new CameraAlternatorEntity(this->player, this->pages);
+    this->addEntity(alternator);
+    this->camera = alternator;
 }
 
 MainGameScene::~MainGameScene() {
     AudioManager::destroySound(this->music);
+}
+
+Scene* MainGameScene::update(float dt) {
+    Scene::update(dt);
+
+    HitSphere* zone = CollisionManager::insideZone(this->player->position);
+    if (zone != nullptr) {
+        this->pages.remove((PageEntity*)zone->owner);
+        this->alternator->onPageRemoved();
+        this->removeEntity(zone->owner);
+        AudioManager::playSound(this->pageGrab);
+    }
+
+    if (this->pages.empty()) {
+        return new WinScene();
+    }
+    return this;
 }
 
 void MainGameScene::draw() {

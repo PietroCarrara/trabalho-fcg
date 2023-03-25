@@ -35,7 +35,6 @@ public:
 
     ObjEntity(std::string filename);
 
-    void update(float deltaTime);
     void draw(Camera* c);
 };
 

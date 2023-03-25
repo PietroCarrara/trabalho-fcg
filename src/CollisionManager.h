@@ -1,7 +1,7 @@
 #ifndef COLLISIONMANAGER_H
 #define COLLISIONMANAGER_H
 
-#include <vector>
+#include <list>
 #include <glm/vec3.hpp>
 
 #include "Entity.h"
@@ -15,16 +15,19 @@ class CollisionManager
         CollisionManager();
 
         // Things that can't be pushed around (walls, slenderman, etc...)
-        static std::vector<HitBox> walls;
+        static std::list<HitBox*> walls;
 
         // Things that trigger events (pages to collect, etc...)
-        static std::vector<HitSphere*> zones;
+        static std::list<HitSphere*> zones;
 
     public:
         // Register an unmovable object
-        static void registerWall(HitBox hb);
+        static void registerWall(HitBox* hb);
+        static void deregisterWall(HitBox* hb);
+
         // Register a zone
         static void registerZone(HitSphere* hs);
+        static void deregisterZone(HitSphere* hs);
 
         // Checks whether something collides with an unmovable object
         static bool collidesWall(HitBox hb);

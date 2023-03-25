@@ -1,6 +1,8 @@
 #ifndef CAMERAALTERNATORENTITY_H
 #define CAMERAALTERNATORENTITY_H
 
+#include <list>
+
 #include "Entity.h"
 #include "Player.h"
 #include "PageEntity.h"
@@ -11,14 +13,14 @@ class CameraAlternatorEntity : public Entity, public Camera
     private:
         unsigned int currentObj = 0;
         Player* player;
-        std::vector<PageEntity*> pages;
+        std::list<PageEntity*> pages;
         LookAtCamera lookAtCam = LookAtCamera(glm::vec3(0));
 
     public:
-        CameraAlternatorEntity(Player* p, std::vector<PageEntity*> pages);
+        CameraAlternatorEntity(Player* p, std::list<PageEntity*> pages);
 
         void update(float dt);
-        void draw(Camera* c);
+        void onPageRemoved();
 
         glm::mat4 getMatrix();
         glm::vec4 getViewVec();

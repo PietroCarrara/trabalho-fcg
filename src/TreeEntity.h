@@ -15,12 +15,12 @@ class TreeEntity : public Entity {
     glm::vec3 position;
     float tiltZ, tiltX;
 
-    std::vector<HitBox> hitboxes;
+    std::vector<HitBox*> hitboxes;
 
   public:
     TreeEntity(MainGameScene *s, glm::vec3 position, float tiltZ, float tiltX);
+    ~TreeEntity();
 
-    void update(float delta);
     void draw(Camera* c);
 };
 

@@ -74,7 +74,3 @@ void Player::update(float deltaTime) {
         AudioManager::playSound(this->step);
     }
 }
-
-void Player::draw(Camera* c) {
-}
-

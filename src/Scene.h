@@ -25,6 +25,8 @@ class Scene
             this->entities.push_back(e);
             return e;
         }
+
+        void removeEntity(Entity* e);
 };
 
 #endif // SCENE_H

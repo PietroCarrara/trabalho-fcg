@@ -18,10 +18,6 @@ CubeEntity::CubeEntity(glm::vec3 position, float width, float height, float dept
     printf("<%f, %f, %f> {%f, %f, %f}\n", position.x, position.y, position.z, width, height, depth);
 }
 
-void CubeEntity::update(float dt) {
-
-}
-
 void CubeEntity::draw(Camera *c) {
     cube->scale = glm::vec3(width, height, depth);
     cube->position = position;

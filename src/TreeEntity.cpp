@@ -30,7 +30,7 @@ TreeEntity::TreeEntity(MainGameScene *s, glm::vec3 position, float tiltZ, float 
     // Debug cube for visualization
     CubeEntity* cube = s->addEntity(new CubeEntity(position + glm::vec3(0, height/2, 0), width, height, depth));
 
-    HitBox hb(
+    HitBox* hb = new HitBox(
       cube->position + glm::vec3(cube->width, cube->height, cube->depth) * -0.5f,
       cube->position + glm::vec3(cube->width, cube->height, cube->depth) * 0.5f
     );
@@ -39,8 +39,10 @@ TreeEntity::TreeEntity(MainGameScene *s, glm::vec3 position, float tiltZ, float 
   }
 }
 
-void TreeEntity::update(float delta) {
-
+TreeEntity::~TreeEntity() {
+  for (HitBox *b : this->hitboxes) {
+    CollisionManager::deregisterWall(b);
+  }
 }
 
 // Each page uses the single loaded model to draw itself

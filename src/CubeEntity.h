@@ -20,8 +20,6 @@ class CubeEntity : public Entity
 
         CubeEntity(glm::vec3 position, float width, float height, float depth);
 
-
-        void update(float dt);
         void draw(Camera *c);
 };
 

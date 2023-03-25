@@ -13,6 +13,7 @@ class PageEntity : public ObjEntity
 {
     public:
         PageEntity(glm::vec3 position, std::string name = "page1");
+        ~PageEntity();
 
         HitSphere* hitZone;
 

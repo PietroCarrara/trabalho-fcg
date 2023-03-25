@@ -16,7 +16,6 @@ public:
     float sanity = 1;
 
     void update(float deltaTime);
-    void draw(Camera* c);
 };
 
 #endif // PLAYER_H

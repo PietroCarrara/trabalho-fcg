@@ -9,8 +9,8 @@ public:
     bool paused = false;
 
     virtual ~Entity();
-    virtual void update(float deltaTime) = 0;
-    virtual void draw(Camera* c) = 0;
+    virtual void update(float deltaTime);
+    virtual void draw(Camera* c);
 };
 
 #endif // ENTITY_H

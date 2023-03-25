@@ -14,6 +14,10 @@ PageEntity::PageEntity(glm::vec3 position, std::string name) : ObjEntity("../../
     CollisionManager::registerZone(this->hitZone);
 }
 
+PageEntity::~PageEntity() {
+    CollisionManager::deregisterZone(this->hitZone);
+}
+
 void PageEntity::update(float delta) {
     this->rotation.y += delta;
 }

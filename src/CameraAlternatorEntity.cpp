@@ -5,12 +5,10 @@
 
 #include "InputManager.hpp"
 
-CameraAlternatorEntity::CameraAlternatorEntity(Player* p, std::vector<PageEntity*> pages)
+CameraAlternatorEntity::CameraAlternatorEntity(Player* p, std::list<PageEntity*> pages)
 {
     this->player = p;
-    for (PageEntity* p : pages) {
-        this->pages.push_back(p);
-    }
+    this->pages = pages;
 
     this->lookAtCam.distance = 5;
 }
@@ -26,7 +24,11 @@ void CameraAlternatorEntity::update(float dt) {
     if (this->currentObj > 0) {
         this->player->paused = true;
 
-        PageEntity* p = this->pages[this->currentObj - 1];
+        // Get the nth page from the list
+        auto list = this->pages.begin();
+        std::advance(list, this->currentObj - 1);
+        PageEntity* p = *list;
+
         this->lookAtCam.focus = p->position;
 
         // Mouse input
@@ -48,8 +50,12 @@ void CameraAlternatorEntity::update(float dt) {
     }
 }
 
-void CameraAlternatorEntity::draw(Camera* c) {
-
+void CameraAlternatorEntity::onPageRemoved() {
+    // In case the page we were looking has been removed,
+    // update to make sure we're inside the list bounds
+    if (this->currentObj > this->pages.size()) {
+        this->currentObj = 0;
+    }
 }
 
 glm::mat4 CameraAlternatorEntity::getMatrix() {
