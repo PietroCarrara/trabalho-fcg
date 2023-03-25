@@ -1,6 +1,7 @@
 #include "CameraAlternatorEntity.h"
 
 #include <glcommon.h>
+#include <utilities.h>
 
 #include "InputManager.hpp"
 
@@ -23,8 +24,27 @@ void CameraAlternatorEntity::update(float dt) {
     }
 
     if (this->currentObj > 0) {
+        this->player->paused = true;
+
         PageEntity* p = this->pages[this->currentObj - 1];
         this->lookAtCam.focus = p->position;
+
+        // Mouse input
+        float dx = InputManager::getMouseDelta().x;
+        float dy = InputManager::getMouseDelta().y;
+        this->lookAtCam.rotX -= 0.01*dx;
+        this->lookAtCam.rotY += 0.01*dy;
+
+        float phimax = M_PI/2 - 0.00001;
+        float phimin = -phimax;
+        if (this->lookAtCam.rotY > phimax) {
+            this->lookAtCam.rotY = phimax;
+        }
+        if (this->lookAtCam.rotY < phimin) {
+            this->lookAtCam.rotY = phimin;
+        }
+    } else {
+        this->player->paused = false;
     }
 }
 

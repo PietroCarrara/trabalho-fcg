@@ -17,7 +17,6 @@ Player::~Player() {
 }
 
 void Player::update(float deltaTime) {
-
     // Mouse input
     float dx = InputManager::getMouseDelta().x;
     float dy = InputManager::getMouseDelta().y;
@@ -26,7 +25,7 @@ void Player::update(float deltaTime) {
     this->rotX -= 0.01*dx;
     this->rotY += 0.01*dy;
 
-    float phimax = 3.141592f/2;
+    float phimax = M_PI/2 - 0.00001;
     float phimin = -phimax;
 
     if (this->rotY > phimax) {
@@ -38,17 +37,13 @@ void Player::update(float deltaTime) {
     }
 
     glm::vec4 w = this->getViewVec();
-
     w.y = 0.0;
 
-
     glm::vec4 u = crossproduct(glm::vec4(0, 1, 0, 0), w);
-
     w = w / norm(w);
     u = u / norm(u);
 
     glm::vec4 movement = glm::vec4(0);
-
     if (InputManager::isKeyDown(GLFW_KEY_W)) {
         movement += w;
     }

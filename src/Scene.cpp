@@ -15,7 +15,9 @@ Scene::~Scene()
 Scene* Scene::update(float dt)
 {
     for (Entity* e : this->entities) {
-        e->update(dt);
+        if (!e->paused) {
+            e->update(dt);
+        }
     }
     return this;
 }
