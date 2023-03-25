@@ -23,16 +23,6 @@ SlenderEntity::~SlenderEntity() {
     AudioManager::destroySound(this->scary);
 }
 
-float angleBetween(
-     glm::vec3 a,
-     glm::vec3 b,
-     glm::vec3 origin
-){
-     glm::vec3 da=glm::normalize(a-origin);
-     glm::vec3 db=glm::normalize(b-origin);
-     return glm::acos(glm::dot(da, db));
-}
-
 void SlenderEntity::update(float dt)
 {
     this->timeStanding += dt;
@@ -44,7 +34,7 @@ void SlenderEntity::update(float dt)
     fromPlayerToSlender.y = playerView.y; // Put both vectors on the same Y plane
     const float distance = glm::length(fromPlayerToSlender);
 
-    const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, playerView, glm::vec3(0, 0, 0)));
+    const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, (glm::vec3)playerView));
     const bool looking = angleSlenderPlayer < 33 && distance < 60;
 
     if (!looking && this->timeStanding > 5) {

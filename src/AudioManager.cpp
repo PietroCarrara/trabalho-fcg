@@ -16,9 +16,13 @@ struct Sound {
   ma_sound sound;
 };
 
-Sound* AudioManager::makeSound(const char* fname, bool loop, float volume) {
+Sound* AudioManager::makeSound(const char* fname, bool loop, float volume, float stream) {
   Sound* s = (Sound*)malloc(sizeof(Sound));
-  ma_sound_init_from_file(&engine, fname, 0, NULL, NULL, &s->sound);
+  if (stream) {
+    ma_sound_init_from_file(&engine, fname, MA_SOUND_FLAG_STREAM, NULL, NULL, &s->sound);
+  } else {
+    ma_sound_init_from_file(&engine, fname, 0, NULL, NULL, &s->sound);
+  }
   ma_sound_set_looping(&s->sound, loop);
   ma_sound_set_volume(&s->sound, volume);
   return s;

@@ -9,7 +9,7 @@
 class CameraAlternatorEntity : public Entity, public Camera
 {
     private:
-        int currentObj = 0;
+        unsigned int currentObj = 0;
         Player* player;
         std::vector<PageEntity*> pages;
         LookAtCamera lookAtCam = LookAtCamera(glm::vec3(0));

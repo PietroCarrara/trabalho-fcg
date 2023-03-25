@@ -13,6 +13,8 @@
 #define deg2rad(x) ((x)/57.2958f)
 #define rad2deg(x) ((x)*57.2958f)
 
+#define angleBetween(a, b) glm::acos(glm::dot(glm::normalize(a), glm::normalize(b)))
+
 #define randomFloat(x) ((float)rand()/(float)(RAND_MAX/(x)))
 
 static GLenum glCheckError_(const char *file, int line)
