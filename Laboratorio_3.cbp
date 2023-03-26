@@ -411,6 +411,8 @@
 		<Unit filename="src/SlenderEntity.h" />
 		<Unit filename="src/TreeEntity.cpp" />
 		<Unit filename="src/TreeEntity.h" />
+		<Unit filename="src/WinScene.cpp" />
+		<Unit filename="src/WinScene.h" />
 		<Unit filename="src/glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -427,9 +429,6 @@
 		<Unit filename="src/tiny_obj_loader.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
-			<envvars />
-			<code_completion />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

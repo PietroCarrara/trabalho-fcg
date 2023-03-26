@@ -2,6 +2,7 @@
 
 #include <glm/vec4.hpp>
 #include <glcommon.h>
+#include <utilities.h>
 
 #include "InputManager.hpp"
 #include "CollisionManager.h"
