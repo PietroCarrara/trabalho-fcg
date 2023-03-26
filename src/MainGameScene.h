@@ -13,7 +13,6 @@
 class MainGameScene : public Scene
 {
 private:
-  Skybox* skybox;
   Player* player;
   Sound* music;
   Sound* pageGrab;
@@ -25,7 +24,6 @@ public:
   ~MainGameScene();
 
   Scene* update(float dt);
-  void draw();
 };
 
 #endif // MAINGAMESCENE_H

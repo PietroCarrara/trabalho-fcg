@@ -10,8 +10,8 @@ MenuScene::MenuScene()
     this->player = this->addEntity(new Player());
     this->camera = this->player;
 
-    this->playPage = this->addEntity(new PageEntity(glm::vec3(1, 1, 2), "play"));
-    this->quitPage = this->addEntity(new PageEntity(glm::vec3(-1, 1, 2), "quit"));
+    this->playPage = this->addEntity(new PageEntity(glm::vec3(1, 1, 3), "play"));
+    this->quitPage = this->addEntity(new PageEntity(glm::vec3(-1, 1, 3), "quit"));
 
     this->song = AudioManager::makeSound("../../assets/audio/slender.mp3", true, 1, true);
     AudioManager::playSound(this->song);

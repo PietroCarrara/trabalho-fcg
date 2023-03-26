@@ -14,13 +14,11 @@ CubeEntity::CubeEntity(glm::vec3 position, float width, float height, float dept
     if (cube == nullptr) {
         cube = new ObjEntity("../../assets/objects/cube/Cube.obj");
     }
-
-    printf("<%f, %f, %f> {%f, %f, %f}\n", position.x, position.y, position.z, width, height, depth);
 }
 
 void CubeEntity::draw(Camera *c) {
-    cube->scale = glm::vec3(width, height, depth);
-    cube->position = position;
+    cube->scale = glm::vec3(this->width, this->height, this->depth);
+    cube->position = this->position;
     cube->rotation = glm::vec3(0);
 
     cube->draw(c);

@@ -27,9 +27,6 @@ MainGameScene::MainGameScene() {
     this->music = AudioManager::makeSound("../../assets/audio/music1.wav", true);
     AudioManager::playSound(this->music);
 
-
-    this->skybox = new Skybox();
-
     // Spawn player in between the two tree rings
     this->player = this->addEntity(new Player());
     this->player->position.z = -70;
@@ -72,11 +69,6 @@ Scene* MainGameScene::update(float dt) {
         return new WinScene();
     }
     return this;
-}
-
-void MainGameScene::draw() {
-    this->skybox->draw(this->camera);
-    Scene::draw();
 }
 
 void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float innerRadius, float outerRadius) {

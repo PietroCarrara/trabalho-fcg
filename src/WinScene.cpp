@@ -11,6 +11,7 @@
 WinScene::WinScene() {
   this->player = this->addEntity(new Player());
   this->camera = this->player;
+  this->player->position.z = -2;
 
   ObjEntity *slender = this->addEntity(new ObjEntity("../../assets/objects/slender/slender.obj"));
   slender->position.z = 4.5;

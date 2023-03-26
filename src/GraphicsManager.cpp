@@ -153,7 +153,7 @@ GLuint GraphicsManager::loadTexture(std::string filename) {
     glSamplerParameteri(sampler_id, GL_TEXTURE_WRAP_T,  GL_REPEAT);
 
     // Parâmetros de amostragem da textura.
-    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glSamplerParameteri(sampler_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glSamplerParameteri(sampler_id, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
     // Agora enviamos a imagem lida do disco para a GPU

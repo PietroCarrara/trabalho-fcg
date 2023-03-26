@@ -1,14 +1,13 @@
 g the_plane
 mtllib plane.mtl
 usemtl plane
-v -1 0 1
-v 1 0 1
-v 1 0 -1
-v -1 0 -1
-vt 0 0
-vt 1 0
-vt 1 1
-vt 0 1
-
+v -100 0  100
+v  100 0  100
+v  100 0 -100
+v -100 0 -100
+vt   0   0
+vt  50   0
+vt  50  50
+vt   0  50
 f 1/1 2/2 3/3
 f 1/1 3/3 4/4

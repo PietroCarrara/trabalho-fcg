@@ -20,19 +20,20 @@ TreeEntity::TreeEntity(MainGameScene *s, glm::vec3 position, float tiltZ, float 
   this->tiltX = tiltX;
 
   for (unsigned int i = 0; i < tree->bboxMax.size(); i++) {
-    glm::vec3 bboxMin = tree->bboxMin[i] * tree->scale;
-    glm::vec3 bboxMax = tree->bboxMax[i] * tree->scale;
+    glm::vec3 bboxMin = tree->bboxMin[i];
+    glm::vec3 bboxMax = tree->bboxMax[i];
 
     const float width  = 13 * tree->scale.x; // measured directly from the obj file
-    const float height = bboxMax.y - bboxMin.y;
+    const float height = (bboxMax.y - bboxMin.y) * tree->scale.y;
     const float depth = 13 * tree->scale.z; // measured directly from the obj file
+    const glm::vec3 center = this->position + glm::vec3(0, height/2, 0);
 
     // Debug cube for visualization
-    CubeEntity* cube = s->addEntity(new CubeEntity(position + glm::vec3(0, height/2, 0), width, height, depth));
+    // CubeEntity* cube = s->addEntity(new CubeEntity(center, width, height, depth));
 
     HitBox* hb = new HitBox(
-      cube->position + glm::vec3(cube->width, cube->height, cube->depth) * -0.5f,
-      cube->position + glm::vec3(cube->width, cube->height, cube->depth) * 0.5f
+      center + glm::vec3(width, height, depth) * -0.5f,
+      center + glm::vec3(width, height, depth) * 0.5f
     );
     this->hitboxes.push_back(hb);
     CollisionManager::registerWall(hb);
@@ -42,6 +43,7 @@ TreeEntity::TreeEntity(MainGameScene *s, glm::vec3 position, float tiltZ, float 
 TreeEntity::~TreeEntity() {
   for (HitBox *b : this->hitboxes) {
     CollisionManager::deregisterWall(b);
+    delete b;
   }
 }
 

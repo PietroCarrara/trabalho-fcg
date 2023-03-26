@@ -22,6 +22,7 @@
 #include "InputManager.hpp"
 #include "Camera.hpp"
 #include "MenuScene.h"
+#include "Skybox.h"
 
 int main()
 {
@@ -30,6 +31,7 @@ int main()
     update_lowlevel(w);
 
     Scene *s = new MenuScene();
+    Skybox *sky = new Skybox();
     bool running = true;
 
     while (running && programAlive(w) && !InputManager::isKeyDown(GLFW_KEY_ESCAPE))
@@ -41,6 +43,7 @@ int main()
         // DRAW:
         glClearColor(0, 0, 0, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        sky->draw(s->camera);
         s->draw();
 
         // Switch scenes if needed
@@ -56,6 +59,7 @@ int main()
         glfwSwapBuffers(w);
         glfwPollEvents();
     }
+    delete sky;
     delete s;
 
     destroy_lowlevel();
