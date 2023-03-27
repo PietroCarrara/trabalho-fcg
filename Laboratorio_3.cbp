@@ -377,6 +377,8 @@
 		<Unit filename="include/utilities.h" />
 		<Unit filename="src/AudioManager.cpp" />
 		<Unit filename="src/AudioManager.h" />
+		<Unit filename="src/BatEntity.cpp" />
+		<Unit filename="src/BatEntity.h" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Camera.hpp" />
 		<Unit filename="src/CameraAlternatorEntity.cpp" />

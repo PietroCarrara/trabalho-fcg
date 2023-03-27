@@ -10,6 +10,7 @@
 #include "TreeEntity.h"
 #include "CollisionManager.h"
 #include "WinScene.h"
+#include "BatEntity.h"
 
 /**
  * @brief Spawns N trees uniformly distributed in a "donut" shaped area
@@ -29,7 +30,7 @@ MainGameScene::MainGameScene() {
 
     // Spawn player in between the two tree rings
     this->player = this->addEntity(new Player());
-    this->player->position.z = -70;
+    // this->player->position.z = -70;
 
     // Dense inner and outer tree rings
     spawnTrees(this, 80, glm::vec3(0), 20, 60);
@@ -39,6 +40,14 @@ MainGameScene::MainGameScene() {
     plane->scale = glm::vec3(1, 1, 1);
 
     this->addEntity(new SlenderEntity(this->player));
+
+    this->addEntity(new BatEntity(
+        5,
+        glm::vec3(-7, 15, -7),
+        glm::vec3(-7, 10,  0),
+        glm::vec3( 7, 15,  0),
+        glm::vec3( 7, 20,  7)
+    ));
 
     this->pages = {
         this->addEntity(new PageEntity(glm::vec3(0, 1, 1))),

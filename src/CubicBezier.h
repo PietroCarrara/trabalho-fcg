@@ -6,6 +6,7 @@
 class CubicBezier
 {
     private:
+        float direction = 1;
         bool loop;
         float timer = 0;
         float duration;

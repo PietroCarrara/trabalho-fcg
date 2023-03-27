@@ -13,14 +13,24 @@ CubicBezier::CubicBezier(float duration, glm::vec3 p1, glm::vec3 p2, glm::vec3 p
 }
 
 void CubicBezier::update(float dt) {
-    this->timer += dt;
+    this->timer += dt*this->direction;
 
-    while (this->timer > this->duration && this->loop) {
-        this->timer -= this->duration;
+    if (this->timer >= this->duration) {
+        if (this->loop) {
+            this->timer = this->duration;
+            this->direction = -1;
+        } else {
+            this->timer = 0;
+        }
     }
 
-    if (this->timer > this->duration) {
-        this->timer = this->duration;
+    if (this->timer <= 0) {
+        if (this->loop) {
+            this->timer = 0;
+            this->direction = 1;
+        } else {
+            this->timer = 0;
+        }
     }
 }
 
