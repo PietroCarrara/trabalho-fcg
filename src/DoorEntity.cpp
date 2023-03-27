@@ -14,8 +14,8 @@ DoorEntity::DoorEntity(Player *p) : ObjEntity("../../assets/objects/door/basemen
     this->isClosing = false;
     this->progression = 0.0f;
 
-    //this->hitZone = new HitSphere(this, this->position, 3);
-    //CollisionManager::registerZone(this->hitZone);
+    this->hitZone = new HitSphere(this, this->position, 3);
+    CollisionManager::registerZone(this->hitZone);
 }
 
 void DoorEntity::update(float deltaTime) {

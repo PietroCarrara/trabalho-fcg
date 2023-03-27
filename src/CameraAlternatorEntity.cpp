@@ -5,7 +5,7 @@
 
 #include "InputManager.hpp"
 
-CameraAlternatorEntity::CameraAlternatorEntity(Player* p, std::list<PageEntity*> pages)
+CameraAlternatorEntity::CameraAlternatorEntity(Player* p, std::list<PageEntity*>* pages)
 {
     this->player = p;
     this->pages = pages;
@@ -16,7 +16,7 @@ CameraAlternatorEntity::CameraAlternatorEntity(Player* p, std::list<PageEntity*>
 void CameraAlternatorEntity::update(float dt) {
     if (InputManager::isKeyPressed(GLFW_KEY_N)) {
         this->currentObj += 1;
-        if (this->currentObj > this->pages.size()) {
+        if (this->currentObj > this->pages->size()) {
             this->currentObj = 0;
         }
     }
@@ -25,7 +25,7 @@ void CameraAlternatorEntity::update(float dt) {
         this->player->paused = true;
 
         // Get the nth page from the list
-        auto list = this->pages.begin();
+        auto list = this->pages->begin();
         std::advance(list, this->currentObj - 1);
         PageEntity* p = *list;
 
@@ -53,7 +53,7 @@ void CameraAlternatorEntity::update(float dt) {
 void CameraAlternatorEntity::onPageRemoved() {
     // In case the page we were looking has been removed,
     // update to make sure we're inside the list bounds
-    if (this->currentObj > this->pages.size()) {
+    if (this->currentObj > this->pages->size()) {
         this->currentObj = 0;
     }
 }

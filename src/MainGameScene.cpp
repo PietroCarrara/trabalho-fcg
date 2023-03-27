@@ -40,8 +40,6 @@ MainGameScene::MainGameScene() {
     this->player = this->addEntity(new Player());
     this->player->position.z = -70;
 
-    printf("%f, %f, %f\n", this->player->position.x, this->player->position.y, this->player->position.z);
-
     // Dense inner and outer tree rings
     spawnTrees(this, 80, glm::vec3(0), 20, 60);
     spawnTrees(this, 300, glm::vec3(0), 80, 110);
@@ -55,9 +53,6 @@ MainGameScene::MainGameScene() {
     this->addEntity(new DoorEntity(this->player));
     this->addEntity(new HouseEntity(this));
     this->addEntity(new FenceEntity(this));
-
-    templateOne(this, glm::vec3(0,0,-75));
-
 
     this->addEntity(new SlenderEntity(this->player));
 
@@ -75,7 +70,7 @@ MainGameScene::MainGameScene() {
         this->addEntity(new PageEntity(glm::vec3(0, 1, -60))),
     };
 
-    this->alternator = new CameraAlternatorEntity(this->player, this->pages);
+    this->alternator = new CameraAlternatorEntity(this->player, &this->pages);
     this->addEntity(alternator);
     this->camera = alternator;
 }
@@ -89,10 +84,15 @@ Scene* MainGameScene::update(float dt) {
 
     HitSphere* zone = CollisionManager::insideZone(this->player->position);
     if (zone != nullptr) {
-        this->pages.remove((PageEntity*)zone->owner);
-        this->alternator->onPageRemoved();
-        this->removeEntity(zone->owner);
-        AudioManager::playSound(this->pageGrab);
+        for (PageEntity* page : pages) {
+            if (zone->owner == page) {
+                this->pages.remove((PageEntity*)zone->owner);
+                this->alternator->onPageRemoved();
+                this->removeEntity(zone->owner);
+                AudioManager::playSound(this->pageGrab);
+                break;
+            }
+        }
     }
 
     if (this->pages.empty()) {
@@ -149,15 +149,3 @@ void spawnBushes(MainGameScene* s, int count, glm::vec3 origin, float innerRadiu
         ));
     }
 }
-
-void templateOne(MainGameScene* s, glm::vec3 position) {
-    s->addEntity(new RockEntity(s, position));
-
-    s->addEntity(new TreeEntity(s, glm::vec3(2.9,0,0)+position, 0, 0));
-    s->addEntity(new TreeEntity(s, glm::vec3(-1.9,0,-1.9)+position, 0, 0));
-
-    s->addEntity(new BushEntity(glm::vec3(2.1,0,1.7)+position));
-    s->addEntity(new BushEntity(glm::vec3(2.9,0,1.1)+position));
-    s->addEntity(new BushEntity(glm::vec3(-2.1,0,1.2)+position));
-}
-

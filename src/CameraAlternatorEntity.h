@@ -13,11 +13,11 @@ class CameraAlternatorEntity : public Entity, public Camera
     private:
         unsigned int currentObj = 0;
         Player* player;
-        std::list<PageEntity*> pages;
+        std::list<PageEntity*>* pages;
         LookAtCamera lookAtCam = LookAtCamera(glm::vec3(0));
 
     public:
-        CameraAlternatorEntity(Player* p, std::list<PageEntity*> pages);
+        CameraAlternatorEntity(Player* p, std::list<PageEntity*>* pages);
 
         void update(float dt);
         void onPageRemoved();
