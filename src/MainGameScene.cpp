@@ -12,6 +12,11 @@
 #include "CollisionManager.h"
 #include "WinScene.h"
 #include "MenuScene.h"
+#include "DoorEntity.h"
+#include "HouseEntity.h"
+#include "FenceEntity.h"
+#include "BushEntity.h"
+#include "RockEntity.h"
 
 /**
  * @brief Spawns N trees uniformly distributed in a "donut" shaped area
@@ -23,6 +28,8 @@
  * @param outerRadius The radius of the larger (outer border) circle of the donut
  */
 void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float outerRadius, float innerRadius);
+void spawnBushes(MainGameScene* s, int count, glm::vec3 origin, float innerRadius, float outerRadius);
+void templateOne(MainGameScene* s, glm::vec3 position);
 
 MainGameScene::MainGameScene() {
     this->pageGrab = AudioManager::makeSound("../../assets/audio/page-grab.wav");
@@ -33,12 +40,24 @@ MainGameScene::MainGameScene() {
     this->player = this->addEntity(new Player());
     this->player->position.z = -70;
 
+    printf("%f, %f, %f\n", this->player->position.x, this->player->position.y, this->player->position.z);
+
     // Dense inner and outer tree rings
     spawnTrees(this, 80, glm::vec3(0), 20, 60);
     spawnTrees(this, 300, glm::vec3(0), 80, 110);
 
+    spawnBushes(this, 20, glm::vec3(0), 20, 60);
+    spawnBushes(this, 80, glm::vec3(0), 80, 110);
+
     ObjEntity* plane = this->addEntity(new ObjEntity("../../assets/objects/plane/plane.obj"));
     plane->scale = glm::vec3(1, 1, 1);
+
+    this->addEntity(new DoorEntity(this->player));
+    this->addEntity(new HouseEntity(this));
+    this->addEntity(new FenceEntity(this));
+
+    templateOne(this, glm::vec3(0,0,-75));
+
 
     this->addEntity(new SlenderEntity(this->player));
 
@@ -111,3 +130,34 @@ void spawnTrees(MainGameScene* s, int count, glm::vec3 origin, float innerRadius
         ));
     }
 }
+
+void spawnBushes(MainGameScene* s, int count, glm::vec3 origin, float innerRadius, float outerRadius) {
+    // Multiply by hundred so we carry to decimal places to the int
+    // conversion. Divide by 100.0f later to "push" them back
+    float radiusRange = outerRadius - innerRadius;
+
+    for (int i = 0; i < count; i++) {
+        float angle = 2*M_PI * (i/(float)count);
+
+        float radius = innerRadius + randomFloat(radiusRange);
+        float x = cos(angle) * radius;
+        float z = sin(angle) * radius;
+
+
+        s->addEntity(new BushEntity(
+            glm::vec3(x, 0, z) + origin
+        ));
+    }
+}
+
+void templateOne(MainGameScene* s, glm::vec3 position) {
+    s->addEntity(new RockEntity(s, position));
+
+    s->addEntity(new TreeEntity(s, glm::vec3(2.9,0,0)+position, 0, 0));
+    s->addEntity(new TreeEntity(s, glm::vec3(-1.9,0,-1.9)+position, 0, 0));
+
+    s->addEntity(new BushEntity(glm::vec3(2.1,0,1.7)+position));
+    s->addEntity(new BushEntity(glm::vec3(2.9,0,1.1)+position));
+    s->addEntity(new BushEntity(glm::vec3(-2.1,0,1.2)+position));
+}
+
