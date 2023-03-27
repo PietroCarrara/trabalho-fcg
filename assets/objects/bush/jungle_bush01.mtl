@@ -1,0 +1,16 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl jungle_bush01_cute
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump jungle_bush01_cute_n.png
+map_Kd jungle_bush01_cute_c.png
+map_Ks jungle_bush01_cute_c.png
+map_d jungle_bush01_cute_c.png

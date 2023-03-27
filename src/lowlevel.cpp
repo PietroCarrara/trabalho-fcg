@@ -40,6 +40,7 @@ float update_lowlevel(GLFWwindow* w) {
     GLFW_KEY_A,
     GLFW_KEY_S,
     GLFW_KEY_D,
+    GLFW_KEY_E,
     GLFW_KEY_SPACE,
 
     GLFW_KEY_ESCAPE,
