@@ -46,6 +46,10 @@ void AudioManager::destroy() {
   ma_engine_uninit(&engine);
 }
 
+void AudioManager::setSoundVolume(Sound *s, float volume) {
+  ma_sound_set_volume(&s->sound, volume);
+}
+
 void AudioManager::playSound(Sound *s) {
   ma_sound_start(&s->sound);
 }

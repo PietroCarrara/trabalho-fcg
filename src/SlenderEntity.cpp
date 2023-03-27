@@ -15,12 +15,16 @@
 SlenderEntity::SlenderEntity(Player* p) : ObjEntity("../../assets/objects/slender/slender.obj")
 {
     this->scary = AudioManager::makeSound("../../assets/audio/dramatic-piano.wav");
+    this->camStatic = AudioManager::makeSound("../../assets/audio/static.wav", true, 0);
+    AudioManager::playSound(this->camStatic);
+
     this->position = glm::vec3(10, 0, 10);
     this->player = p;
 }
 
 SlenderEntity::~SlenderEntity() {
     AudioManager::destroySound(this->scary);
+    AudioManager::destroySound(this->camStatic);
 }
 
 void SlenderEntity::update(float dt)
@@ -66,7 +70,10 @@ void SlenderEntity::update(float dt)
     } else if (player->sanity > 1) {
         player->sanity = 1;
     }
-    GraphicsManager::setNoisiness(1 - player->sanity);
+
+    // Play the static sound, increasing at a quadratic rate
+    float volume = 1 - this->player->sanity;
+    AudioManager::setSoundVolume(this->camStatic, volume*volume);
 
     // Look at player
     float x2 = this->position.x;

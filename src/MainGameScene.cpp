@@ -8,9 +8,10 @@
 #include "ObjEntity.h"
 #include "SlenderEntity.h"
 #include "TreeEntity.h"
+#include "BatEntity.h"
 #include "CollisionManager.h"
 #include "WinScene.h"
-#include "BatEntity.h"
+#include "MenuScene.h"
 #include "DoorEntity.h"
 #include "HouseEntity.h"
 #include "FenceEntity.h"
@@ -37,7 +38,7 @@ MainGameScene::MainGameScene() {
 
     // Spawn player in between the two tree rings
     this->player = this->addEntity(new Player());
-    // this->player->position.z = -70;
+    this->player->position.z = -70;
 
     printf("%f, %f, %f\n", this->player->position.x, this->player->position.y, this->player->position.z);
 
@@ -96,6 +97,11 @@ Scene* MainGameScene::update(float dt) {
     if (this->pages.empty()) {
         return new WinScene();
     }
+
+    if (this->player->sanity <= 0) {
+        return new MenuScene(1);
+    }
+
     return this;
 }
 

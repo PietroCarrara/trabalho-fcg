@@ -1,14 +1,16 @@
 #include "MenuScene.h"
 
 #include <glm/vec3.hpp>
+#include <cmath>
 
 #include "CollisionManager.h"
 #include "MainGameScene.h"
 
-MenuScene::MenuScene()
+MenuScene::MenuScene(float noisiness)
 {
     this->player = this->addEntity(new Player());
     this->camera = this->player;
+    this->player->sanity = 1 - noisiness;
 
     this->playPage = this->addEntity(new PageEntity(glm::vec3(1, 1, 3), "play"));
     this->quitPage = this->addEntity(new PageEntity(glm::vec3(-1, 1, 3), "quit"));
@@ -24,6 +26,14 @@ MenuScene::~MenuScene()
 
 Scene* MenuScene::update(float dt) {
     Scene::update(dt);
+
+    // Wait "delay" seconds before starting to heal
+    if (delay <= 0) {
+        // Heal player
+        this->player->sanity = std::min(1.0f, this->player->sanity+dt);
+    } else {
+        delay -= dt;
+    }
 
     HitSphere* zone = CollisionManager::insideZone(this->player->position);
 
