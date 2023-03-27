@@ -53,6 +53,7 @@ MainGameScene::MainGameScene() {
     this->pages = {
         this->addEntity(new PageEntity(glm::vec3(0, 1, 1))),
         this->addEntity(new PageEntity(glm::vec3(3, 1, 2))),
+        this->addEntity(new PageEntity(glm::vec3(0, 1, -60))),
     };
 
     this->alternator = new CameraAlternatorEntity(this->player, this->pages);

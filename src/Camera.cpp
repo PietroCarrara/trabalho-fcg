@@ -15,10 +15,10 @@ glm::mat4 LookAtCamera::getMatrix() {
   float x = r * cos(this->rotY) * sin(this->rotX);
 
   // Ponto "c", centro da câmera
-  glm::vec4 camera_position_c = glm::vec4(x, y, z, 1.0f);
+  glm::vec4 camera_position_c = glm::vec4(glm::vec3(x, y, z) + this->focus, 1.0f);
 
   // Ponto "l", para onde a câmera (look-at) estará sempre olhando
-  glm::vec4 camera_lookat_l = glm::vec4(0.0f, 0.0f, 0.0f,1.0f);
+  glm::vec4 camera_lookat_l = glm::vec4(this->focus, 1.0f);
 
   // Vetor "view", sentido para onde a câmera está virada
   glm::vec4 camera_view_vector = camera_lookat_l - camera_position_c;
@@ -36,10 +36,10 @@ glm::vec4 LookAtCamera::getViewVec() {
   float x = r * cos(this->rotY) * sin(this->rotX);
 
   // Ponto "c", centro da câmera
-  glm::vec4 camera_position_c = glm::vec4(x, y, z, 1.0f);
+  glm::vec4 camera_position_c = glm::vec4(glm::vec3(x, y, z) + this->focus, 1.0f);
 
   // Ponto "l", para onde a câmera (look-at) estará sempre olhando
-  glm::vec4 camera_lookat_l = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
+  glm::vec4 camera_lookat_l = glm::vec4(this->focus, 1.0f);
 
   return camera_lookat_l - camera_position_c;
 }
