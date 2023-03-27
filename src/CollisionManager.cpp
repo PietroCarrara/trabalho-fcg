@@ -16,7 +16,6 @@ HitSphere::HitSphere(Entity* owner, glm::vec3 pos, float r) {
     this->radius = r;
 }
 
-// Register an unmovable object
 void CollisionManager::registerWall(HitBox* hb) {
     walls.push_back(hb);
 }
@@ -25,7 +24,6 @@ void CollisionManager::deregisterWall(HitBox* hb) {
     walls.remove(hb);
 }
 
-// Register an unmovable object
 void CollisionManager::registerZone(HitSphere* hs) {
     zones.push_back(hs);
 }
@@ -58,3 +56,5 @@ HitSphere* CollisionManager::insideZone(glm::vec3 position) {
 
     return nullptr;
 }
+
+// TODO: Check whether something collides with a plane

@@ -32,6 +32,8 @@ void spawnBushes(MainGameScene* s, int count, glm::vec3 origin, float innerRadiu
 void templateOne(MainGameScene* s, glm::vec3 position);
 
 MainGameScene::MainGameScene() {
+    // TODO: Add complex cow model
+
     this->pageGrab = AudioManager::makeSound("../../assets/audio/page-grab.wav");
     this->music = AudioManager::makeSound("../../assets/audio/music1.wav", true);
     AudioManager::playSound(this->music);
