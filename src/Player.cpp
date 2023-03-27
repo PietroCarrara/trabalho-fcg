@@ -6,6 +6,7 @@
 
 #include "InputManager.hpp"
 #include "CollisionManager.h"
+#include "GraphicsManager.hpp"
 
 Player::Player() {
     this->position.y = 1.80;
@@ -18,6 +19,8 @@ Player::~Player() {
 }
 
 void Player::update(float deltaTime) {
+    GraphicsManager::setNoisiness(1 - this->sanity);
+
     // Mouse input
     float dx = InputManager::getMouseDelta().x;
     float dy = InputManager::getMouseDelta().y;

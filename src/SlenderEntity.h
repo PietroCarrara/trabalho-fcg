@@ -13,6 +13,7 @@ private:
     float timeStanding = 0;
     Player* player;
     Sound* scary;
+    Sound* camStatic;
     glm::vec3 lastSeenPos; // Last position the player saw slendeman
 
 public:

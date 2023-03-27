@@ -9,13 +9,14 @@
 class MenuScene : public Scene
 {
     private:
+        float delay = 0.5;
         Player *player;
         PageEntity* playPage;
         PageEntity* quitPage;
         Sound* song;
 
     public:
-        MenuScene();
+        MenuScene(float noisiness = 0);
         ~MenuScene();
 
         Scene* update(float dt);
