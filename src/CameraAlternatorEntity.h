@@ -12,9 +12,13 @@ class CameraAlternatorEntity : public Entity, public Camera
 {
     private:
         unsigned int currentObj = 0;
+        bool traveling = false;
+        float progress = 0;
         Player* player;
         std::list<PageEntity*>* pages;
         LookAtCamera lookAtCam = LookAtCamera(glm::vec3(0));
+
+        glm::vec3 getPosition(int index);
 
     public:
         CameraAlternatorEntity(Player* p, std::list<PageEntity*>* pages);
