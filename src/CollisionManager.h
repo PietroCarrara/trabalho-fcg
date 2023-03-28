@@ -34,6 +34,9 @@ class CollisionManager
 
         // Checks in which zone is a given point
         static HitSphere* insideZone(glm::vec3 position);
+
+        // Raycast
+        static bool hitsWall(glm::vec3 origin, glm::vec3 direction);
 };
 
 class HitBox {
@@ -44,6 +47,7 @@ class HitBox {
         HitBox(glm::vec3 bottomFrontRight, glm::vec3 topBackLeft);
 
         friend bool CollisionManager::collidesWall(HitBox hb);
+        friend bool CollisionManager::hitsWall(glm::vec3 origin, glm::vec3 direction);
 };
 
 class HitSphere {

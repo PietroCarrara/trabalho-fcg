@@ -7,6 +7,7 @@
 #include <utilities.h>
 
 #include "GraphicsManager.hpp"
+#include "CollisionManager.h"
 
 #define DAMAGE_PER_SECOND 0.33
 #define HEAL_PER_SECOND 1
@@ -35,11 +36,11 @@ void SlenderEntity::update(float dt)
     const float playerAngle = rad2deg(atan2(playerView.z, playerView.x));
 
     glm::vec3 fromPlayerToSlender = this->position - this->player->position;
-    fromPlayerToSlender.y = playerView.y; // Put both vectors on the same Y plane
+    fromPlayerToSlender.y = 0; // Put both vectors on the same Y plane
     const float distance = glm::length(fromPlayerToSlender);
 
     const float angleSlenderPlayer = rad2deg(angleBetween(fromPlayerToSlender, (glm::vec3)playerView));
-    const bool looking = angleSlenderPlayer < 33 && distance < 60;
+    const bool looking = angleSlenderPlayer < 33 && distance < 60 && !CollisionManager::hitsWall(this->player->position, fromPlayerToSlender);
 
     if (!looking && this->timeStanding > 5) {
         // Teleport my man slender close to the player
