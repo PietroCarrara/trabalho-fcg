@@ -10,6 +10,7 @@ BushEntity::BushEntity(glm::vec3 position) {
     if (bush == nullptr) {
         bush = new ObjEntity("../../assets/objects/bush/jungle_bush01.obj");
         bush->scale = glm::vec3(0.01);
+        bush->phong = false;
     }
     this->position = position;
 }

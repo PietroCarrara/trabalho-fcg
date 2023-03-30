@@ -54,7 +54,11 @@ void ObjEntity::draw(Camera* c) {
       Matrix_Rotate_Z(this->rotation.z);
 
     for (unsigned int i = 0; i < this->vboIDs.size(); i++) {
-        GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
+        if (this->phong) {
+            GraphicsManager::DrawElements(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
+        } else {
+            GraphicsManager::DrawElementsGouraud(model, c, this->bboxMin[i], this->bboxMax[i], this->textureID[i], this->vboIDs[i], GL_TRIANGLES, this->indexCount[i], GL_UNSIGNED_INT, (void*)(this->firstIndex[i]*sizeof(GLuint)));
+        }
     }
 }
 

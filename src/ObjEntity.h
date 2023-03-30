@@ -33,6 +33,8 @@ public:
     std::vector<glm::vec3> bboxMin;
     std::vector<glm::vec3> bboxMax;
 
+    bool phong = true; // Should I render using phong shading?
+
     ObjEntity(std::string filename);
 
     void draw(Camera* c);

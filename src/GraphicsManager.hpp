@@ -19,6 +19,7 @@ private:
 
     static GLuint shaderID;
     static GLuint skyboxShaderID;
+    static GLuint gouraudID;
 
     static GLint modelUniform;
     static GLint viewUniform;
@@ -36,6 +37,14 @@ private:
     static GLint skyboxTimeUniform;
     static GLint skyboxNoisinessUniform;
 
+    static GLint gouraudModel;
+    static GLint gouraudView;
+    static GLint gouraudProjection;
+    static GLint gouraudViewVec;
+    static GLint gouraudColorTexture;
+    static GLint gouraudTime;
+    static GLint gouraudNoisiness;
+
     static float fov;
     static float nearPlane;
     static float farPlane;
@@ -47,6 +56,7 @@ public:
     static void setNoisiness(float n);
 
     static void DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex = 0);
+    static void DrawElementsGouraud(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex = 0);
     static void DrawSkybox(Camera* cam, GLuint texture, GLuint vertexArrayID);
 
     static GLuint loadTexture(std::string filename);

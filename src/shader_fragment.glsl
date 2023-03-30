@@ -105,6 +105,3 @@ void main()
     color.rgb = mix(color.rgb, vec3(random(vec2((vertexColor.xz + texCoord.xy) * time))), noisiness);
     color.a = 1;
 }
-
-
-

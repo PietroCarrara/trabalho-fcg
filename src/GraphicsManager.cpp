@@ -20,6 +20,8 @@ float GraphicsManager::farPlane = -60.0;
 
 GLuint GraphicsManager::shaderID = -1;
 GLuint GraphicsManager::skyboxShaderID = -1;
+GLuint GraphicsManager::gouraudID = -1;
+
 GLint GraphicsManager::modelUniform = -1;
 GLint GraphicsManager::viewUniform = -1;
 GLint GraphicsManager::projectionUniform = -1;
@@ -36,9 +38,18 @@ GLint GraphicsManager::skyboxColorTextureUniform = -1;
 GLint GraphicsManager::skyboxTimeUniform = -1;
 GLint GraphicsManager::skyboxNoisinessUniform = -1;
 
+GLint GraphicsManager::gouraudModel = -1;
+GLint GraphicsManager::gouraudView = -1;
+GLint GraphicsManager::gouraudProjection = -1;
+GLint GraphicsManager::gouraudViewVec = -1;
+GLint GraphicsManager::gouraudColorTexture = -1;
+GLint GraphicsManager::gouraudTime = 1;
+GLint GraphicsManager::gouraudNoisiness = 1;
+
 void GraphicsManager::init() {
   shaderID = LoadShadersFromFiles("../../src/shader_vertex.glsl", "../../src/shader_fragment.glsl");
   skyboxShaderID = LoadShadersFromFiles("../../src/skybox.vert.glsl", "../../src/skybox.frag.glsl");
+  gouraudID = LoadShadersFromFiles("../../src/gouraud.vert.glsl", "../../src/gouraud.frag.glsl");
 
   modelUniform = glGetUniformLocation(shaderID, "model");
   viewUniform = glGetUniformLocation(shaderID, "view");
@@ -55,6 +66,14 @@ void GraphicsManager::init() {
   skyboxColorTextureUniform = glGetUniformLocation(skyboxShaderID, "skybox");
   skyboxTimeUniform = glGetUniformLocation(skyboxShaderID, "time");
   skyboxNoisinessUniform = glGetUniformLocation(skyboxShaderID, "noisiness");
+
+  gouraudModel = glGetUniformLocation(gouraudID, "model");
+  gouraudView = glGetUniformLocation(gouraudID, "view");
+  gouraudProjection = glGetUniformLocation(gouraudID, "projection");
+  gouraudViewVec = glGetUniformLocation(gouraudID, "viewVec");
+  gouraudColorTexture = glGetUniformLocation(gouraudID, "colorTexture");
+  gouraudTime = glGetUniformLocation(gouraudID, "time");
+  gouraudNoisiness = glGetUniformLocation(gouraudID, "noisiness");
 }
 
 void GraphicsManager::setScreenRatio(float r) {
@@ -68,6 +87,9 @@ void GraphicsManager::setTime(float t) {
 
   glUseProgram(skyboxShaderID);
   glUniform1f(skyboxTimeUniform, t);
+
+  glUseProgram(gouraudID);
+  glUniform1f(gouraudTime, t);
 }
 
 void GraphicsManager::setNoisiness(float n) {
@@ -76,6 +98,9 @@ void GraphicsManager::setNoisiness(float n) {
 
   glUseProgram(skyboxShaderID);
   glUniform1f(skyboxNoisinessUniform, n);
+
+  glUseProgram(gouraudID);
+  glUniform1f(gouraudNoisiness, n);
 }
 
 void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
@@ -90,6 +115,27 @@ void GraphicsManager::DrawElements(glm::mat4 model, Camera* cam, glm::vec3 bboxM
   glUniform4fv(bboxMinUniform, 1, glm::value_ptr(bboxMin));
   glUniform4fv(bboxMaxUniform, 1, glm::value_ptr(bboxMax));
   glUniform1i(colorTextureUniform, texture);
+
+  glDrawElements(
+      drawMode,
+      elCount,
+      type,
+      firstIndex
+  );
+
+  glBindVertexArray(0);
+}
+
+void GraphicsManager::DrawElementsGouraud(glm::mat4 model, Camera* cam, glm::vec3 bboxMin, glm::vec3 bboxMax, GLuint texture, GLuint vertexArrayID, GLenum drawMode, GLsizei elCount, GLenum type, void* firstIndex) {
+  glUseProgram(gouraudID);
+
+  glBindVertexArray(vertexArrayID);
+
+  glUniformMatrix4fv(gouraudModel     , 1, GL_FALSE, glm::value_ptr(model));
+  glUniformMatrix4fv(gouraudView      , 1, GL_FALSE, glm::value_ptr(cam->getMatrix()));
+  glUniformMatrix4fv(gouraudProjection, 1, GL_FALSE, glm::value_ptr(perspectiveProjection));
+  glUniform4fv(gouraudViewVec, 1, glm::value_ptr(cam->getViewVec()));
+  glUniform1i(gouraudColorTexture, texture);
 
   glDrawElements(
       drawMode,
