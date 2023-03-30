@@ -10,7 +10,6 @@
 
 Player::Player() {
     this->position.y = 1.80;
-
     this->step = AudioManager::makeSound("../../assets/audio/step.wav", false, 0.4);
 }
 

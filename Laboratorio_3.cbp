@@ -379,6 +379,8 @@
 		<Unit filename="src/AudioManager.h" />
 		<Unit filename="src/BatEntity.cpp" />
 		<Unit filename="src/BatEntity.h" />
+		<Unit filename="src/BushEntity.cpp" />
+		<Unit filename="src/BushEntity.h" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Camera.hpp" />
 		<Unit filename="src/CameraAlternatorEntity.cpp" />
@@ -389,10 +391,16 @@
 		<Unit filename="src/CubeEntity.h" />
 		<Unit filename="src/CubicBezier.cpp" />
 		<Unit filename="src/CubicBezier.h" />
+		<Unit filename="src/DoorEntity.cpp" />
+		<Unit filename="src/DoorEntity.h" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/Entity.h" />
+		<Unit filename="src/FenceEntity.cpp" />
+		<Unit filename="src/FenceEntity.h" />
 		<Unit filename="src/GraphicsManager.cpp" />
 		<Unit filename="src/GraphicsManager.hpp" />
+		<Unit filename="src/HouseEntity.cpp" />
+		<Unit filename="src/HouseEntity.h" />
 		<Unit filename="src/InputManager.cpp" />
 		<Unit filename="src/InputManager.hpp" />
 		<Unit filename="src/MainGameScene.cpp" />
@@ -405,6 +413,8 @@
 		<Unit filename="src/PageEntity.h" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Player.h" />
+		<Unit filename="src/RockEntity.cpp" />
+		<Unit filename="src/RockEntity.h" />
 		<Unit filename="src/Scene.cpp" />
 		<Unit filename="src/Scene.h" />
 		<Unit filename="src/Skybox.cpp" />
@@ -431,6 +441,9 @@
 		<Unit filename="src/tiny_obj_loader.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -5,6 +5,7 @@
 
 #include "Scene.h"
 #include "Player.h"
+#include "SlenderEntity.h"
 #include "PageEntity.h"
 #include "AudioManager.h"
 #include "Skybox.h"
@@ -14,14 +15,13 @@ class MainGameScene : public Scene
 {
 private:
   Player* player;
-  Sound* music;
+  SlenderEntity* slender;
   Sound* pageGrab;
   CameraAlternatorEntity* alternator;
   std::list<PageEntity*> pages;
 
 public:
   MainGameScene();
-  ~MainGameScene();
 
   Scene* update(float dt);
 };

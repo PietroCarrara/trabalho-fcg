@@ -26,10 +26,12 @@ uniform sampler2D colorTexture;
 // O valor de saída ("out") de um Fragment Shader é a cor final do fragmento.
 out vec4 color;
 
+// FONTE: https://stackoverflow.com/questions/4200224/random-noise-functions-for-glsl
 float random (vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43757.441);
 }
 
+// FONTE: https://easings.net/#easeInOutSine
 float easeInOutSine(float x) {
   return -(cos(3.1415 * x) - 1) / 2;
 

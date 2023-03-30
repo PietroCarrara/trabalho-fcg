@@ -6,7 +6,6 @@
 
 #include "InputManager.hpp"
 #include "ObjEntity.h"
-#include "SlenderEntity.h"
 #include "TreeEntity.h"
 #include "BatEntity.h"
 #include "CollisionManager.h"
@@ -33,10 +32,7 @@ void templateOne(MainGameScene* s, glm::vec3 position);
 
 MainGameScene::MainGameScene() {
     // TODO: Add complex cow model
-
     this->pageGrab = AudioManager::makeSound("../../assets/audio/page-grab.wav");
-    this->music = AudioManager::makeSound("../../assets/audio/music1.wav", true);
-    AudioManager::playSound(this->music);
 
     // Spawn player in between the two tree rings
     this->player = this->addEntity(new Player());
@@ -52,11 +48,21 @@ MainGameScene::MainGameScene() {
     ObjEntity* plane = this->addEntity(new ObjEntity("../../assets/objects/plane/plane.obj"));
     plane->scale = glm::vec3(1, 1, 1);
 
+    // House
     this->addEntity(new DoorEntity(this->player));
     this->addEntity(new HouseEntity(this));
     this->addEntity(new FenceEntity(this));
 
-    this->addEntity(new SlenderEntity(this->player));
+    // Rock
+    const glm::vec3 rockPos(68, 0, -15);
+    this->addEntity(new RockEntity(this, rockPos));
+    this->addEntity(new TreeEntity(this, glm::vec3(2.9,0,0)+rockPos, 0, 0));
+    this->addEntity(new TreeEntity(this, glm::vec3(-1.9,0,-1.9)+rockPos, 0, 0));
+    this->addEntity(new BushEntity(glm::vec3(2.1,0,1.7)+rockPos));
+    this->addEntity(new BushEntity(glm::vec3(2.9,0,1.1)+rockPos));
+    this->addEntity(new BushEntity(glm::vec3(-2.1,0,1.2)+rockPos));
+
+    this->slender = this->addEntity(new SlenderEntity(this->player));
 
     this->addEntity(new BatEntity(
         5,
@@ -67,18 +73,15 @@ MainGameScene::MainGameScene() {
     ));
 
     this->pages = {
-        this->addEntity(new PageEntity(glm::vec3(0, 1, 1))),
-        this->addEntity(new PageEntity(glm::vec3(3, 1, 2))),
         this->addEntity(new PageEntity(glm::vec3(0, 1, -60))),
+        this->addEntity(new PageEntity(glm::vec3(0, 1, 0))),
+        this->addEntity(new PageEntity(glm::vec3(0, 1, 37))),
+        this->addEntity(new PageEntity(glm::vec3(71, 1, -10))),
     };
 
     this->alternator = new CameraAlternatorEntity(this->player, &this->pages);
     this->addEntity(alternator);
     this->camera = alternator;
-}
-
-MainGameScene::~MainGameScene() {
-    AudioManager::destroySound(this->music);
 }
 
 Scene* MainGameScene::update(float dt) {
@@ -88,6 +91,7 @@ Scene* MainGameScene::update(float dt) {
     if (zone != nullptr) {
         for (PageEntity* page : pages) {
             if (zone->owner == page) {
+                this->slender->levelUp();
                 this->pages.remove((PageEntity*)zone->owner);
                 this->alternator->onPageRemoved();
                 this->removeEntity(zone->owner);
